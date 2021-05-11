@@ -1,0 +1,149 @@
+*{
+    font-family: Calibri, sans-serif;
+}
+
+/* COULEURS */
+.orange{
+    background-color: #fad270;
+}
+
+.rouge{
+    background-color: #dc4e56;
+}
+
+.vert{
+    background-color: #c3d948
+}
+
+.bleu{
+    background-color: #048b9a;
+}
+
+
+/* ID */
+#titre{
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+#formulaire{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 80px;
+}
+
+#logo-retour{
+    position: absolute;
+    width: 3.5%;
+    height: auto;
+}
+
+
+
+#message{
+    text-align: center;
+    position: relative;
+    left: 35px;
+}
+
+#ligne1 .champ{
+    width: 150px;
+}
+
+#ligne3{
+    justify-content: center;
+}
+
+#dialogue{
+    display: none;
+    background-color: #D3D3D3;
+    text-align: center;
+    border-radius: 8px;
+    border: 3px solid black;
+    padding: 16px 5px;
+    position: absolute;
+    top: 200px;
+    right: 380px;
+    width: 500px;
+}
+
+#griser{
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    position: fixed;
+    opacity: 80%;
+    background-color: grey;
+    display: none;
+}
+
+
+/* CLASSES */
+.champ{
+    border-radius:8px;
+    border:1px solid black;
+    display:inline-block;
+    color: black;
+    font-size:17px;
+    padding:16px 5px;
+    text-align: center;
+    width: 210px;
+    height: 4px;
+}
+
+.conteneur{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.element{
+    align-content: space-around;
+    margin: 20px;
+}
+
+.texte{
+    text-decoration: underline;
+    position: relative;
+    top: 25px;
+    left: 10px;
+}
+
+.bouton{
+	border-radius: 38px;
+    border: 1px black solid;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-size: 17px;
+	padding: 16px 31px;
+	text-decoration: none;
+}
+
+.bouton:hover{
+	background-color:#B7CC43;
+}
+
+.bouton:hover:nth-of-type(2){
+    background-color: #BD4248;
+}
+
+.bouton:active{
+	position: relative;
+	top: 1px;
+}
+
+
+
+
+/* ELEMENTS */
+
+
+

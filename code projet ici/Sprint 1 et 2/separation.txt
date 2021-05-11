@@ -1,0 +1,11 @@
+Elements utilisés pour les pages d'inscriptions
+
+id/ en-tete
+id/ titre
+id/ logo-retour
+id/ formulaire
+id/ bouton
+id/ message
+class/ element
+class/ conteneur
+class/ champ

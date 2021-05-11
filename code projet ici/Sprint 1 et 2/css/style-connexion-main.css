@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.rouge{
+    background-color: #dc4e56;
+}
+.orange{
+    background-color: #FFC647;
+}
+
+.vert{
+    background-color: #c3d948
+}
+
+
+#titre{
+    font-family: Calibri, sans-serif;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+.bouton{
+    border-radius: 38px;
+    border: 1px black solid;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+}
+
+.champ{
+    border-radius:8px;
+    border:1px solid black;
+    display:inline-block;
+    cursor:pointer;
+    color: black;
+    font-family:Calibri, sans-serif;
+    font-size:17px;
+    padding:16px 5px;
+    text-align: center;
+    width: 210px;
+}
+
+
+#formulaire{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.conteneur{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.element{
+    align-content: space-around;
+    margin: 10px;
+}
+
+
+#logo-retour{
+    position: absolute;
+    width: 3.5%;
+    height: auto;
+}
+
+
+form{
+
+    padding-top: 100px;
+}
+
+#mdpoublier{
+
+    text-align: center;
+}

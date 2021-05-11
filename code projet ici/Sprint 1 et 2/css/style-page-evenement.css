@@ -1,0 +1,66 @@
+/* COULEURS */
+.orange{
+    background-color: #fad270;
+}
+.rouge{
+    background-color: #dc4e56;
+}
+
+.vert{
+    background-color: #80B650;
+}
+
+.bleu{
+    background-color: #048b9a;
+}
+
+
+#logo-retour{
+  position: absolute;
+  width: 3.5%;
+  height: auto;
+}
+
+
+#titre{
+    font-family: Calibri, sans-serif;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+#wrapper{
+  width: 100%;
+    margin:0 auto;
+    padding: 0 10px;
+    padding-bottom: 100px;
+}
+
+#infos{
+  margin-right: 7%;
+}
+
+
+#centrale{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.event{
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 75%;
+}
+
+.emplacement{
+  display: flex;
+  justify-content: space-around;
+}
+
+p{
+  font-size: 150%;
+  font-family: cursive;
+}

@@ -1,0 +1,111 @@
+/* COULEURS */
+.rouge{
+    background-color: #dc4e56;
+}
+
+.vert{
+    background-color: #80B650;
+}
+
+.blanc{
+  color: white;
+}
+
+
+.champc{
+  border:1px solid black;
+  font-family:Calibri, sans-serif;
+  font-size:17px;
+  padding:16px 5px;
+    text-align: center;
+    width: 100px;
+    float: right;
+
+}
+
+#titre{
+    font-family: Calibri, sans-serif;
+    color: black;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+
+#logo-retour{
+  position: absolute;
+  width: 3.5%;
+  height: auto;
+}
+
+
+#wrapper{
+  width: 100%;
+    margin:0 auto;
+    padding: 0 10px;
+    padding-bottom: 100px;
+}
+
+#infos{
+  margin-right: 7%;
+}
+
+#moitieG{
+  width: 75%;
+  height: 450px;
+  
+}
+
+#scroll{
+  overflow-y: scroll;
+  height: 450px;
+}
+
+
+#moitieD{
+  border:1px solid black;
+  width: 20%;
+  height: 530px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#centrale{
+  display: flex;
+  justify-content: space-between;
+}
+
+.event{
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 75%;
+}
+
+
+table {
+  border:1px solid black;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-collapse:collapse;
+  font-size: 85%;
+  font-family:Arial,sans-serif;
+
+}
+
+
+table th {
+  padding:5px 1px;
+  background: #ccc;
+  border: 1px solid #666;
+}
+
+
+table td {
+  border: 5px solid #ccc;
+  padding:8px 3px;
+  background-color: white;
+}

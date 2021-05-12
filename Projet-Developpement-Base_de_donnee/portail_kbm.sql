@@ -24,7 +24,7 @@ DELIMITER $$
 --
 -- Procédures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `p_verify_pseudo` (IN `new_pseudo` VARCHAR(32))  BEGIN
+CREATE DEFINER=`demen1587164`@`localhost` PROCEDURE `p_verify_pseudo` (IN `new_pseudo` VARCHAR(32))  BEGIN
 DECLARE temp VARCHAR(32);
 SET temp = "";
 SELECT pseudocli INTO temp FROM client WHERE pseudocli = new_pseudo;

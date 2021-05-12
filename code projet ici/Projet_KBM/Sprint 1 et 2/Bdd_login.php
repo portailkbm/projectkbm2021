@@ -6,6 +6,6 @@ define("BD_USER", "demen1587164");
 
 define("BD_MDP", "KBMdjl2021");
 
-define("BD_NAME", "portail_kbm");
+define("BD_NAME", "demen1587164");
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-
+// ne pas oublier de changer le host des 2 fonction
     function visualiser()
     {
         try

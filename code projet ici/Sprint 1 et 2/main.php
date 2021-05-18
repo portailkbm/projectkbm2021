@@ -66,7 +66,7 @@
 							<th id="dates">Dates</th>
 						</tr>
 					</thead>
-					<tbody id="pointsTable" align="center">
+					<tbody id="pointsTable" aligne="center">
 						<marquee behavior="scroll" direction="down">
 						<tr>
 							<td id="Organisateur"> ... </td>

@@ -4,7 +4,7 @@
 
 define("BD_USER", "root");
 
-define("BD_MDP", "");
+define("BD_MDP", "root");
 
 define("BD_NAME", "bdd");
 

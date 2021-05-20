@@ -4,7 +4,7 @@
     {
         try
         {
-            $bdd = new PDO('mysql:host=91.216.107.183;dbname=demen1587164;charset=utf8', '5t4fllyba3', '');
+            $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
         }
         catch (Exception $e)
         {
@@ -40,7 +40,7 @@
     {
         try
         {
-            $bdd = new PDO('mysql:host=91.216.107.183;dbname=demen1587164;charset=utf8', '5t4fllyba3', '');
+            $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
         }
         catch (Exception $e)
         {

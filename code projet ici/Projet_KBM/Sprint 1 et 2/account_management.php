@@ -9,8 +9,11 @@ function m_inscription_client($nom, $prenom, $password_non_crypte, $email, $tel,
     echo "nom:$nom prenom:$prenom pass:$password_non_crypte email:$email tel:$tel class:$class_client pseudo:$pseudo ville:$ville cp:$cp <br>";
         try
         {
+            $useur = 'root';
+            $pass = '';
             include_once("Bdd_login.php");     
-            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', constant("BD_USER") , constant("BD_MDP"));
+           // $bdd = new PDO('mysql:host=91.216.107.183;dbname='.constant("BD_NAME").';charset=utf8', constant("BD_USER") , constant("BD_MDP"));
+            $bdd = new PDO('mysql:host=localhost;dbname=bdd', $useur , $pass);
         }
         catch (Exception $e)
         {
@@ -30,6 +33,7 @@ function m_inscription_client($nom, $prenom, $password_non_crypte, $email, $tel,
 
         $rows = $res->rowCount();
 
+        echo "requete : INSERT INTO `client`(`nomcli`, `prencli`, `telcli`, `mailcli`, `categoriecli`, `pseudocli`, `mdpcli`, `cp`) VALUES ('$nom', '$prenom', '$tel', '$email', '$class_client', '$pseudo', '$password', '$cp') <br>";
         echo "rowCount: ".$rows."<br>";
         if ($rows == 0) {
           return 0;
@@ -44,10 +48,14 @@ function m_inscription_client($nom, $prenom, $password_non_crypte, $email, $tel,
 */
 function m_connexion_client($pseudo, $password_non_crypte ){
     //connection à la base de donnée
+    $useur = 'root';
+    $pass = '';
     try
     {  
       include_once("Bdd_login.php");     
-      $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', constant("BD_USER") , constant("BD_MDP"));
+      //$bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', constant("BD_USER") , constant("BD_MDP"));
+      //$bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME"), $useur , $pass);
+      $bdd = new PDO('mysql:host=localhost;dbname=bdd', $useur , $pass);
     }
     catch (Exception $e)
     {

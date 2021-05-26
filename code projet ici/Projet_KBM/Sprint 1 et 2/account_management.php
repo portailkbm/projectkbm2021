@@ -13,7 +13,8 @@ function m_inscription_client($nom, $prenom, $password_non_crypte, $email, $tel,
             $pass = '';
             include_once("Bdd_login.php");     
            // $bdd = new PDO('mysql:host=91.216.107.183;dbname='.constant("BD_NAME").';charset=utf8', constant("BD_USER") , constant("BD_MDP"));
-            $bdd = new PDO('mysql:host=localhost;dbname=bdd', $useur , $pass);
+           // $bdd = new PDO('mysql:host=localhost;dbname=bdd', $useur , $pass);
+           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
         catch (Exception $e)
         {
@@ -54,8 +55,8 @@ function m_connexion_client($pseudo, $password_non_crypte ){
     {  
       include_once("Bdd_login.php");     
       //$bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', constant("BD_USER") , constant("BD_MDP"));
-      //$bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME"), $useur , $pass);
-      $bdd = new PDO('mysql:host=localhost;dbname=bdd', $useur , $pass);
+      $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME"), $useur , $pass);
+      //$bdd = new PDO('mysql:host=localhost;dbname=bdd', $useur , $pass);
     }
     catch (Exception $e)
     {

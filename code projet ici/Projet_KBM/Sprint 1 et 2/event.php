@@ -39,6 +39,43 @@
 	</div>
 	<!-- NE pas oublier de changer les host ds modelevenment et controleurevenement-->
 	<br>
+    <?php
+		try
+		{
+			// $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+			$useur = 'root';
+			$pass = '';
+			include_once("Bdd_login.php");
+			$bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
+			}
+			catch (Exception $e)
+			{
+			die('Erreur : ' . $e->getMessage());
+			}
+
+                
+            //$requete = $bdd->query('SELECT * FROM evenement WHERE visevent = 1');
+			$requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
+			$requete ->execute();
+
+          /* foreach($requete as $evenement) {
+                
+           echo $requete['debutevent']'</br>';
+           echo $requete['libevent']'</br>';
+           echo $requete['cp']'</br>';
+                
+           }
+                
+        //S $requete->closeCursor();   
+        echo "<div id='centrale'><div id='moitieG'><table>";
+        echo "<thead><tr><th>Dates</th><th>Activités</th><th>Lieux</th></tr></thead>";
+        while($donnee = $requete->fetch()){ 
+
+
+        }*/
+
+
+ ?>
 	<div id="centrale">
 		<div id="moitieG">
 			<table>
@@ -50,48 +87,28 @@
 					</tr>
 				</thead>
 
-				<tbody>
-					<tr>
-						<td> ....</td>
-						<td> <a href="page-evenement.html"> Foot </a> </td>
-						<td> Gosier</td>
-					</tr>
-					<tr>
-						<td> ....</td>
-						<td> Surf </td>
-						<td> Point à Pitre</td>
-					</tr>
-					<tr>
-						<td> ....</td>
-						<td> Tournoi Dominos</td>
-						<td> Les Abymes</td>
-					</tr>						
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-				</tbody>
+				<!--? foreach($requete as $evenement) {?-->
+               <!--? while($row = $requete->fetch()) { ?-->
+                <?php while($donnee = $requete->fetch()){ ?>
+                <tr>
+				<td>
+					<?php echo $donnee["debutevent"] ?>
+				</td>
+				<td>
+					<?php echo $donnee['libevent']; ?>
+				</td>
+
+				<td>
+					<?php echo $donnee['cp']; ?>
+				</td>
+                </tr>
+
+
+				<?   
+                   $requete->closeCursor();   
+                   } 
+                ?>
+				
 			</table>
 		</div>
 		<div id="moitieD">

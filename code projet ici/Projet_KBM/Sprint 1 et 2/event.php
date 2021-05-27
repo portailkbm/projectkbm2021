@@ -19,19 +19,18 @@
 	<br>
 	<!-- C'est le code coter html a adapter qui envoie le tri dans le terminale-->
 	<div>
-		<form  action="controleurevenement.php" method="POST" >
-			<select name="trier">
+		<form  action="" method="POST" >
+			<select name="trier" id="trier">
 			Tri par : 
 				<option value="debutevent">Date</option>
 				<option value="typeevent">Type</option>
-				<option value="idlak">lakout</option>
 			</select>
 			<input type ="submit" name="recherche">
 		</form>
 		<br>
 		<p>test</p>
 	
-		<form  action="controleurevenement.php" method="POST" >
+		<form  action="" method="POST" >
 			visualiser : 
 				
 			<input type ="submit" name="visualiser">
@@ -39,43 +38,6 @@
 	</div>
 	<!-- NE pas oublier de changer les host ds modelevenment et controleurevenement-->
 	<br>
-    <?php
-		try
-		{
-			// $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
-			$useur = 'root';
-			$pass = '';
-			include_once("Bdd_login.php");
-			$bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
-			}
-			catch (Exception $e)
-			{
-			die('Erreur : ' . $e->getMessage());
-			}
-
-                
-            //$requete = $bdd->query('SELECT * FROM evenement WHERE visevent = 1');
-			$requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
-			$requete ->execute();
-
-          /* foreach($requete as $evenement) {
-                
-           echo $requete['debutevent']'</br>';
-           echo $requete['libevent']'</br>';
-           echo $requete['cp']'</br>';
-                
-           }
-                
-        //S $requete->closeCursor();   
-        echo "<div id='centrale'><div id='moitieG'><table>";
-        echo "<thead><tr><th>Dates</th><th>Activités</th><th>Lieux</th></tr></thead>";
-        while($donnee = $requete->fetch()){ 
-
-
-        }*/
-
-
- ?>
 	<div id="centrale">
 		<div id="moitieG">
 			<table>
@@ -86,30 +48,22 @@
 						<th>Lieux</th>
 					</tr>
 				</thead>
-
-				<!--? foreach($requete as $evenement) {?-->
-               <!--? while($row = $requete->fetch()) { ?-->
-                <?php while($donnee = $requete->fetch()){ ?>
-                <tr>
-				<td>
-					<?php echo $donnee["debutevent"] ?>
-				</td>
-				<td>
-					<?php echo $donnee['libevent']; ?>
-				</td>
-
-				<td>
-					<?php echo $donnee['cp']; ?>
-				</td>
-                </tr>
-
-
-				<?   
-                   $requete->closeCursor();   
-                   } 
-                ?>
-				
-			</table>
+			    <tbody>
+					<?php			
+						//modification des information
+						if (isset($_POST['recherche']))
+						{
+							include_once ("modelevenement.php");
+							filter($_POST['trier']);
+						}
+						if (isset($_POST['visualiser']))
+						{
+							include_once ("modelevenement.php");
+							visualiser();
+						}
+					?>
+				</tbody>
+        	 </table>
 		</div>
 		<div id="moitieD">
 				<div>

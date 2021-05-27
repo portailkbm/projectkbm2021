@@ -56,7 +56,12 @@
 							include_once ("modelevenement.php");
 							filter($_POST['trier']);
 						}
-						if (isset($_POST['visualiser']))
+						elseif (isset($_POST['visualiser']))
+						{
+							include_once ("modelevenement.php");
+							visualiser();
+						}
+						else
 						{
 							include_once ("modelevenement.php");
 							visualiser();

@@ -22,6 +22,15 @@
         {
             while($donnee = $requete->fetch())
             {
+
+                echo "<tr><td>";
+						echo $donnee["debutevent"];
+						echo "</td><td>";
+						echo $donnee["libevent"];
+						echo "</td><td>";
+						echo $donnee["cp"];
+						echo "</td></tr>";
+                 /*
                 echo ' id = '.$donnee["idevent"].'</br>';
                 echo ' type = '.$donnee["typeevent"].'</br>';
                 echo ' lib = '.$donnee["libevent"].'</br>';
@@ -35,7 +44,7 @@
                 echo ' cr_event = '.$donnee["cr_event"].'</br>';
                 echo ' visevent = '.$donnee["visevent"].'</br>';
                 echo ' code postale = '.$donnee["cp"].'</br>';
-                echo ' idlak = '.$donnee["idlak"].'</br></br>';
+                echo ' idlak = '.$donnee["idlak"].'</br></br>'; */
             }
         }
     }
@@ -64,6 +73,15 @@
         {
             while($donnee = $requete->fetch())
             {
+                echo "<tr><td>";
+						echo $donnee["debutevent"];
+						echo "</td><td>";
+						echo $donnee["libevent"];
+						echo "</td><td>";
+						echo $donnee["cp"];
+						echo "</td></tr>";
+                        
+                /*
                 echo ' id = '.$donnee["idevent"].'</br>';
                 echo ' type = '.$donnee["typeevent"].'</br>';
                 echo ' lib = '.$donnee["libevent"].'</br>';
@@ -78,6 +96,7 @@
                 echo ' visevent = '.$donnee["visevent"].'</br>';
                 echo ' code postale = '.$donnee["cp"].'</br>';
                 echo ' idlak = '.$donnee["nomlak"].'</br></br>';
+                */
             }
         }
     }

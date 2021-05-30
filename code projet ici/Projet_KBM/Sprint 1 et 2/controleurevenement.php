@@ -2,7 +2,12 @@
         //connection à la base de donnée
         try
         {
-            $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+            $useur = 'root';
+            $pass = '';
+            include_once("Bdd_login.php");
+            //$bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
+            
         }
         catch (Exception $e)
         {

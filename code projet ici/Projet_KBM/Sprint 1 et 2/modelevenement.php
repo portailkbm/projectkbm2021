@@ -4,7 +4,11 @@
     {
         try
         {
-            $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+           $useur = 'root';
+           $pass = '';
+           include_once("Bdd_login.php");
+           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
         catch (Exception $e)
         {
@@ -18,6 +22,15 @@
         {
             while($donnee = $requete->fetch())
             {
+
+                echo "<tr><td>";
+						echo $donnee["debutevent"];
+						echo "</td><td>";
+						echo $donnee["libevent"];
+						echo "</td><td>";
+						echo $donnee["cp"];
+						echo "</td></tr>";
+                 /*
                 echo ' id = '.$donnee["idevent"].'</br>';
                 echo ' type = '.$donnee["typeevent"].'</br>';
                 echo ' lib = '.$donnee["libevent"].'</br>';
@@ -31,7 +44,7 @@
                 echo ' cr_event = '.$donnee["cr_event"].'</br>';
                 echo ' visevent = '.$donnee["visevent"].'</br>';
                 echo ' code postale = '.$donnee["cp"].'</br>';
-                echo ' idlak = '.$donnee["idlak"].'</br></br>';
+                echo ' idlak = '.$donnee["idlak"].'</br></br>'; */
             }
         }
     }
@@ -40,14 +53,19 @@
     {
         try
         {
-            $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+            //$bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+            $useur = 'root';
+            $pass = '';
+            include_once("Bdd_login.php");
+            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
         catch (Exception $e)
         {
                 die('Erreur : ' . $e->getMessage());
         }
 
-        $requete = $bdd->prepare('SELECT * FROM evenement,lakou  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
+        //$requete = $bdd->prepare('SELECT * FROM evenement,lakou  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
+        $requete = $bdd->prepare('SELECT * FROM evenement  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
         $requete ->execute();
 
 
@@ -55,6 +73,15 @@
         {
             while($donnee = $requete->fetch())
             {
+                echo "<tr><td>";
+						echo $donnee["debutevent"];
+						echo "</td><td>";
+						echo $donnee["libevent"];
+						echo "</td><td>";
+						echo $donnee["cp"];
+						echo "</td></tr>";
+                        
+                /*
                 echo ' id = '.$donnee["idevent"].'</br>';
                 echo ' type = '.$donnee["typeevent"].'</br>';
                 echo ' lib = '.$donnee["libevent"].'</br>';
@@ -69,6 +96,7 @@
                 echo ' visevent = '.$donnee["visevent"].'</br>';
                 echo ' code postale = '.$donnee["cp"].'</br>';
                 echo ' idlak = '.$donnee["nomlak"].'</br></br>';
+                */
             }
         }
     }

@@ -19,19 +19,18 @@
 	<br>
 	<!-- C'est le code coter html a adapter qui envoie le tri dans le terminale-->
 	<div>
-		<form  action="controleurevenement.php" method="POST" >
-			<select name="trier">
+		<form  action="" method="POST" >
+			<select name="trier" id="trier">
 			Tri par : 
 				<option value="debutevent">Date</option>
 				<option value="typeevent">Type</option>
-				<option value="idlak">lakout</option>
 			</select>
 			<input type ="submit" name="recherche">
 		</form>
 		<br>
 		<p>test</p>
 	
-		<form  action="controleurevenement.php" method="POST" >
+		<form  action="" method="POST" >
 			visualiser : 
 				
 			<input type ="submit" name="visualiser">
@@ -49,50 +48,22 @@
 						<th>Lieux</th>
 					</tr>
 				</thead>
-
-				<tbody>
-					<tr>
-						<td> ....</td>
-						<td> <a href="page-evenement.html"> Foot </a> </td>
-						<td> Gosier</td>
-					</tr>
-					<tr>
-						<td> ....</td>
-						<td> Surf </td>
-						<td> Point à Pitre</td>
-					</tr>
-					<tr>
-						<td> ....</td>
-						<td> Tournoi Dominos</td>
-						<td> Les Abymes</td>
-					</tr>						
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
-					<tr>
-						<td> ....</td>
-						<td> .....</td>
-						<td> .....</td>
-					</tr>	
+			    <tbody>
+					<?php			
+						//modification des information
+						if (isset($_POST['recherche']))
+						{
+							include_once ("modelevenement.php");
+							filter($_POST['trier']);
+						}
+						if (isset($_POST['visualiser']))
+						{
+							include_once ("modelevenement.php");
+							visualiser();
+						}
+					?>
 				</tbody>
-			</table>
+        	 </table>
 		</div>
 		<div id="moitieD">
 				<div>

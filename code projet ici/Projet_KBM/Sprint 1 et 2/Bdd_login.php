@@ -4,8 +4,12 @@
 
 define("BD_USER", "root");
 
-define("BD_MDP", "");
+/*<<<<<<< HEAD
+define("BD_MDP", "5t4fllyba3");
+=======
 
-define("BD_NAME", "bdd");
+>>>>>>> ee1f866f483f69c22704e1d26c3793e7ae0103d6*/
+define("BD_MDP", "");
+define("BD_NAME", "demen1587164");
 
 ?>

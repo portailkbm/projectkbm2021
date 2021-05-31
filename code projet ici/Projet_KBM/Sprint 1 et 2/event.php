@@ -49,6 +49,7 @@
 					</tr>
 				</thead>
 			    <tbody>
+					<!-- Controller -->
 					<?php			
 						//modification des information
 						if (isset($_POST['recherche']))

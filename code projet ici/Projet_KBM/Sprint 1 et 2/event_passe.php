@@ -37,7 +37,7 @@
 					<!-- Controller -->
 					<?php			
 						include_once ("modelevenement.php");
-						filter_date_futur();
+						filter_date_passe();
 					?>
 				</tbody>
 			</table>
@@ -77,8 +77,6 @@
 					        Rechercher
 					    </div>
    					 </form>
-
-
 
 		</div>
 

@@ -22,15 +22,13 @@
         {
             while($donnee = $requete->fetch())
             {
-
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td>";
+						echo "</td><td><a href='page-evenement.html'>";
 						echo $donnee["libevent"];
-						echo "</td><td>";
+						echo "</a></td><td>";
 						echo $donnee["cp"];
-						echo "</td></tr>";
-                 
+						echo "</td></tr>";  
             }
         }
     }
@@ -60,9 +58,9 @@
             {
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td>";
+						echo "</td><td><a href='page-evenement.html'>";
 						echo $donnee["libevent"];
-						echo "</td><td>";
+						echo "</a></td><td>";
 						echo $donnee["cp"];
 						echo "</td></tr>";
                         
@@ -97,9 +95,9 @@
             {
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td>";
+						echo "</td><td><a href='page-evenement.html'>";
 						echo $donnee["libevent"];
-						echo "</td><td>";
+						echo "</a></td><td>";
 						echo $donnee["cp"];
 						echo "</td></tr>";
             }
@@ -133,9 +131,9 @@
             {
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td>";
+						echo "</td><td><a href='page-evenement.html'>";
 						echo $donnee["libevent"];
-						echo "</td><td>";
+						echo "</a></td><td>";
 						echo $donnee["cp"];
 						echo "</td></tr>";
             }

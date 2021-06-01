@@ -36,7 +36,7 @@
 				<tbody>
 					<!-- Controller -->
 					<?php			
-						include_once ("modelevenement.php");
+						include_once ("models/modelevenement.php");
 						filter_date_futur();
 					?>
 				</tbody>

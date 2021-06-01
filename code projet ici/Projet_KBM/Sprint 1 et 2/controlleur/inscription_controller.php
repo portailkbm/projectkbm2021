@@ -1,5 +1,5 @@
 <?php 
-	include("account_management.php");
+	include("models/account_management.php");
 	session_start();
 
 	$mdp=$_POST["mdp"];
@@ -8,14 +8,14 @@
     
 	if($mdp!=$cmdp){
 		$_SESSION['message']="Veiller à ce que le mot de passe et sa confirmation soient identiques";
-		include("inscription.php");
+		include("models/inscription.php");
 	}
 	else{
 		$login="C_".$pseudo;
 		$_SESSION['login'] = $login;
 		$return = m_inscription_client($_POST["nom"], $_POST["prenom"], $_POST["mdp"], $_POST["mail"], $_POST["telephone"], 1, $login, $_POST["ville"], $_POST["cp"]);
 		if ($return == 1){
-			header('Location: inscription.php');
+			header('Location: models/inscription.php');
             exit();
 		}else{
 			echo "Erreur impossible d'inscrire le client.";

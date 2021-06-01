@@ -5,19 +5,19 @@
         echo $return;
         switch ($return) {
             case 1:
-                header('Location: connexion_client.html');
+                header('Location: View/connexion_client.html');
                 break;
             case 2:
-                header('Location: connexion_membre.html');
+                header('Location: View/connexion_membre.html');
                 break;
             case 3:
-                header('Location: connexion_producteur.html');   
+                header('Location: View/connexion_producteur.html');   
                 break;
             case 4:
-                header('Location: connexion_responsable.html');
+                header('Location: View/connexion_responsable.html');
                 break;
             case 5:
-                header('Location: connexion_administrateur.html');
+                header('Location: View/connexion_administrateur.html');
                 break;
             default:
                 header('Location: connexion.php');

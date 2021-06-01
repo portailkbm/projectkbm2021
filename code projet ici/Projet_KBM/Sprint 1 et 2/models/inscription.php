@@ -35,7 +35,7 @@
         </div>
         <div class="element conteneur" id="ligne3">
             <button class="element vert bouton" type="submit" >S'inscrire</button>
-            <a href="main.html" class="element rouge bouton"> Annuler </a>
+            <a href="main.php" class="element rouge bouton"> Annuler </a>
         </div>
     </form>
 

@@ -9,7 +9,7 @@
 	<header>
 		<a href="evenement.html"> <img id="logo-retour" src="Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
-			<h1 id="titre">Nos Évenements à Venir</h1>
+			<h1 id="titre">Nos Évenements Passés</h1>
 
 			<br>
 
@@ -37,7 +37,7 @@
 					<!-- Controller -->
 					<?php			
 						include_once ("modelevenement.php");
-						filter_date_futur();
+						filter_date_passe();
 					?>
 				</tbody>
 			</table>
@@ -46,38 +46,41 @@
 
 		<div id="moitieD">
 
-			<div>
-				<a href="evenement-passe.html" class="champc rouge event">Évenements Passés</a>
-			</div>
-
-			<div>
-				<a href="evenement-futur.html" class="champc vert event">Évenements à Venir</a>
-			</div>
-
-
-			<form id="formulaire" method="post">
+				<div>
+					<a href="evenement-passe.html" class="champc rouge event">Évenements Passés</a>
+				</div>
 
 				<div>
-					<label for="date">À partir de :</label>
-					<input type="date" id="date" name="date" value="" min="2000-01-01" max="2023-12-31">
+					<a href="evenement-futur.html" class="champc vert event">Évenements à Venir</a>
 				</div>
 
-				<br>
-				<br>
 
-				<div>
-					<label for="ville">Dans cette Ville :</label>
-					<input type="text" name="ville" id="ville" placeholder="Entrer un nom de Ville" />
-				</div>
+					<form id="formulaire" method="post">
 
-				<br>
-				<br>
+						<div>
+					        <label for="date">À partir de :</label>
+							<input type="date" id="date" name="date" value="" min="2000-01-01" max="2023-12-31">
+						</div>
 
-				<div class="champc bleu event">
-					Rechercher
-				</div>
-			</form>
+						<br>
+						<br>
+
+						<div>
+					      	<label for="ville">Dans cette Ville :</label>
+							<input type="text" name="ville" id="ville" placeholder="Entrer un nom de Ville" />
+						</div>
+
+						<br>
+						<br>
+
+					    <div class="champc bleu event">
+					        Rechercher
+					    </div>
+   					 </form>
+
 		</div>
+
+
 	</div>
 
 

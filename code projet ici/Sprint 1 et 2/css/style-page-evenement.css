@@ -46,6 +46,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+}
+#ImageEmplacement2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+
+.emplacement3{
+  display: flex;
 }
 
 

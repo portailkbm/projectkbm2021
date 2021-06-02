@@ -49,17 +49,24 @@
 			<form  action="" method="POST" >
 			<P>
 				<?php
-				    echo ' '.$_SESSION["resultat"]["debutevent"].' ';
+				    include_once ("../models/modelevenement.php");
+				    Select_Debut_evenement($_GET["id"]);	    
 				?>  AU 			
-				<?php
-				    echo ' '.$_SESSION["resultat"]["finevent"].' ';
+				<?php 
+					while($_SESSION["resultat"] = $requete->fetch())
+					{
+						echo ' '.$_SESSION["resultat"]["finevent"].' ';
+					}
 				?>
 			</P>
 
 			<p>
 				LE LIEU EST : 
 				<?php
-				    echo ' '.$_SESSION["resultat"]["cp"].' ';
+					while($_SESSION["resultat"] = $requete->fetch())
+					{
+					    echo ' '.$_SESSION["resultat"]["cp"].' ';
+					}
 				?>
 			</P>
 		</div>
@@ -96,7 +103,10 @@
 				
 				<p>conctact : 
 				<?php
-				    echo ' test '.$_SESSION["resultat"]["libevent"].' ';
+				    while($_SESSION["resultat"] = $requete->fetch())
+					{
+						echo $_SESSION["resultat"]["libevent"];
+					}
 				?></p>
 			</div>
 	
@@ -105,20 +115,19 @@
 
 
         <?php
-            echo '<img src="'.$_SESSION["resultat"]["fllyer"].'" alt="" width="600" height="600">';
-
+		    while($_SESSION["resultat"] = $requete->fetch())
+			{
+					echo '<img src="'.$_SESSION["resultat"]["fllyer"].'" alt="" width="600" height="600">';
+			}
 		    /* foreach($_SESSION["resultat"] AS $e )
 			 {
 				 echo "<img"
 
 			 }*/
 		?>
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbCCFS0waFrAvxjY8sO5Q1_PGxhPVI9EyNeQ&usqp=CAU" alt="" width="600" height="600">
-
+		<!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbCCFS0waFrAvxjY8sO5Q1_PGxhPVI9EyNeQ&usqp=CAU" alt="" width="600" height="600">
+         -->
 
 	</div>
-
-
-
 </body>
 </html>

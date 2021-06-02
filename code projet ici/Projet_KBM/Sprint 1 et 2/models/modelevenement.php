@@ -113,18 +113,28 @@
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
 
         $_SESSION["resultat"] = $requete ->execute();
+        //echo ' test1 '.$_SESSION["resultat"].' ';
+        //echo ' test '.$_SESSION["resultat"]["libevent"].' ';
+
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["libevent"].' ';
+        } 
         
+        //echo $_SESSION["resultat"];
+        //echo $_SESSION["resultat"]["libevent"];
     }
 
-    function Select_Image($select){
+    function Select_Debut_evenement($select){
         $bdd= connection_bdd();
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `libevent` LIKE "'.$select.'"');
         $requete ->execute();
 
-        while($donnee = $requete->fetch())
-            {
-                echo ' photo = '.$donnee["photoevent"].'</br>';
-            }    
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["debutevent"].' ';
+        }  
     }
 
     function Select_date($select){

@@ -96,7 +96,7 @@
 				
 				<p>conctact : 
 				<?php
-				    echo ' '.$_SESSION["resultat"]["libevent"].' ';
+				    echo ' test '.$_SESSION["resultat"]["libevent"].' ';
 				?></p>
 			</div>
 	

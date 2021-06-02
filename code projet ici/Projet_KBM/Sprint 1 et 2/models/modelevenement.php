@@ -1,8 +1,7 @@
 <?php
 // ne pas oublier de changer le host des 2 fonction
 
-    function visualiser()
-    {
+    function connection_bdd() {
         try
         {
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
@@ -15,6 +14,11 @@
         {
                 die('Erreur : ' . $e->getMessage());
         }
+        return $bdd;
+    }
+    function visualiser()
+    {
+        $bdd= connection_bdd();
         $requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
         $requete ->execute();
 
@@ -35,18 +39,7 @@
     
     function filter($trier)
     {
-        try
-        {
-           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
-           $useur = 'root';
-           $pass = '';
-           include_once("Bdd_login.php");
-           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
-        }
-        catch (Exception $e)
-        {
-                die('Erreur : ' . $e->getMessage());
-        }
+        $bdd= connection_bdd();
         //$requete = $bdd->prepare('SELECT * FROM evenement,lakou  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
         $requete = $bdd->prepare('SELECT * FROM evenement  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
         $requete ->execute();
@@ -93,13 +86,19 @@
         {
             while($donnee = $requete->fetch())
             {
+                echo "<form  action='page-evenement.php' method='POST'>";
                 echo "<tr><td>";
-						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+               // echo "</td><td><a href='page-evenement.php'>";
+                //echo "</td><td>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                //echo "</td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
+                /*echo "<input  name='recherche'>
+		              </form>";*/
             }
         }
     } 
@@ -130,15 +129,48 @@
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
-						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../Views/page-evenement.php'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
             }
         }
     } 
+
+    function Select_Flyer($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `libevent` LIKE "'.$select.'"');
+
+        $_SESSION["resultat"] = $requete ->execute();
+        
+    }
+
+    function Select_Image($select){
+         try
+        {
+           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+           $useur = 'root';
+           $pass = '';
+           include_once("Bdd_login.php");
+           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
+        }
+        catch (Exception $e)
+        {
+                die('Erreur : ' . $e->getMessage());
+        }
+
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `libevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        while($donnee = $requete->fetch())
+            {
+                echo ' photo = '.$donnee["photoevent"].'</br>';
+            }
+
+        
+    }
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';
                 echo ' type = '.$donnee["typeevent"].'</br>';

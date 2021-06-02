@@ -86,7 +86,10 @@
 			<div class="emplacement3">
 				<p>Organisateur :</p>
 				
-				<p>conctact : </p>
+				<p>conctact : 
+				<?php
+				    echo ' '.$_SESSION["resultat"]["libevent"].' ';
+				?></p>
 			</div>
 	
 

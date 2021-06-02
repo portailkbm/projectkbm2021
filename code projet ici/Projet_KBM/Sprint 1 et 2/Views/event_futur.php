@@ -51,7 +51,7 @@
 			</div>
 
 			<div>
-				<a href="event-futur.php" class="champc vert event">Évenements à Venir</a>
+				<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>
 			</div>
 
 

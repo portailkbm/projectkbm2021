@@ -74,19 +74,13 @@
         {
             while($donnee = $requete->fetch())
             {
-                echo "<form  action='page-evenement.php' method='POST'>";
                 echo "<tr><td>";
                 echo $donnee["debutevent"];
-                echo "</td><td><a href='controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
-               // echo "</td><td><a href='page-evenement.php'>";
-                //echo "</td><td>";
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
-                //echo "</td><td>";
                 echo $donnee["cp"];
                 echo "</td></tr>";
-                /*echo "<input  name='recherche'>
-		              </form>";*/
             }
         }
     } 
@@ -97,16 +91,14 @@
         $date = date("Y-m-d");
 
         $requete = $bdd->prepare('SELECT * FROM `evenement`  WHERE `debutevent` <= "'.$date.'"');
-        $requete ->execute();
-        //SELECT prenom, nom FROM personnes WHERE date_naissance >= 2016-01-01 AND date_naissance <= 2016-12-31
-        //SELECT * FROM `evenement` WHERE `debutevent`>= 2021-05-31  
+        $requete ->execute(); 
         if ( $requete ->execute())
         {
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
                 echo $donnee["debutevent"];
-                echo "</td><td><a href='../Views/page-evenement.php'>";
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
                 echo $donnee["cp"];
@@ -117,7 +109,7 @@
 
     function Select_Flyer($select){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `libevent` LIKE "'.$select.'"');
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
 
         $_SESSION["resultat"] = $requete ->execute();
         
@@ -131,9 +123,14 @@
         while($donnee = $requete->fetch())
             {
                 echo ' photo = '.$donnee["photoevent"].'</br>';
-            }
+            }    
+    }
 
-        
+    function Select_date($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+
+        $_SESSION["resultat"] = $requete ->execute();
     }
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';

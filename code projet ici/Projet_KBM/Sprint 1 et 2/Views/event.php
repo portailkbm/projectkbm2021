@@ -73,7 +73,7 @@
 		</div>
 		<div id="moitieD">
 				<div>
-					<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
+					<a href="event_passe.php" class="champc rouge event">Évenements Passés t1</a>
 				</div>
 				<div>
 					<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>

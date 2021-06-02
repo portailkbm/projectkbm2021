@@ -10,7 +10,7 @@ function m_inscription_client($nom, $prenom, $password_non_crypte, $email, $tel,
         try
         {
             $useur = 'root';
-            $pass = '';
+            $pass = 'root';
             include_once("Bdd_login.php");     
            // $bdd = new PDO('mysql:host=91.216.107.183;dbname='.constant("BD_NAME").';charset=utf8', constant("BD_USER") , constant("BD_MDP"));
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd', $useur , $pass);
@@ -50,7 +50,7 @@ function m_inscription_client($nom, $prenom, $password_non_crypte, $email, $tel,
 function m_connexion_client($pseudo, $password_non_crypte ){
     //connection à la base de donnée
     $useur = 'root';
-    $pass = '';
+    $pass = 'root';
     try
     {  
       include_once("Bdd_login.php");     

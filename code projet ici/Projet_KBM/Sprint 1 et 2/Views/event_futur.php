@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="css/style-evenement.css" />
+	   	<link rel="stylesheet" href="../css/style-evenement.css" />
 		<title>KBM-Evenement</title>
 	</head>
 <body class="vert">
 	<header>
-		<a href="evenement.html"> <img id="logo-retour" src="Ressources/logo_retour.png" /> </a>
+		<a href="event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
 			<h1 id="titre">Nos Évenements à Venir</h1>
 
@@ -36,7 +36,7 @@
 				<tbody>
 					<!-- Controller -->
 					<?php			
-						include_once ("models/modelevenement.php");
+						include_once ("../models/modelevenement.php");
 						filter_date_futur();
 					?>
 				</tbody>
@@ -47,11 +47,11 @@
 		<div id="moitieD">
 
 			<div>
-				<a href="evenement-passe.html" class="champc rouge event">Évenements Passés</a>
+				<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
 			</div>
 
 			<div>
-				<a href="evenement-futur.html" class="champc vert event">Évenements à Venir</a>
+				<a href="event-futur.php" class="champc vert event">Évenements à Venir</a>
 			</div>
 
 

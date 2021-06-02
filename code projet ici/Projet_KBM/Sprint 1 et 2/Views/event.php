@@ -54,17 +54,17 @@
 						//modification des information
 						if (isset($_POST['recherche']))
 						{
-							include_once ("modelevenement.php");
+							include_once ("../models/modelevenement.php");
 							filter($_POST['trier']);
 						}
 						elseif (isset($_POST['visualiser']))
 						{
-							include_once ("modelevenement.php");
+							include_once ("../models/modelevenement.php");
 							visualiser();
 						}
 						else
 						{
-							include_once ("modelevenement.php");
+							include_once ("../models/modelevenement.php");
 							visualiser();
 						}
 					?>
@@ -73,10 +73,10 @@
 		</div>
 		<div id="moitieD">
 				<div>
-					<a href="evenement-passe.html" class="champc rouge event">Évenements Passés</a>
+					<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
 				</div>
 				<div>
-					<a href="evenement-futur.html" class="champc vert event">Évenements à Venir</a>
+					<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>
 				</div>
 					<form id="formulaire" method="post">
 						<div>

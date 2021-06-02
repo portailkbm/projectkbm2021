@@ -48,11 +48,19 @@
 		<div class="emplacement">
 			<form  action="" method="POST" >
 			<P>
-				DATE		AU 			DATE
+				<?php
+				    echo ' '.$_SESSION["resultat"]["debutevent"].' ';
+				?>  AU 			
+				<?php
+				    echo ' '.$_SESSION["resultat"]["finevent"].' ';
+				?>
 			</P>
 
 			<p>
-				LE LIEU EST : UN LIEU
+				LE LIEU EST : 
+				<?php
+				    echo ' '.$_SESSION["resultat"]["cp"].' ';
+				?>
 			</P>
 		</div>
 

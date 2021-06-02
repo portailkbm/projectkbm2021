@@ -63,19 +63,7 @@
 
     function filter_date_futur()
     {
-        try
-        {
-           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
-           $useur = 'root';
-           $pass = '';
-           include_once("Bdd_login.php");
-           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
-        }
-        catch (Exception $e)
-        {
-                die('Erreur : ' . $e->getMessage());
-        }
-
+        $bdd= connection_bdd();
         $date = date("Y-m-d");
 
         $requete = $bdd->prepare('SELECT * FROM `evenement`  WHERE `debutevent` >= "'.$date.'"');
@@ -105,19 +93,7 @@
     
     function filter_date_passe()
     {
-        try
-        {
-           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
-           $useur = 'root';
-           $pass = '';
-           include_once("Bdd_login.php");
-           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
-        }
-        catch (Exception $e)
-        {
-                die('Erreur : ' . $e->getMessage());
-        }
-
+        $bdd= connection_bdd();
         $date = date("Y-m-d");
 
         $requete = $bdd->prepare('SELECT * FROM `evenement`  WHERE `debutevent` <= "'.$date.'"');
@@ -148,19 +124,7 @@
     }
 
     function Select_Image($select){
-         try
-        {
-           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
-           $useur = 'root';
-           $pass = '';
-           include_once("Bdd_login.php");
-           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
-        }
-        catch (Exception $e)
-        {
-                die('Erreur : ' . $e->getMessage());
-        }
-
+        $bdd= connection_bdd();
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `libevent` LIKE "'.$select.'"');
         $requete ->execute();
 

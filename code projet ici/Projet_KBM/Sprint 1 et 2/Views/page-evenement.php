@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,12 +21,12 @@
 
 
 
-		<img src="../Ressources/image1.png" alt="">
+		<!--<img src="../Ressources/image1.png" alt=""> -->
 
 		
 
 		
-
+<!--
 		<div class="emplacement">
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in ante fermentum
@@ -36,7 +37,7 @@
 				 rutrum ultricies.</p>
 
 
-		</div>
+		</div> -->
 
 		<br>
 		<br>
@@ -47,28 +48,16 @@
 
 		<div class="emplacement">
 			<form  action="" method="POST" >
-			<P>
+			   <P> 
 				<?php
 				    include_once ("../models/modelevenement.php");
-				    Select_Debut_evenement($_GET["id"]);	    
-				?>  AU 			
-				<?php 
-					while($_SESSION["resultat"] = $requete->fetch())
-					{
-						echo ' '.$_SESSION["resultat"]["finevent"].' ';
-					}
+				    Select_Debut_evenement($_GET["id"]);    
+				    echo 'AU ';
+					Select_Fin_evenement($_GET["id"]); 
+				    echo '<p> LE LIEU EST :  ';
+					Select_code_postal($_GET["id"]); 
 				?>
-			</P>
-
-			<p>
-				LE LIEU EST : 
-				<?php
-					while($_SESSION["resultat"] = $requete->fetch())
-					{
-					    echo ' '.$_SESSION["resultat"]["cp"].' ';
-					}
-				?>
-			</P>
+			   </P>
 		</div>
 
 
@@ -103,10 +92,8 @@
 				
 				<p>conctact : 
 				<?php
-				    while($_SESSION["resultat"] = $requete->fetch())
-					{
-						echo $_SESSION["resultat"]["libevent"];
-					}
+				    include_once ("../controlleur/controleurevenement.php");
+					echo $_SESSION["resultat"]["libevent"];
 				?></p>
 			</div>
 	
@@ -115,10 +102,9 @@
 
 
         <?php
-		    while($_SESSION["resultat"] = $requete->fetch())
-			{
-					echo '<img src="'.$_SESSION["resultat"]["fllyer"].'" alt="" width="600" height="600">';
-			}
+		   
+			echo '<img src="'.$_SESSION["resultat"]["fllyer"].'" alt="" width="600" height="600">';
+			
 		    /* foreach($_SESSION["resultat"] AS $e )
 			 {
 				 echo "<img"

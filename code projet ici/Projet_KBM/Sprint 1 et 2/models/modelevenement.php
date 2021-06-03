@@ -7,7 +7,7 @@
         {
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
            $useur = 'root';
-           $pass = 'root';
+           $pass = '';
            include_once("Bdd_login.php");
            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
@@ -113,21 +113,17 @@
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
 
         $_SESSION["resultat"] = $requete ->execute();
-        //echo ' test1 '.$_SESSION["resultat"].' ';
-        //echo ' test '.$_SESSION["resultat"]["libevent"].' ';
 
         while($_SESSION["resultat"] = $requete->fetch())
         {
             echo ' '.$_SESSION["resultat"]["libevent"].' ';
         } 
         
-        //echo $_SESSION["resultat"];
-        //echo $_SESSION["resultat"]["libevent"];
     }
 
     function Select_Debut_evenement($select){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `libevent` LIKE "'.$select.'"');
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
         $requete ->execute();
 
         $_SESSION["resultat"] = $requete ->execute();
@@ -143,6 +139,39 @@
 
         $_SESSION["resultat"] = $requete ->execute();
     }
+
+    function Select_Fin_evenement($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["finevent"].' ';
+        }  
+    }
+
+    function Select_code_postal($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["cp"].' ';
+        }  
+    }
+
+
+
+
+
+
+
+
+
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';
                 echo ' type = '.$donnee["typeevent"].'</br>';

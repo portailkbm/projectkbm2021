@@ -29,7 +29,7 @@
             {
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
+						echo "</td><td><a href='page-evenement.php'>";
 						echo $donnee["libevent"];
 						echo "</a></td><td>";
 						echo $donnee["cp"];
@@ -52,7 +52,7 @@
             {
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
+						echo "</td><td><a href='page-evenement.php'>";
 						echo $donnee["libevent"];
 						echo "</a></td><td>";
 						echo $donnee["cp"];

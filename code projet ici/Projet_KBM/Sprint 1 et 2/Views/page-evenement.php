@@ -7,7 +7,7 @@
 	</head>
 <body class="vert"> 
 	<header>
-		<a href="../evenement.html"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
 			<h1 id="titre">Évenement</h1>
 		</div>
@@ -38,11 +38,16 @@
 			</div>
 
 			<div class="emplacement">
-				<P>
-					DATE		AU 			DATE
-				</P>
-				<p>
-					LE LIEU EST : UN LIEU
+				<formulaire   action ="" méthode =" POST ">
+				<P> 
+					<?php
+						include_once ( "../models/modelevenement.php" );
+						Select_Debut_evenement($_GET ["id"]);    
+						echo  'AU';
+						Select_Fin_evenement($_GET ["id"]);
+						echo  '<p> LE LIEU EST : ';
+						Select_code_postal($_GET ["id"]);
+					?>
 				</P>
 			</div>
 		</div>

@@ -7,7 +7,7 @@
         {
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
            $useur = 'root';
-           $pass = 'root';
+           $pass = '';
            include_once("Bdd_login.php");
            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
@@ -28,12 +28,12 @@
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
-						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";  
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
             }
         }
     }
@@ -51,13 +51,12 @@
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
-						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";
-                        
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";                  
             }
         }
     }
@@ -113,21 +112,17 @@
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
 
         $_SESSION["resultat"] = $requete ->execute();
-        //echo ' test1 '.$_SESSION["resultat"].' ';
-        //echo ' test '.$_SESSION["resultat"]["libevent"].' ';
 
         while($_SESSION["resultat"] = $requete->fetch())
         {
             echo ' '.$_SESSION["resultat"]["libevent"].' ';
         } 
         
-        //echo $_SESSION["resultat"];
-        //echo $_SESSION["resultat"]["libevent"];
     }
 
     function Select_Debut_evenement($select){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `libevent` LIKE "'.$select.'"');
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
         $requete ->execute();
 
         $_SESSION["resultat"] = $requete ->execute();
@@ -143,6 +138,90 @@
 
         $_SESSION["resultat"] = $requete ->execute();
     }
+
+    function Select_Fin_evenement($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["finevent"].' ';
+        }  
+    }
+
+    function Select_code_postal($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["cp"].' ';
+        }  
+    }
+
+    function Select_Image($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+
+        $res = $requete ->execute();
+
+        //Récupérer l'image à partir du base de données
+        //$res = $db->query('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+    
+       /* if($requete->num_rows > 0){
+            $img = $requete->fetch_assoc();
+            
+            //Rendre l'image
+            header("Content-type: image/jpg"); 
+            echo $img['imagevent']; 
+        }else{
+            echo 'Image non trouvée...';
+        }*/
+
+        header("Content-type: image/jpg");
+        while($res = $requete->fetch())
+        {
+            //Rendre l'image
+            
+           /*echo '<img src="'.$_SESSION["resultat"]["imagevent"].'"';
+           echo ' alt="" width="600" height="600">';*/
+           echo $res["imagevent"];
+           //$image = base64_decode($res["imagevent"]);
+           //echo $image;
+        }        
+    }
+    
+    function Select_Image_Evenement($select){
+        
+        header("Content-Type: image/jpeg");
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+
+        //$_SESSION["resultat"] = $requete ->execute();
+    
+        /*require_once 'PHP/config.php';
+    
+        $dsn = mysql_connect($DBHost, $DBUtilisateur, $DBPassword)
+        or die("La base '".$DBName."' n'est pas accessible.<br>");
+    
+        mysql_select_db($DBName, $dsn)
+        or die("impossbile de sÃ©lectionner la base ".$DBName."<br>");
+    
+        $requete = "select * from photo;";*/
+    
+        //$result = mysql_query($requete) or die($requete.mysql_error());
+        $result = $requete ->execute();
+    
+        while ($row = mysql_fetch_array($result)) {
+            $image = base64_decode($row['photo']);
+            echo $image;
+        }
+    }
+
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';
                 echo ' type = '.$donnee["typeevent"].'</br>';

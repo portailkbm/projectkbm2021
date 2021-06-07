@@ -164,6 +164,35 @@
         }  
     }
 
+    function Select_Image($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+
+        $_SESSION["resultat"] = $requete ->execute();
+
+        //Récupérer l'image à partir du base de données
+        $res = $db->query('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+    
+        if($res->num_rows > 0){
+            $img = $res->fetch_assoc();
+            
+            //Rendre l'image
+            header("Content-type: image/jpg"); 
+            echo $img['imagevent']; 
+        }else{
+            echo 'Image non trouvée...';
+        }
+/*
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            //Rendre l'image
+           header("Content-type: image/jpg"); 
+           /*echo '<img src="'.$_SESSION["resultat"]["imagevent"].'"';
+           echo ' alt="" width="600" height="600">'; */
+ /*          echo $_SESSION["resultat"]["imagevent"];
+        }       */  
+    }
+
 
 
 

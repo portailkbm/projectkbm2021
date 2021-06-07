@@ -62,7 +62,7 @@
 				<table>
 					<thead>
 						<tr>
-							<th id="Organisateur">Organisateur</th>
+							<!--<th id="Organisateur">Organisateur</th>-->
 							<th id="activités">Activités</th>
 							<th id="lieux">Lieux</th>
 							<th id="dates">Dates</th>
@@ -70,54 +70,8 @@
 					</thead>
 					<tbody id="pointsTable" aligne="center">
 						<marquee behavior="scroll" direction="down">
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Foot </td>
-							<td id="lieux"> Gosier</td>
-							<td id="dates"> 09-04-21</td>
-						</tr>
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Surf </td>
-							<td id="lieux"> Saint-François</td>
-							<td id="dates"> 14-04-21</td>
-						</tr>
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Marcher </td>
-							<td id="lieux"> Pointe-à-Pitre</td>
-							<td id="dates"> 20-04-21</td>
-						</tr>
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Gwo ka </td>
-							<td id="lieux"> Abymes</td>
-							<td id="dates"> 01-05-21</td>
-						</tr>
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Gwo ka </td>
-							<td id="lieux"> Pointe-à-Pitre</td>
-							<td id="dates"> 05-05-21</td>
-						</tr>
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Atelier Jeux traditionel </td>
-							<td id="lieux"> Abymes</td>
-							<td id="dates"> 24-05-21</td>
-						</tr>
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Foire  </td>
-							<td id="lieux"> Gosier</td>
-							<td id="dates"> 31-05-21</td>
-						</tr>
-						<tr>
-							<td id="Organisateur"> ... </td>
-							<td id="activités"> Tournoie de belote </td>
-							<td id="lieux"> Saint-Anne</td>
-							<td id="dates"> 01-06-21</td>
-						</tr>
+						    include_once ("../models/modelevenement.php");
+							visualiser();
 						</marquee>
 					</tbody>
 				</table> 

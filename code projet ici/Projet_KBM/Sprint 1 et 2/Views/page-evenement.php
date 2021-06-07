@@ -15,36 +15,6 @@
 
 	</header>
 
-<<<<<<< HEAD
-	<br>
-
-	<div id="centrale">
-       <?php
-	       include_once ("../models/modelevenement.php");
-		   echo '<p>';
-		   Select_Flyer($_GET["id"]);
-		   echo '</p>';
-	   ?>
-
-
-		<!--<img src="../Ressources/image1.png" alt=""> -->
-
-		
-
-		
-<!--
-		<div class="emplacement">
-			
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in ante fermentum
-				, cursus arcu a, commodo magna. Proin mi elit, porta quis luctus sit amet, elementum ac metus. 
-				Aliquam accumsan mauris quis ante laoreet, a lacinia odio cursus. Aliquam fermentum, ipsum eu maximus lacinia, diam
-				 leo congue odio, in bibendum sem tortor nec leo. Ut dignissim massa rutrum enim lacinia 
-				 feugiat. Quisque ac ante fermentum, tristique urna a, ultricies elit. In sit amet ipsum vel neque 
-				 rutrum ultricies.</p>
-
-
-		</div> -->
-=======
 	<div id="conteneurprincipale">
 		<div id="conteneurphoto">
 
@@ -54,7 +24,6 @@
 			</div>
 			<div class="flexb1"></div>
 		</div>
->>>>>>> master
 
 		<div id="conteneurtexte">		
 			<div class="flexb1"></div>
@@ -64,20 +33,6 @@
 			<div class="flexb1"></div>
 		</div>
 
-<<<<<<< HEAD
-		<div class="emplacement">
-			<form  action="" method="POST" >
-			   <P> 
-				<?php
-				    include_once ("../models/modelevenement.php");
-				    Select_Debut_evenement($_GET["id"]);    
-				    echo 'AU ';
-					Select_Fin_evenement($_GET["id"]); 
-				    echo '<p> LE LIEU EST :  ';
-					Select_code_postal($_GET["id"]); 
-				?>
-			   </P>
-=======
 		<div id="conteneurapropos">
 			<div class="emplacement">
 				<p>Se tiendra du :</p>
@@ -96,7 +51,6 @@
 					?>
 				</P>
 			</div>
->>>>>>> master
 		</div>
 
 
@@ -117,7 +71,6 @@
 				</div>
 
 			</div>
-<<<<<<< HEAD
 			
 			<div class="emplacement3">
 				<p>Organisateur :</p>
@@ -148,13 +101,6 @@
 		<!--"alt="" width="600" height="600"> -->
 		<!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbCCFS0waFrAvxjY8sO5Q1_PGxhPVI9EyNeQ&usqp=CAU" alt="" width="600" height="600">
          -->
-=======
-
-		</div>
-
-	</div>
-			
->>>>>>> master
 
 	</div>
 </body>

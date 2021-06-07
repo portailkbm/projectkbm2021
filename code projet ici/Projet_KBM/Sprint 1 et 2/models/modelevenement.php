@@ -28,12 +28,12 @@
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
-						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";  
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
             }
         }
     }
@@ -51,12 +51,19 @@
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
+              /*  echo "<tr><td>";
 						echo $donnee["debutevent"];
 						echo "</td><td><a href='page-evenement.html'>";
 						echo $donnee["libevent"];
 						echo "</a></td><td>";
 						echo $donnee["cp"];
-						echo "</td></tr>";
+						echo "</td></tr>";*/
                         
             }
         }
@@ -192,14 +199,6 @@
  /*          echo $_SESSION["resultat"]["imagevent"];
         }       */  
     }
-
-
-
-
-
-
-
-
 
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';

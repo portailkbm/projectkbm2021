@@ -76,8 +76,6 @@
 <<<<<<< HEAD
 					<a href="event_passe.php" class="champc rouge event">Évenements Passés </a>
 =======
-					<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
->>>>>>> master
 				</div>
 				<div>
 					<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>

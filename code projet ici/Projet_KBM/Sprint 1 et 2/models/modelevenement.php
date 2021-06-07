@@ -56,15 +56,7 @@
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
                 echo $donnee["cp"];
-                echo "</td></tr>";
-              /*  echo "<tr><td>";
-						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.html'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";*/
-                        
+                echo "</td></tr>";                  
             }
         }
     }
@@ -175,29 +167,59 @@
         $bdd= connection_bdd();
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
 
-        $_SESSION["resultat"] = $requete ->execute();
+        $res = $requete ->execute();
 
         //Récupérer l'image à partir du base de données
-        $res = $db->query('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        //$res = $db->query('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
     
-        if($res->num_rows > 0){
-            $img = $res->fetch_assoc();
+       /* if($requete->num_rows > 0){
+            $img = $requete->fetch_assoc();
             
             //Rendre l'image
             header("Content-type: image/jpg"); 
             echo $img['imagevent']; 
         }else{
             echo 'Image non trouvée...';
-        }
-/*
-        while($_SESSION["resultat"] = $requete->fetch())
+        }*/
+
+        header("Content-type: image/jpg");
+        while($res = $requete->fetch())
         {
             //Rendre l'image
-           header("Content-type: image/jpg"); 
+            
            /*echo '<img src="'.$_SESSION["resultat"]["imagevent"].'"';
-           echo ' alt="" width="600" height="600">'; */
- /*          echo $_SESSION["resultat"]["imagevent"];
-        }       */  
+           echo ' alt="" width="600" height="600">';*/
+           echo $res["imagevent"];
+           //$image = base64_decode($res["imagevent"]);
+           //echo $image;
+        }        
+    }
+    
+    function Select_Image_Evenement($select){
+        
+        header("Content-Type: image/jpeg");
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+
+        //$_SESSION["resultat"] = $requete ->execute();
+    
+        /*require_once 'PHP/config.php';
+    
+        $dsn = mysql_connect($DBHost, $DBUtilisateur, $DBPassword)
+        or die("La base '".$DBName."' n'est pas accessible.<br>");
+    
+        mysql_select_db($DBName, $dsn)
+        or die("impossbile de sÃ©lectionner la base ".$DBName."<br>");
+    
+        $requete = "select * from photo;";*/
+    
+        //$result = mysql_query($requete) or die($requete.mysql_error());
+        $result = $requete ->execute();
+    
+        while ($row = mysql_fetch_array($result)) {
+            $image = base64_decode($row['photo']);
+            echo $image;
+        }
     }
 
     /*

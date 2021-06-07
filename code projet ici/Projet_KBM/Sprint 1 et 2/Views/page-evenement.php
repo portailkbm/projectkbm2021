@@ -105,10 +105,11 @@
 
 		</div>
 
-        <img src="
+        <!--<img src="-->
         <?php
 		   include_once ("../controlleur/controleurevenement.php");
-		   Select_Image($_GET["id"]); 
+		   Select_Image($_GET["id"]);
+		   //Select_Image_Evenement($_GET["id"]); 
 			//echo '<img src="'.$_SESSION["resultat"]["fllyer"].'" alt="" width="600" height="600">';
 			
 		    /* foreach($_SESSION["resultat"] AS $e )
@@ -117,7 +118,7 @@
 
 			 }*/
 		?>
-		"alt="" width="600" height="600">
+		<!--"alt="" width="600" height="600"> -->
 		<!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbCCFS0waFrAvxjY8sO5Q1_PGxhPVI9EyNeQ&usqp=CAU" alt="" width="600" height="600">
          -->
 

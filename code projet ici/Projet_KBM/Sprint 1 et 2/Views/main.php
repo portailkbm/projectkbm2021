@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../css/style-main.css" />
-		<title>KBM - Acceuil</title>
+		<title>KBM - Acceuile</title>
 	</head>
 	<body class="vert">
 		<header>

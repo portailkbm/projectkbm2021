@@ -2,14 +2,14 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="css/style-connexion-pageaccueil-main.css" />
-		<title>KBM-Administrateur</title>
+	   	<link rel="stylesheet" href="../css/style-connexion-pageaccueil-main.css" />
+		<title>KBM-Membre</title>
 	</head>
 <body >
 	<header>
-		<a href="main.php"> <img id="logo-retour" src="Ressources/logo_retour.png" /> </a>
+		<a href="main.html"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
-			<h1 id="titre">Administrateur </h1>
+			<h1 id="titre">Membre</h1>
 
 			<br>
 
@@ -21,7 +21,7 @@
 	<br>
 	<div id="centrale">
 		<div id="moitieG">
-			<h1 id="titre" name="titretableau">Gestion des produits</h1>
+			<h1 id="titre" name="titretableau">Gestion du compte</h1>
 			<div id="scroll">
 			<table>
 				<tbody>
@@ -50,19 +50,19 @@
 		<div id="moitieD">
 
 				<div>
-					<a  class="champc  blanc rouge event " onclick="Gestiondesproduits()">Gestion des produits</a>
+					<a  class="champc  blanc rouge event " onclick="Gestionducompte()">Gestion du compte</a>
 				</div>
 
 				<div>
-					<a class="champc vert event" onclick="Gestiondeshabilitations()">Gestion des habilitations</a>
+					<a class="champc vert event" onclick="Commande()">Commande</a>
 				</div>
 
 				<div>
-					<a class="champc vert event" onclick="Gestiondescomptes()">Gestion des comptes</a>
+					<a class="champc vert event" onclick="Suividecommande()">Suivi de commande</a>
 				</div>
 
 				<div>
-					<a class="champc vert event" onclick="Qualificationproducteurs()">Qualification producteurs</a>
+					<a class="champc vert event" onclick="Forum()">Forum</a>
 				</div>
 
 				<div>
@@ -70,30 +70,19 @@
 				</div>
 
 				<div>
-					<a class="champc vert event" onclick="Gestionlakous()">Gestion lakous</a>
+					<a class="champc vert event" onclick="Baykokopousavon()">Bay koko pou savon</a>
 				</div>
 
 				<div>
-					<a class="champc vert event" onclick="Gestionbénéficiaires()">Gestion bénéficiaires</a>
+					<a class="champc vert event" onclick="Signalement()">Signalement</a>
 				</div>
-
-				<div>
-					<a class="champc vert event" onclick="Intégrationproduits()">Intégration produits</a>
-				</div>
-
-				<div>
-					<a class="champc vert event" onclick="Webmastering()">Web mastering</a>
-				</div>
-
-
-
 
 		</div>
 
 
 	</div>
 	
-	<script type="text/javascript" src="js/Administrateur.js"></script>
+	<script type="text/javascript" src="js/Membre.js"></script>
 </body>
 
 </html>

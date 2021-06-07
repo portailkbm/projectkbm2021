@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="css/style-main.css" />
-		<title>KBM - Acceuil</title>
+		<link rel="stylesheet" href="../css/style-main.css" />
+		<title>KBM - Acceuile</title>
 	</head>
 	<body class="vert">
 		<header>
@@ -16,7 +18,7 @@
 							<li><a href=""> Produit</a></li>
 							<li><a href=""> Producteur</a> </li>
 							<li><a href="">Lakou</a></li>
-							<li><a href="evenement.html">Evenements</a></li>
+							<li><a href="event.php">Evenements</a></li>
 							<li><a href="">Demenjala</a></li>
 					</nav>
 					<a href="inscription.php" class="champc bleu">Inscription </a>
@@ -32,15 +34,15 @@
     			<input type="radio" id="play_slider" name="slider_commands">
   			<div id="slides">
         		<figure id="slide1">
-          			<img src="Ressources/image1.png" alt="Une première image">
+          			<img src="../Ressources/image1.png" alt="Une première image">
           			<figcaption></figcaption>
        			</figure>
       		  	<figure id="slide2">
-         		 	<img src="Ressources/image2.png" alt="Une deuxième image">
+         		 	<img src="../Ressources/image2.png" alt="Une deuxième image">
         			<figcaption></figcaption>
         		</figure>
         		<figure id="slide3">
-            		<img src="Ressources/image3.png" alt="Une troisième image">
+            		<img src="../Ressources/image3.png" alt="Une troisième image">
             		<figcaption></figcaption>
         		</figure>
    			</div>

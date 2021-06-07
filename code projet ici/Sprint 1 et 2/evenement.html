@@ -9,13 +9,14 @@
 	<header>
 		<a href="main.php"> <img id="logo-retour" src="Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
-			<h1 id="titre">Nos Évenements</h1>
+			<h1 class="titre">Nos Évenements</h1>
 			<br>
 			<div class="champc orange" id="infos">
 				Voir Plus
 			</div>
 		</div>
 	</header>
+	<br>
 	<br>
 	<div id="centrale">
 		<div id="moitieG">
@@ -28,21 +29,12 @@
 					</tr>
 				</thead>
 				<tbody>
+									
 					<tr>
 						<td> ....</td>
-						<td> <a href="page-evenement.html"> Foot </a> </td>
-						<td> Gosier</td>
-					</tr>
-					<tr>
-						<td> ....</td>
-						<td> Surf </td>
-						<td> Point à Pitre</td>
-					</tr>
-					<tr>
-						<td> ....</td>
-						<td> Tournoi Dominos</td>
-						<td> Les Abymes</td>
-					</tr>						
+						<td> .....</td>
+						<td> .....</td>
+					</tr>	
 					<tr>
 						<td> ....</td>
 						<td> .....</td>
@@ -71,29 +63,26 @@
 				</tbody>
 			</table>
 		</div>
-		<div id="moitieD">
-				<div>
-					<a href="evenement-passe.html" class="champc rouge event">Évenements Passés</a>
-				</div>
-				<div>
-					<a href="evenement-futur.html" class="champc vert event">Évenements à Venir</a>
-				</div>
-					<form id="formulaire" method="post">
-						<div>
-					        <label for="date">À partir de :</label>
-							<input type="date" id="date" name="date" value="" min="2000-01-01" max="2023-12-31">
-						</div>
-						<br>
-						<div>
-					      	<label for="ville">Dans cette Ville :</label>
-							<input type="text" name="ville" id="ville" placeholder="Entrer un nom de Ville" />
-						</div>
-						<br>
-					    <div class="champc bleu event">
-					        Rechercher
-					    </div>
-   					 </form>
-		</div>
+		<!-- C'est le code coter html a adapter qui envoie le tri dans le terminale-->
+	<div id=moitieD>
+		<form  action="controleurevenement.php" method="POST" >
+			<p class="titre2"> Trier les elements par :</p>
+			<select name="trier" class="champc">
+			Tri par : 
+				<option value="debutevent" class="champc">Date</option>
+				<option value="typeevent" class="champc">Type</option>
+				<option value="idlak" class="champc">lakout</option>
+			</select>
+			
+			<input type ="submit" name="recherche" class="champc">
+		</form>
+		<br>
+		<form  action="controleurevenement.php" method="POST" >
+			<p class="titre2">Voir tout les évenemnts </p> 
+			<input type ="submit" name="visualiser" class="champc">
+		</form>
+	</div>
+	<!-- NE pas oublier de changer les host ds modelevenment et controleurevenement-->
 	</div>
 </body>
 	<footer>

@@ -4,8 +4,8 @@
 
 define("BD_USER", "root");
 
-define("BD_MDP", "root");
+define("BD_MDP", "5t4fllyba3");
 
-define("BD_NAME", "portail_kbm");
+define("BD_NAME", "bdd");
 
 ?>

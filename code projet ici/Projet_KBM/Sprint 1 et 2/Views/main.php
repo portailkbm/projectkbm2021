@@ -70,9 +70,9 @@
 					</thead>
 					<tbody id="pointsTable" aligne="center">
 						<marquee behavior="scroll" direction="down">
-						    include_once ("../models/modelevenement.php");
-							visualiser();
 						</marquee>
+						include_once ("../models/modelevenement.php");
+						visualiser();
 					</tbody>
 				</table> 
 			</div>

@@ -18,7 +18,12 @@
 	<br>
 
 	<div id="centrale">
-
+       <?php
+	       include_once ("../models/modelevenement.php");
+		   echo '<p>';
+		   Select_Flyer($_GET["id"]);
+		   echo '</p>';
+	   ?>
 
 
 		<!--<img src="../Ressources/image1.png" alt=""> -->

@@ -8,7 +8,7 @@
     }
 
     
-    Select_Flyer($_GET["id"]);
+    //Select_Flyer($_GET["id"]);
     include_once ("../Views/page-evenement.php");  
       
 ?>

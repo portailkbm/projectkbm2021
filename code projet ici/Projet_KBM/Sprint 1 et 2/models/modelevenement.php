@@ -6,7 +6,7 @@
         {
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
            $useur = 'root';
-           $pass = 'root';
+           $pass = '';
            include_once("Bdd_login.php");
            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
@@ -27,12 +27,12 @@
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
-						echo $donnee["debutevent"];
-                        echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";  
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
             }
         }
     }
@@ -50,13 +50,12 @@
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
-						echo $donnee["debutevent"];
-                        echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
-						echo $donnee["libevent"];
-						echo "</a></td><td>";
-						echo $donnee["cp"];
-						echo "</td></tr>";
-                        
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";                  
             }
         }
     }
@@ -234,10 +233,26 @@
         }
     }
 
-
-
-
-
+        //$_SESSION["resultat"] = $requete ->execute();
+    
+        /*require_once 'PHP/config.php';
+    
+        $dsn = mysql_connect($DBHost, $DBUtilisateur, $DBPassword)
+        or die("La base '".$DBName."' n'est pas accessible.<br>");
+    
+        mysql_select_db($DBName, $dsn)
+        or die("impossbile de sÃ©lectionner la base ".$DBName."<br>");
+    
+        $requete = "select * from photo;";*/
+    
+        //$result = mysql_query($requete) or die($requete.mysql_error());
+        $result = $requete ->execute();
+    
+        while ($row = mysql_fetch_array($result)) {
+            $image = base64_decode($row['photo']);
+            echo $image;
+        }
+    }
 
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';

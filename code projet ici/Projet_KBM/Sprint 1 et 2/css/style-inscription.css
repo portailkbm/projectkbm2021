@@ -119,6 +119,7 @@
 
 .element{
     align-content: space-around;
+    margin: 20px;
 }
 
 .texte{
@@ -151,32 +152,7 @@
 	position: relative;
 	top: 1px;
 }
-#conteneurprincipale{
-    display: flex;
-    flex-direction: column;
-}
-#conteneurformulaire{
-    flex: 1;
-    display: flex;
-    flex-direction: row;
 
-}
-#gformulaire{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    
-}
-
-#dformulaire{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    
-}
-#inul{
-    flex: 1.5;
-}
 
 
 

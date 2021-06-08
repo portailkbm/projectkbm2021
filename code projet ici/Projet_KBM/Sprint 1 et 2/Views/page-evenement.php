@@ -8,7 +8,7 @@
 	</head>
 <body class="vert"> 
 	<header>
-		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /></a>
 		<div id="wrapper">
 			<h1 id="titre">Évenement</h1>
 			<p>

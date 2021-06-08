@@ -71,11 +71,6 @@
 
 
 		<div id="conteneurorganisateur">
-			<div id="photoorganisateur">
-				<img src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-
-				ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut
-				-masculin-photo-placeholder-.jpg" alt=" L'image n'a pas charger" width="200" height="200">
-			</div>
 
 			<div id="aproposorganisateur">
 				<div class="flexh1">
@@ -95,7 +90,7 @@
 		</div>
 		<?php
 			include_once ( "../models/modelevenement.php" );
-			Select_Flyer_Evenement($_GET ["id"]);
+			Select_FL_Evenement($_GET ["id"]);
 		?>
 	</div>
 </body>

@@ -219,7 +219,20 @@
 
 
 
+    function cp()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT cp FROM `ville` WHERE 1');
+        $requete ->execute();
 
+        if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo  '<option value=' .$_SESSION["resultat"]. '</option>' ;		
+            }
+        }
+    }
 
 
 

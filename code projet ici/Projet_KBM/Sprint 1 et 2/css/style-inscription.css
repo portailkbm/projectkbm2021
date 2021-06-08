@@ -26,6 +26,7 @@
     text-align: center;
     position: relative;
     left: 40px;
+    font-size: 4em;
 }
 
 #formulaire{
@@ -94,6 +95,18 @@
     text-align: center;
     width: 210px;
     height: 4px;
+}
+.mail{
+    border-radius:8px;
+    border:1px solid black;
+    display:inline-block;
+    color: black;
+    font-size:17px;
+    padding:16px 5px;
+    text-align: center;
+    width: 210px;
+    height: 4px;
+    
 }
 
 .conteneur{

@@ -3,12 +3,12 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style-inscription.css" />
+    <link rel="stylesheet" href="../css/style-inscription.css" />
     <title> KBM - Inscription </title>
 </head>
 <body class="rouge">
     <div id="en-tete">
-        <a href="main.php"> <img id="logo-retour" src="Ressources/logo_retour.png" /></a> 
+        <a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /></a> 
         <h1 id="titre"> Inscription </h1> 
 
     </div>
@@ -16,7 +16,7 @@
         <div class="element conteneur" id="ligne1">
             <div class="texte"> Nom : </div> <input  class="element champ" type="text" name="nom" id="nom" placeholder="Votre nom" required pattern=".*\S.*" />
             <div class="texte"> Prénom : </div> <input  class="element champ" type="text" name="prenom" id="prenom" placeholder="Votre prénom" required pattern=".*\S.*"  />
-            <div class="texte"> Mail : </div> <input  class="element champ" type="email" name="mail" id="mail" placeholder="Votre mail" required pattern=".*\S.*" /> 
+            <div class="texte"> Mail : </div> <input  class="element mail" type="email" name="mail" id="mail" placeholder="Votre mail" required pattern=".*\S.*" /> 
             <div class="texte"> Ville : </div> <input  class="element champ" type="text" name="ville" id="ville" placeholder="Votre ville" required pattern=".*\S.*"  />
             <div class="texte"> Code Postal : </div> <input  class="element champ" type="text" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*"  />
         </div>

@@ -163,6 +163,61 @@
         }  
     }
 
+    function Select_Description_Evenement($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["desevent"].' ';
+        }  
+    }
+    function Select_Im_Evenement($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo '<img src="data:image/jpeg;base64,'.base64_encode( $_SESSION["resultat"]['imagevent'] ).'"/>';
+        }  
+    }
+
+    function Select_Flyer_Evenement($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            //echo '<p class="fichier"><strong>'.htmlspecialchars($_SESSION["resultat"]['date']).'</strong> : <a href="'.$_SESSION["resultat"]['fichier'].'">'. htmlspecialchars($_SESSION["resultat"]['fichier']).'</a></p>';
+            echo '<a href='.$_SESSION["resultat"]['date'].' download="">télécharcher le lien</a>';
+           /* $contenuFichier = $_SESSION["resultat"]['date'];
+            $nomFichier = 'nom du fichier.txt';
+            
+            $tailleFichier = strlen($contenuFichier);
+            
+            $nomFichier = str_replace('"', '\\"', $nomFichier);
+            
+            header('Content-Type: application/pdf');
+            //header('Content-Type: application/octet-stream');
+            header("Content-Length: $tailleFichier");
+            header('Content-Disposition: inline; filename="$nomFichier" ') ;
+            //header("Content-Disposition: attachment; filename=\"$nomFichier\"");
+            
+            //echo $contenuFichier;  
+            readfile($contenuFichier);*/
+        }  
+    }
+
+
 
 
 

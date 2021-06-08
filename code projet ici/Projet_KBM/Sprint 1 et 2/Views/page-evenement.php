@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -10,6 +10,12 @@
 		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
 			<h1 id="titre">Évenement</h1>
+			<p>
+				<?php
+						include_once ( "../models/modelevenement.php" );
+						Select_Flyer($_GET ["id"]);    
+				?>
+			</p>
 		</div>
 
 	</header>
@@ -19,7 +25,12 @@
 
 			<div class="flexb1"></div>
 			<div class="imgconteneur">
-				<p>emplacement image</p>
+				<p>
+					<?php
+						include_once ("../controlleur/controleurevenement.php");
+						Select_Im_Evenement($_GET ["id"]);	
+					?>
+			    </p>
 			</div>
 			<div class="flexb1"></div>
 		</div>
@@ -27,7 +38,12 @@
 		<div id="conteneurtexte">		
 			<div class="flexb1"></div>
 			<div class="conteneurtextepresentation">
-				<p>Lorem Ipsum est simplement un texte factice de l'industrie de l'impression et de la composition. Lorem Ipsum est le texte factice standard de l'industrie depuis les années 1500, lorsqu'un imprimeur inconnu a pris une galère de caractères et l'a brouillé pour en faire un livre spécimen de caractères. Il a survécu non seulement à cinq siècles, mais aussi au saut dans la composition électronique, restant essentiellement inchangé. Il a été popularisé dans les années 1960 avec la sortie de feuilles Letraset contenant des passages de Lorem Ipsum, et plus récemment avec des logiciels de PAO comme Aldus PageMaker comprenant des versions de Lorem Ipsum.</p>
+				<p>
+					<?php
+							include_once ( "../models/modelevenement.php" );
+							Select_Description_Evenement($_GET ["id"]);    
+					?>
+				</p>
 			</div>
 			<div class="flexb1"></div>
 		</div>
@@ -66,16 +82,20 @@
 				</div>
 
 				<div class="flexh1">
-					<p>Contact</p>
+					<p>Contact : 
+					<?php
+				    include_once ("../controlleur/controleurevenement.php");
+					echo $_SESSION["resultat"]["libevent"];
+				?></p>
 				</div>
 
 			</div>
-
-		</div>
-
-	</div>
 			
-
+		</div>
+		<?php
+			include_once ( "../models/modelevenement.php" );
+			Select_Flyer_Evenement($_GET ["id"]);
+		?>
 	</div>
 </body>
 </html>

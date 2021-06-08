@@ -83,22 +83,15 @@
 				</div>
 
 				<div class="flexh1">
-					<p>Contact</p>
+					<p>Contact : 
+					<?php
+				    include_once ("../controlleur/controleurevenement.php");
+					echo $_SESSION["resultat"]["libevent"];
+				?></p>
 				</div>
 
 			</div>
 			
-			<div class="emplacement3">
-				<p>Organisateur :</p>
-				
-				<p>conctact : 
-				<?php
-				    include_once ("../controlleur/controleurevenement.php");
-					echo $_SESSION["resultat"]["libevent"];
-				?></p>
-			</div>
-	
-
 		</div>
 		<?php
 			include_once ( "../models/modelevenement.php" );

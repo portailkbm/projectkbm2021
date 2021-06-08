@@ -1,4 +1,3 @@
->
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -24,14 +23,14 @@
 		<div id="conteneurphoto">
 
 			<div class="flexb1"></div>
-			<div class="imgconteneur">
-				<p>
-					<?php
-						include_once ("../controlleur/controleurevenement.php");
-						Select_Im_Evenement($_GET ["id"]);	
-					?>
-			    </p>
-			</div>
+				<div class="imgconteneur">
+					<p>
+						<?php
+							include_once ("../controlleur/controleurevenement.php");
+							Select_Im_Evenement($_GET ["id"]);	
+						?>
+					</p>
+				</div>
 			<div class="flexb1"></div>
 		</div>
 
@@ -70,26 +69,19 @@
 
 
 		<div id="conteneurorganisateur">
-			<div id="photoorganisateur">
-				<img src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-
-				ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut
-				-masculin-photo-placeholder-.jpg" alt=" L'image n'a pas charger" width="200" height="200">
-			</div>
 
-			<div id="aproposorganisateur">
-				<div class="flexh1">
-					<p>Organisateur</p>
+		<div class="flexh1">
+					<p>Organisateur :</p>
 				</div>
 
-				<div class="flexh1">
+				<div class="flexh2">
 					<p>Contact : 
 					<?php
 				    include_once ("../controlleur/controleurevenement.php");
 					echo $_SESSION["resultat"]["libevent"];
-				?></p>
+					?>
+					</p>
 				</div>
-
-			</div>
 			
 		</div>
 		<?php

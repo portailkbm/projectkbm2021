@@ -1,5 +1,4 @@
 <?php
-     session_start();
 // ne pas oublier de changer le host des 2 fonction
 
     function connection_bdd() {
@@ -29,7 +28,7 @@
             {
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.php'>";
+                        echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
 						echo $donnee["libevent"];
 						echo "</a></td><td>";
 						echo $donnee["cp"];
@@ -52,7 +51,7 @@
             {
                 echo "<tr><td>";
 						echo $donnee["debutevent"];
-						echo "</td><td><a href='page-evenement.php'>";
+                        echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
 						echo $donnee["libevent"];
 						echo "</a></td><td>";
 						echo $donnee["cp"];

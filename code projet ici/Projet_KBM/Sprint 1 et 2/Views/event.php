@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="../css/style-evenement.css?v=<?php echo time() ?>"/>
+	   	<link rel="stylesheet" href="../css/style-evenement.css" />
 		<title>KBM-Evenement</title>
 	</head>
 <body class="vert">
@@ -73,7 +73,7 @@
 		</div>
 		<div id="moitieD">
 				<div>
-					<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
+					<a href="event_passe.php" class="champc rouge event">Évenements Passés </a>
 				</div>
 				<div>
 					<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>
@@ -101,3 +101,5 @@
 			<a id="contact" href="page-pas-evenement.html"> Oups y'a rien</a>
 	</footer>
 </html>
+message.txt
+3 Ko

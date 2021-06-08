@@ -1,8 +1,13 @@
+// Variables globales
+let compteur = 0 // Compteur qui permettra de savoir sur quelle slide nous sommes
+let timer, elements, slides, slideWidth
+
+
 // On récupère le conteneur principal du diaporama
 const diapo = document.querySelector(".diapo")
 
 // On récupère le conteneur de tous les éléments
-elements = document.querySelector(".elements")
+ elements = document.querySelector(".elements")
 
 // On récupère un tableau contenant la liste des diapos
 slides = Array.from(elements.children)
@@ -11,9 +16,7 @@ slides = Array.from(elements.children)
 let next = document.querySelector("#nav-droite")
 let prev = document.querySelector("#nav-gauche")
 
-// Variables globales
-let compteur = 0 // Compteur qui permettra de savoir sur quelle slide nous sommes
-let timer, elements, slides, slideWidth
+
 
 // On calcule la largeur visible du diaporama
 slideWidth = diapo.getBoundingClientRect().width
@@ -57,7 +60,7 @@ function slidePrev(){
 }
 
 // Automatiser le diaporama
-timer = setInterval(slideNext, 4000)
+timer = setInterval(slideNext, 2000)
 
 // Gérer le survol de la souris
 diapo.addEventListener("mouseover", stopTimer)
@@ -74,7 +77,7 @@ function stopTimer(){
  * On redémarre le défilement
  */
 function startTimer(){
-    timer = setInterval(slideNext, 4000)
+    timer = setInterval(slideNext, 2000)
 }
 
 // Mise en oeuvre du "responsive"

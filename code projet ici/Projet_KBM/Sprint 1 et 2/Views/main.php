@@ -4,7 +4,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8" />
-		<script src="../js/main.js" defer></script>
+		
 		<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 		<link rel="stylesheet" href="../css/style-main.css?v=<?php echo time() ?>" />
 		<title>KBM - Acceuile</title>
@@ -35,6 +35,7 @@
 		<div class="tu"></div>
 	</div>
 
+
 	<div id="principale">
 		<!--cote gauche du site -->
 		<div id="pgauche">
@@ -56,12 +57,16 @@
 							<img src="../Ressources/imagetest.png" alt="Image 1">
 						</div>
 						<!-- Deuxième diapo -->
-						<div class="element">
+						<div class="element active">
 							<img src="../Ressources/image1.png" alt="Image 2 ">
 						</div>
 						<!-- Troisième diapo -->
 						<div class="element">
 							<img src="../Ressources/image2.png" alt="Image 3">
+						</div>
+						<!-- quatrieme  diapo -->
+						<div class="element">
+							<img src="../Ressources/image3.png" alt="Image 3">
 						</div>
 					</div>
 					<!-- Flèches de navigation -->
@@ -180,7 +185,9 @@
 				</table> 
 			</div>
 		</section>
+		<script src="../js/main.js"></script>
 -->
+<script src="../js/main.js"></script>
 	</body>
 
 </html>

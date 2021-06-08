@@ -170,7 +170,7 @@
 				<table>
 					<thead>
 						<tr>
-							<th id="Organisateur">Organisateur</th>
+							<!--<th id="Organisateur">Organisateur</th>-->
 							<th id="activités">Activités</th>
 							<th id="lieux">Lieux</th>
 							<th id="dates">Dates</th>

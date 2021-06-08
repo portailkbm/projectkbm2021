@@ -14,6 +14,11 @@
     background-color: #048b9a;
 }
 
+img{
+  width: 100%;
+  height: 100%;
+}
+
 
 #logo-retour{
   position: absolute;
@@ -27,7 +32,6 @@
     color: white;
     text-align: center;
     position: relative;
-    left: 40px;
 }
 
 #wrapper{
@@ -75,18 +79,15 @@ p{
 
 #conteneurphoto{
   flex: 1;
- 
   display: flex;
   flex-direction: row;
-  
 }
 .flexb1{
   flex: 1;
-  text-align: center 
+  text-align: center;
 }
 .imgconteneur{
   flex: 2;
-  
 }
 
 #conteneurtexte{

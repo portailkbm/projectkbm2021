@@ -1,12 +1,13 @@
 <?php
-// ne pas oublier de changer le host des 2 fonction
+     session_start();
+     // ne pas oublier de changer le host des 2 fonction
 
     function connection_bdd() {
         try
         {
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
            $useur = 'root';
-           $pass = '';
+           $pass = 'root';
            include_once("Bdd_login.php");
            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
@@ -40,7 +41,6 @@
     function filter($trier)
     {
         $bdd= connection_bdd();
-        //$requete = $bdd->prepare('SELECT * FROM evenement,lakou  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
         $requete = $bdd->prepare('SELECT * FROM evenement  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
         $requete ->execute();
 
@@ -67,7 +67,6 @@
 
         $requete = $bdd->prepare('SELECT * FROM `evenement`  WHERE `debutevent` >= "'.$date.'"');
         $requete ->execute();
-        //SELECT prenom, nom FROM personnes WHERE date_naissance >= 2016-01-01 AND date_naissance <= 2016-12-31
 
         if ( $requete ->execute())
         {
@@ -161,7 +160,6 @@
             echo ' '.$_SESSION["resultat"]["cp"].' ';
         }  
     }
-
     function Select_Description_Evenement($select){
 
         $bdd= connection_bdd();
@@ -217,42 +215,6 @@
     }
 
 
-
-    function cp()
-    {
-        $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT cp FROM `ville` WHERE 1');
-        $requete ->execute();
-
-        if ( $requete ->execute())
-        {
-            while($donnee = $requete->fetch())
-            {
-                echo  '<option value=' .$_SESSION["resultat"]. '</option>' ;		
-            }
-        }
-    }
-
-        //$_SESSION["resultat"] = $requete ->execute();
-    
-        /*require_once 'PHP/config.php';
-    
-        $dsn = mysql_connect($DBHost, $DBUtilisateur, $DBPassword)
-        or die("La base '".$DBName."' n'est pas accessible.<br>");
-    
-        mysql_select_db($DBName, $dsn)
-        or die("impossbile de sÃ©lectionner la base ".$DBName."<br>");
-    
-        $requete = "select * from photo;";*/
-    
-        //$result = mysql_query($requete) or die($requete.mysql_error());
-        $result = $requete ->execute();
-    
-        while ($row = mysql_fetch_array($result)) {
-            $image = base64_decode($row['photo']);
-            echo $image;
-        }
-    }
 
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';

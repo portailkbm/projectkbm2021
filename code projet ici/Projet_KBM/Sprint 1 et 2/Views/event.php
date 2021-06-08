@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="../css/style-evenement.css" />
+	   	<link rel="stylesheet" href="../css/style-evenement.css?v=<?php echo time() ?>"/>
 		<title>KBM-Evenement</title>
 	</head>
 <body class="vert">

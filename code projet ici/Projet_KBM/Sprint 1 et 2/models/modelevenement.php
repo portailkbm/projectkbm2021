@@ -283,6 +283,19 @@
     }
 
 
+    function Select_code_postal($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo ' '.$_SESSION["resultat"]["cp"].' ';
+        }  
+    }
+
+
 
     /*
     echo ' id = '.$donnee["idevent"].'</br>';

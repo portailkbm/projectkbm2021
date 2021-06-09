@@ -55,10 +55,18 @@
                     <p style="font-size: xx-large; color: #dc4e56 ;">Tous les champs sont obligatiore</p>
                 </div>
 
+
                 <div>
-                    <p>Code Postale</p>
-                    <input  class="element champ" type="text" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*"  />
+                    <p>Code Postal</p>
+                    <select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
+                        <option value="">--Votre Code Postal--</option>
+                        <?php
+		                    include_once ( "../models/modelevenement.php" );
+		                    Select_Code_Postal_all();    
+                        ?>
+                    </select> 
                 </div>
+
                 <div>
                     <p>comfirmation de mots de passe</p>
                     <input class="element champ" type="password" name="Cmdp" id="Cmdp" placeholder="Confirmer votre mot de passe" required pattern=".*\S.*"  />
@@ -79,6 +87,11 @@
             <a href="main.php" class="element rouge bouton"> Annuler </a>
         </div>
     </div>
+
+   
+
+
+   
 
 
 

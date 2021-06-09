@@ -71,8 +71,6 @@
 
 
 		<div id="conteneurorganisateur">
-			
-			
 				<div class="flexh1">
 					<p>Organisateur:</p>
 				</div>
@@ -84,7 +82,6 @@
 					echo $_SESSION["resultat"]["libevent"];
 				?></p>
 				</div>
-
 		</div>
 		<?php
 			include_once ( "../models/modelevenement.php" );

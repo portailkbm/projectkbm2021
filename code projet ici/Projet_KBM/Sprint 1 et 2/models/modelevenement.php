@@ -168,7 +168,6 @@
 
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
-
         {
             echo ' '.$_SESSION["resultat"]["desevent"].' ';
         }  
@@ -202,8 +201,6 @@
             echo '</option>';
         }
     }
-   
-
 
     function Select_Flyer_Evenement($select){
 
@@ -223,19 +220,18 @@
 
 
     /*
-    echo ' id = '.$donnee["idevent"].'</br>';
-    echo ' type = '.$donnee["typeevent"].'</br>';
-    echo ' lib = '.$donnee["libevent"].'</br>';
-    echo ' des = '.$donnee["desevent"].'</br>';
-    echo ' photo = '.$donnee["photoevent"].'</br>';
-    echo ' flyer = '.$donnee["flyer"].'</br>';
-    echo ' debut = '.$donnee["debutevent"].'</br>';
-    echo ' debut_hr = '.$donnee["debutevent_hr"].'</br>';
-    echo ' fin = '.$donnee["finevent"].'</br>';
-    echo ' fin_fr = '.$donnee["finevent_hr"].'</br>';
-    echo ' cr_event = '.$donnee["cr_event"].'</br>';
-    echo ' visevent = '.$donnee["visevent"].'</br>';
-    echo ' code postale = '.$donnee["cp"].'</br>';
-    echo ' idlak = '.$donnee["idlak"].'</br></br>'; 
-    */
+                echo ' id = '.$donnee["idevent"].'</br>';
+                echo ' type = '.$donnee["typeevent"].'</br>';
+                echo ' lib = '.$donnee["libevent"].'</br>';
+                echo ' des = '.$donnee["desevent"].'</br>';
+                echo ' photo = '.$donnee["photoevent"].'</br>';
+                echo ' flyer = '.$donnee["flyer"].'</br>';
+                echo ' debut = '.$donnee["debutevent"].'</br>';
+                echo ' debut_hr = '.$donnee["debutevent_hr"].'</br>';
+                echo ' fin = '.$donnee["finevent"].'</br>';
+                echo ' fin_fr = '.$donnee["finevent_hr"].'</br>';
+                echo ' cr_event = '.$donnee["cr_event"].'</br>';
+                echo ' visevent = '.$donnee["visevent"].'</br>';
+                echo ' code postale = '.$donnee["cp"].'</br>';
+                echo ' idlak = '.$donnee["idlak"].'</br></br>'; */
 ?>

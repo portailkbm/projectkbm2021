@@ -85,7 +85,6 @@
 				?></p>
 				</div>
 
-			
 		</div>
 		<?php
 			include_once ( "../models/modelevenement.php" );

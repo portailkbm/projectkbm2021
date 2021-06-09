@@ -8,7 +8,7 @@
 	</head>
 <body class="vert"> 
 	<header>
-		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /></a>
 		<div id="wrapper">
 			<h1 id="titre">Évenement</h1>
 			<p>
@@ -71,10 +71,8 @@
 
 
 		<div id="conteneurorganisateur">
-
-			<div id="aproposorganisateur">
 				<div class="flexh1">
-					<p>Organisateur</p>
+					<p>Organisateur:</p>
 				</div>
 
 				<div class="flexh1">
@@ -84,13 +82,10 @@
 					echo $_SESSION["resultat"]["libevent"];
 				?></p>
 				</div>
-
-			</div>
-			
 		</div>
 		<?php
 			include_once ( "../models/modelevenement.php" );
-			Select_FL_Evenement($_GET ["id"]);
+			Select_Flyer_Evenement($_GET ["id"]);
 		?>
 	</div>
 </body>

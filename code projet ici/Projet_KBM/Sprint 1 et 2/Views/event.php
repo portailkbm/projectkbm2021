@@ -73,7 +73,11 @@
 		</div>
 		<div id="moitieD">
 				<div>
+<<<<<<< HEAD
+					<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
+=======
 					<a href="event_passe.php" class="champc rouge event">Évenements Passés </a>
+>>>>>>> 63f1ee6748b0dee88e020fe4f4a1322226482e72
 				</div>
 				<div>
 					<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>
@@ -101,3 +105,5 @@
 			<a id="contact" href="page-pas-evenement.html"> Oups y'a rien</a>
 	</footer>
 </html>
+message.txt
+3 Ko

@@ -1,13 +1,14 @@
 <?php
-     //session_start();
-     // ne pas oublier de changer le host des 2 fonction
+     session_start();
+     /session_start();
+// ne pas oublier de changer le host des 2 fonction
 
     function connection_bdd() {
         try
         {
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
            $useur = 'root';
-           $pass = '';
+           $pass = 'root';
            include_once("Bdd_login.php");
            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
@@ -168,6 +169,7 @@
 
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
+
         {
             echo ' '.$_SESSION["resultat"]["desevent"].' ';
         }  
@@ -185,54 +187,20 @@
         }  
     }
 
-    function Select_Flyer_Evenement($select){
+    function Select_Code_Postal_all(){
 
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
         $requete ->execute();
 
         $_SESSION["resultat"] = $requete ->execute();
-        
         while($_SESSION["resultat"] = $requete->fetch())
         {
-            //header('Content-Type: application/pdf');
-            //echo '<p class="fichier"><strong>'.htmlspecialchars($_SESSION["resultat"]['date']).'</strong> : <a href="'.$_SESSION["resultat"]['fichier'].'">'. htmlspecialchars($_SESSION["resultat"]['fichier']).'</a></p>';
-            //echo '<a href="" download='.$_SESSION["resultat"]['flyer'].'>télécharcher le lien</a>';
-            echo $_SESSION["resultat"]['flyer'];
-           /* $contenuFichier = $_SESSION["resultat"]['date'];
-            $nomFichier = 'nom du fichier.txt';
-            
-            $tailleFichier = strlen($contenuFichier);
-            
-            $nomFichier = str_replace('"', '\\"', $nomFichier);
-            
-            header('Content-Type: application/pdf');
-            //header('Content-Type: application/octet-stream');
-            header("Content-Length: $tailleFichier");
-            header('Content-Disposition: inline; filename="$nomFichier" ') ;
-            //header("Content-Disposition: attachment; filename=\"$nomFichier\"");
-            
-            //echo $contenuFichier;  
-
-            readfile($contenuFichier);*/
-        }  
-    }
-
-    function lien ($select)
-    {
-        $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
-        $requete ->execute();
-        $_SESSION["resultat"] = $requete ->execute();
-
-        if ( $_SESSION["resultat"] = $requete->fetch())
-        {
-            while($donnee = $requete->fetch())
-            {
-               //echo "</td><td><a href='../controlleur/controller_telechargement.php?id=".$donnee["idevent"]."'> Télécharger </a>";
-              /* echo "<a href='../controlleur/controller_telechargement.php?'";
-               echo 'id=".$donnee["idevent"]."' download='.$_SESSION["resultat"]['flyer'].'>télécharcher le lien</a>';*/
-            }
+            echo '<option valeur="';
+            echo $_SESSION["resultat"]['cp'];
+            echo '">';
+            echo $_SESSION["resultat"]['cp'];
+            echo '</option>';
         }
     }
     function Test ()
@@ -292,6 +260,37 @@
         while($_SESSION["resultat"] = $requete->fetch())
         {
             echo ' '.$_SESSION["resultat"]["cp"].' ';
+        }  
+    }
+
+
+
+    function Select_Flyer_Evenement($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            //echo '<p class="fichier"><strong>'.htmlspecialchars($_SESSION["resultat"]['date']).'</strong> : <a href="'.$_SESSION["resultat"]['fichier'].'">'. htmlspecialchars($_SESSION["resultat"]['fichier']).'</a></p>';
+            echo '<a href='.$_SESSION["resultat"]['date'].' download="">télécharcher le lien</a>';
+           /* $contenuFichier = $_SESSION["resultat"]['date'];
+            $nomFichier = 'nom du fichier.txt';
+            
+            $tailleFichier = strlen($contenuFichier);
+            
+            $nomFichier = str_replace('"', '\\"', $nomFichier);
+            
+            header('Content-Type: application/pdf');
+            //header('Content-Type: application/octet-stream');
+            header("Content-Length: $tailleFichier");
+            header('Content-Disposition: inline; filename="$nomFichier" ') ;
+            //header("Content-Disposition: attachment; filename=\"$nomFichier\"");
+            
+            //echo $contenuFichier;  
+            readfile($contenuFichier);*/
         }  
     }
 

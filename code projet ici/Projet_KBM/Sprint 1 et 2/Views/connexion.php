@@ -30,7 +30,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style-connexion-main.css" />
+    <link rel="stylesheet" href="css/style-connexion-main.css?v=<?php echo time() ?>" />
     <title> KBM - CONNEXION</title>
 </head>
 <body class="orange">

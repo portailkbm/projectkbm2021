@@ -76,7 +76,7 @@
 				</div>
 
 				<div class="flexh1">
-					<p>Contact : 
+					<p>Contact: 
 					<?php
 				    include_once ("../controlleur/controleurevenement.php");
 					echo $_SESSION["resultat"]["libevent"];

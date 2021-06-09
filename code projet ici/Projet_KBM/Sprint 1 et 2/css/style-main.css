@@ -1,8 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Calibri, sans-serif;
-}
+
 
 
 .rouge{
@@ -16,14 +12,12 @@
 .bleu{
     background-color: #048b9a;
 }
-
-#titre{
-    font-family: Calibri, sans-serif;
-    color: white;
-    text-align: center;
-    position: relative;
-    left: 40px;
+.beige{
+    background-color: beige;
 }
+a { color: yellow; } /* CSS link color */
+a:hover { color: rgb(228, 168, 4); }
+
 
 
 .champc{
@@ -38,297 +32,163 @@
     text-align: center;
     width: 100px;
     float: right;
-
 }
 
-#en-tete{
+
+#principale{
     display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
-
-.wrapper{
-    width: 1250px;
-    margin:0 auto;
-    padding: 0 10px;
-    padding-bottom: 100px;
-}
-
-header nav{
-    float: left;
-    margin-top: 20px;
-
+#pgauche{
+    flex: 1;
+    display:flex;
+    flex-direction: column ;
+    width: 500px;
 
 }
 
-
-header nav ul li {
-    display: inline-block;
-    float: left;
-}
-
-header nav ul li a{
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-right: 20px;
-    color: yellow;
-}
-
-
-/* CSS POUR LE SLIDER DIMAGE */
-
-#slideshow{
-
-   margin-top: 50px;
-    float: left;
-    height: 50%;
-    margin-left: 50px;
-    border-style: groove;
-    width: 45%;
-
-}
-
-#slideshow div{
-
-    float:absolute;
-    height: 220px;
-    
-
-}
-
-
-#slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 200px;
-}
-
-#slides {
-
-    position: absolute;
-    top: 0;
-    left: 0;
+#pdroite{
+    flex: 1;
     display: flex;
-    max-height: 50%;
+    flex-direction: column;
+    padding-top: 0.5em;   
+}
+#titre{
+    font-family: Calibri, sans-serif;
+    font-size: 3em;
+    flex: 1;
+}
+#contnav{
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+    padding: 0.5em;
+}
+#cent{
+    justify-content: center;
+    display: flex;
+    flex: 5;
+}
+.tu{
+    flex: 1;
+}
+.elemenrnav{
+    flex: 10;
+    color: chartreuse;
+}
+.separenavjaune{
+    background-color: yellow;
+    width: 3px;
+    height: 1.1em;
+    flex: 1;
+}
+#conteneurslide{
+    flex: 1;
+    min-width: 550px;
+    min-height: 300px;
 }
 
-#slides figure {
-    display: inline-block;
-    width: 50vw;
-    max-height: 10%;
-    margin: 0;
+
+.diapo{
+    position: relative;
+    overflow: hidden;
 }
 
-#slides figure img {
-    width: 100%;
-    /*Centrer l'image verticalement si celle-ci ne peut être affichée totalement*/
-    position: center;
+#nav-droite, #nav-gauche{
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
-
-#slides figure figcaption {
-    position: absolute;
-    bottom: 0;
-    padding: 2.5em 0;
-    text-align: center;
-    width: inherit;
-   /* background-color: rgba(0,0,0,0.5); */
     color: white;
+    font-size: 3em;
 }
 
-/* Animation du slide */
-
-@keyframes slide {
-    0%, 20%, 100% {
-        left:  0; /*1ère image*/
-    }
-    35%, 50% {
-        left: -50vw; /*2ème image*/
-    }
-    70%, 95% {
-        left:-100vw /*3ème image*/
-    }
+#nav-droite{
+    right: 20px;
+}
+#nav-gauche{
+    left: 20px;
+}
+.elements{
+    display: flex;
+    transition: 1s linear;
 }
 
-#slides {
-
-   /*CSS3 keyframes animation*/
-    animation-name: slide;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-#slides:hover {
-    animation-play-state: paused; /* Mise en pause de l'animation */
-}
-
-/* Gestion des Bouton racourcie */
-
-.dots_commands  {
-    position: absolute;
-    bottom: 0;
-    width: 40vw;
-    padding:0;
-    margin: 0;
-    text-align: center;
-}
-
-.dots_commands li {
-    display: inline;
-    padding: 0; 
-    margin: 0;
-}
-
-.dots_commands label {
+.element{
+    flex: 1 0 100%;
     position: relative;
-    display: inline-block;
-    height:8px; width: 8px;
-    margin: 0 5px;
-    text-indent: -9999px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.55) inset;
-    cursor: pointer;
 }
 
-input[type="radio"] {
-    display: none;
+.element > img{
+    width: 100%;
 }
 
-input[type="radio"]#show_slide1:checked ~ nav .dots_commands li:nth-of-type(1) label,
-input[type="radio"]#show_slide2:checked ~ nav .dots_commands li:nth-of-type(2) label,
-input[type="radio"]#show_slide3:checked ~ nav .dots_commands li:nth-of-type(3) label {
-    outline: none;
-    background: dodgerblue;
-}
-
-input[type="radio"]#show_slide1:checked ~ div#slides {
-    animation: none;
-    left: 0;
-}
-
-input[type="radio"]#show_slide2:checked ~ div#slides {
-    animation: none;
-    left: -50vw;
-}
-
-input[type="radio"]#show_slide3:checked ~ div#slides {
-    animation: none;
-    left: -100vw;
-}
-
-/* Comme l'animation s'arrete au clic on cree un bouton play qui apparait pour  relancer lanimation */
-
-#play {
+.caption{
     position: absolute;
-    cursor: pointer;
-    bottom: 2em;
-    right: 2em;
-    width: 0;
-    height: 0;
-    border-top: 1em solid transparent;
-    border-bottom: 1em solid transparent;
-    border-left: 1em solid rgba(255,255,255,0.7);
-    display: none;
-    text-indent: -9999px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255,255,255,0.4);
+    padding: 30px;
 }
 
-input[type="radio"]:not(:nth-last-of-type(1)):checked ~ nav label#play {
-    display: block;
-}
-
-input[type="radio"]#play:checked ~ div#slides {
-    animation-name: slide;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-/* TABLEAU EVENEMENT */
-
-#Tableau{
-    margin-top: 50px;
-    float: right;
-    border-style: double;
-    width: 40%;
-}
-
-/* ---------------------- */
 /* table à entête fixe */
 thead{
-  display: block;
-
-  padding-right: 15px;
-}
-tbody{
-  height:10em; /* hauteur imposée */
-  width: 40em;
-  overflow-y: scroll;
-  display: block;
-}
-table th, table td {
-  width:8%;
-}
-/* ---------------------- */
-/* DECO */
-.celules {
-  width: 100%;
-  max-width: 900px; /* pour les TESTS */
-  margin:0 auto;
-
-}
-table {
-  text-align: center;
-  width: 100%;
-  border-collapse:collapse;
-  font-size: 85%;
-  font-family:Arial,sans-serif;
-}
-table th {
-  padding:5px 1px;
-  background: #ccc;
-  border: 1px solid #666;
-}
-table td {
-  border: 1px solid #ccc;
-  padding:8px 3px;
-}
-
-#Organisateur{
-
-    width: 10em;
-
-}
-
-
-#activités{
-
-    width: 20em;
-}
-
-#lieux{
-    width: 15em;
-}
-
-#dates{
-
-    width: 5em;
-
-}
-
-/* ---------------------- */
-
-footer{
-
-    position: absolute;
-    bottom: 0;
+    display: block;
     width: 100%;
+  }
+  tbody{
+    height:10em; /* hauteur imposée */
+    width: 100%;
+    overflow-y: scroll;
+    display: block;
+  }
+  table th, table td {
+    width:10%;
+  }
+  /* ---------------------- */
+  /* DECO */
+  .celules {
+    width: 100%; /* pour les TESTS */
+    margin:0 auto;
+  
+  }
+  table {
     text-align: center;
-    
-}
+    width: 100%;
+    border-collapse:collapse;
+    font-size: 85%;
+    font-family:Arial,sans-serif;
+  }
+  table th {
+    padding:5px 1px;
+    background: #ccc;
+    border: 1px solid #666;
+  }
+  table td {
+    border: 1px solid #ccc;
+    padding:8px 3px;
+  }
+  
+  #Organisateur{
+      width: 10em;
+  }
+  
+  
+  #activités{
+  
+      width: 20em;
+  }
+  
+  #lieux{
+      width: 15em;
+  }
+  
+  #dates{
+  
+      width: 5em;
+  
+  }
+  
+  /* ---------------------- */

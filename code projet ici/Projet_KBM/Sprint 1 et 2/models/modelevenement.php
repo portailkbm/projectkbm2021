@@ -1,13 +1,13 @@
 <?php
      session_start();
-// ne pas oublier de changer le host des 2 fonction
+     // ne pas oublier de changer le host des 2 fonction
 
     function connection_bdd() {
         try
         {
            // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
            $useur = 'root';
-           $pass = '';
+           $pass = 'root';
            include_once("Bdd_login.php");
            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
         }
@@ -41,7 +41,6 @@
     function filter($trier)
     {
         $bdd= connection_bdd();
-        //$requete = $bdd->prepare('SELECT * FROM evenement,lakou  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
         $requete = $bdd->prepare('SELECT * FROM evenement  WHERE visevent = 1 ORDER BY `evenement`.`'.$trier.'` ASC' );
         $requete ->execute();
 
@@ -68,7 +67,6 @@
 
         $requete = $bdd->prepare('SELECT * FROM `evenement`  WHERE `debutevent` >= "'.$date.'"');
         $requete ->execute();
-        //SELECT prenom, nom FROM personnes WHERE date_naissance >= 2016-01-01 AND date_naissance <= 2016-12-31
 
         if ( $requete ->execute())
         {
@@ -162,65 +160,78 @@
             echo ' '.$_SESSION["resultat"]["cp"].' ';
         }  
     }
+    function Select_Description_Evenement($select){
 
-    function Select_Image($select){
         $bdd= connection_bdd();
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
 
-        $res = $requete ->execute();
-
-        //Récupérer l'image à partir du base de données
-        //$res = $db->query('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
-    
-       /* if($requete->num_rows > 0){
-            $img = $requete->fetch_assoc();
-            
-            //Rendre l'image
-            header("Content-type: image/jpg"); 
-            echo $img['imagevent']; 
-        }else{
-            echo 'Image non trouvée...';
-        }*/
-
-        header("Content-type: image/jpg");
-        while($res = $requete->fetch())
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
         {
-            //Rendre l'image
-            
-           /*echo '<img src="'.$_SESSION["resultat"]["imagevent"].'"';
-           echo ' alt="" width="600" height="600">';*/
-           echo $res["imagevent"];
-           //$image = base64_decode($res["imagevent"]);
-           //echo $image;
-        }        
+            echo ' '.$_SESSION["resultat"]["desevent"].' ';
+        }  
     }
-    
-    function Select_Image_Evenement($select){
-        
-        header("Content-Type: image/jpeg");
+    function Select_Im_Evenement($select){
+
         $bdd= connection_bdd();
         $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
 
-        //$_SESSION["resultat"] = $requete ->execute();
-    
-        /*require_once 'PHP/config.php';
-    
-        $dsn = mysql_connect($DBHost, $DBUtilisateur, $DBPassword)
-        or die("La base '".$DBName."' n'est pas accessible.<br>");
-    
-        mysql_select_db($DBName, $dsn)
-        or die("impossbile de sÃ©lectionner la base ".$DBName."<br>");
-    
-        $requete = "select * from photo;";*/
-    
-        //$result = mysql_query($requete) or die($requete.mysql_error());
-        $result = $requete ->execute();
-    
-        while ($row = mysql_fetch_array($result)) {
-            $image = base64_decode($row['photo']);
-            echo $image;
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo '<img src="data:image/jpeg;base64,'.base64_encode( $_SESSION["resultat"]['imagevent'] ).'"/>';
+        }  
+    }
+
+    function Select_Code_Postal_all(){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo '<option valeur="';
+            echo $_SESSION["resultat"]['cp'];
+            echo '">';
+            echo $_SESSION["resultat"]['cp'];
+            echo '</option>';
         }
     }
+
+    function Select_Flyer_Evenement($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            //echo '<p class="fichier"><strong>'.htmlspecialchars($_SESSION["resultat"]['date']).'</strong> : <a href="'.$_SESSION["resultat"]['fichier'].'">'. htmlspecialchars($_SESSION["resultat"]['fichier']).'</a></p>';
+            echo '<a href='.$_SESSION["resultat"]['date'].' download="">télécharcher le lien</a>';
+           /* $contenuFichier = $_SESSION["resultat"]['date'];
+            $nomFichier = 'nom du fichier.txt';
+            
+            $tailleFichier = strlen($contenuFichier);
+            
+            $nomFichier = str_replace('"', '\\"', $nomFichier);
+            
+            header('Content-Type: application/pdf');
+            //header('Content-Type: application/octet-stream');
+            header("Content-Length: $tailleFichier");
+            header('Content-Disposition: inline; filename="$nomFichier" ') ;
+            //header("Content-Disposition: attachment; filename=\"$nomFichier\"");
+            
+            //echo $contenuFichier;  
+            readfile($contenuFichier);*/
+        }  
+    }
+
+
 
     /*
                 echo ' id = '.$donnee["idevent"].'</br>';

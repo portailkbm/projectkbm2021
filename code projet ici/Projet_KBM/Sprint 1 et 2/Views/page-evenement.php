@@ -8,9 +8,15 @@
 	</head>
 <body class="vert"> 
 	<header>
-		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /></a>
 		<div id="wrapper">
 			<h1 id="titre">Évenement</h1>
+			<p>
+				<?php
+						include_once ( "../models/modelevenement.php" );
+						Select_Flyer($_GET ["id"]);    
+				?>
+			</p>
 		</div>
 
 	</header>
@@ -20,7 +26,12 @@
 
 			<div class="flexb1"></div>
 			<div class="imgconteneur">
-				<p>emplacement image</p>
+				<p>
+					<?php
+						include_once ("../controlleur/controleurevenement.php");
+						Select_Im_Evenement($_GET ["id"]);	
+					?>
+			    </p>
 			</div>
 			<div class="flexb1"></div>
 		</div>
@@ -28,7 +39,12 @@
 		<div id="conteneurtexte">		
 			<div class="flexb1"></div>
 			<div class="conteneurtextepresentation">
-				<p>Lorem Ipsum est simplement un texte factice de l'industrie de l'impression et de la composition. Lorem Ipsum est le texte factice standard de l'industrie depuis les années 1500, lorsqu'un imprimeur inconnu a pris une galère de caractères et l'a brouillé pour en faire un livre spécimen de caractères. Il a survécu non seulement à cinq siècles, mais aussi au saut dans la composition électronique, restant essentiellement inchangé. Il a été popularisé dans les années 1960 avec la sortie de feuilles Letraset contenant des passages de Lorem Ipsum, et plus récemment avec des logiciels de PAO comme Aldus PageMaker comprenant des versions de Lorem Ipsum.</p>
+				<p>
+					<?php
+							include_once ( "../models/modelevenement.php" );
+							Select_Description_Evenement($_GET ["id"]);    
+					?>
+				</p>
 			</div>
 			<div class="flexb1"></div>
 		</div>
@@ -55,53 +71,25 @@
 
 
 		<div id="conteneurorganisateur">
-			<div id="photoorganisateur">
-				<img src="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-
-				ic%C3%B4ne-de-visage-anonyme-de-profil-personne-silhouette-grise-avatar-par-d%C3%A9faut
-				-masculin-photo-placeholder-.jpg" alt=" L'image n'a pas charger" width="200" height="200">
-			</div>
-
-			<div id="aproposorganisateur">
-				<div class="flexh1">
-					<p>Organisateur</p>
-				</div>
-
-				<div class="flexh1">
-					<p>Contact</p>
-				</div>
-
-			</div>
 			
-			<div class="emplacement3">
-				<p>Organisateur :</p>
-				
-				<p>conctact : 
-				<?php
+			
+				<div class="flexh1">
+					<p>Organisateur:</p>
+				</div>
+
+				<div class="flexh1">
+					<p>Contact : 
+					<?php
 				    include_once ("../controlleur/controleurevenement.php");
 					echo $_SESSION["resultat"]["libevent"];
 				?></p>
-			</div>
-	
+				</div>
 
 		</div>
-
-        <!--<img src="-->
-        <?php
-		   include_once ("../controlleur/controleurevenement.php");
-		   Select_Image($_GET["id"]);
-		   //Select_Image_Evenement($_GET["id"]); 
-			//echo '<img src="'.$_SESSION["resultat"]["fllyer"].'" alt="" width="600" height="600">';
-			
-		    /* foreach($_SESSION["resultat"] AS $e )
-			 {
-				 echo "<img"
-
-			 }*/
+		<?php
+			include_once ( "../models/modelevenement.php" );
+			Select_Flyer_Evenement($_GET ["id"]);
 		?>
-		<!--"alt="" width="600" height="600"> -->
-		<!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbCCFS0waFrAvxjY8sO5Q1_PGxhPVI9EyNeQ&usqp=CAU" alt="" width="600" height="600">
-         -->
-
 	</div>
 </body>
 </html>

@@ -105,3 +105,5 @@
 			<a id="contact" href="page-pas-evenement.html"> Oups y'a rien</a>
 	</footer>
 </html>
+message.txt
+3 Ko

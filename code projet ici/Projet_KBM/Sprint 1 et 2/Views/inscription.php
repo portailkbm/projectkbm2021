@@ -58,6 +58,7 @@
 
                 <div>
                     <p>Code Postal</p>
+                    
                     <select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
                         <option value="">--Votre Code Postal--</option>
                         <?php

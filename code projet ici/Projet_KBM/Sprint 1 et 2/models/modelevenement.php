@@ -1,5 +1,5 @@
 <?php
-     session_start();
+    
      // ne pas oublier de changer le host des 2 fonction
 
     function connection_bdd() {

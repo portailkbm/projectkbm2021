@@ -73,30 +73,30 @@
 		</div>
 		<div id="moitieD">
 				<div>
-<<<<<<< HEAD
 					<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
-=======
-					<a href="event_passe.php" class="champc rouge event">Évenements Passés </a>
->>>>>>> 63f1ee6748b0dee88e020fe4f4a1322226482e72
 				</div>
 				<div>
 					<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>
 				</div>
-					<form id="formulaire" method="post">
+					
 						<div>
-					        <label for="date">À partir de :</label>
-							<input type="date" id="date" name="date" value="" min="2000-01-01" max="2023-12-31">
+							<button class="champc bleu event"  type="date" id="date" name="date" value="">trie par date</button>
 						</div>
-						<br>
+						
+						
 						<div>
-					      	<label for="ville">Dans cette Ville :</label>
-							<input type="text" name="ville" id="ville" placeholder="Entrer un nom de Ville" />
+							<button class="champc rouge event" type="ville" id="ville" name="ville" value=" cp">trie par Ville</button>
+							
+                    
+							<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
+                        <option value="">--Votre Code Postal--</option>
+                        <?php
+		                    include_once ( "../models/modelevenement.php" );
+		                    Select_Code_Postal_all();    
+                        ?>
+                    </select> 
 						</div>
-						<br>
-					    <div class="champc bleu event">
-					        Rechercher
-					    </div>
-   					 </form>
+   					
 		</div>
 	</div>
 </body>

@@ -73,31 +73,39 @@
 		</div>
 		<div id="moitieD">
 				<div>
-					<a href="event_passe.php" class="champc rouge event">Évenements Passés</a>
+					<a href="event_passe.php" class="champc rouge event">Évenements Passés </a>
 				</div>
 				<div>
 					<a href="event_futur.php" class="champc vert event">Évenements à Venir</a>
 				</div>
-					
+					<form id="formulaire" method="post">
 						<div>
-							<button class="champc bleu event"  type="date" id="date" name="date" value="">trie par date</button>
+					        <label for="date">À partir de :</label>
+							<input type="date" id="date" name="date" value="" min="2000-01-01" max="2023-12-31">
 						</div>
-						
-						
 						<div>
-							<button class="champc rouge event" type="ville" id="ville" name="ville" value=" cp">trie par Ville</button>
-							
-                    
-							<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
-                        <option value="">--Votre Code Postal--</option>
-                        <?php
-		                    include_once ( "../models/modelevenement.php" );
-		                    Select_Code_Postal_all();    
-                        ?>
-                    </select> 
+						<button class="champc bleu event" onclick="">
+								Valider
+							</button>
+					    </div>
+						<br>
+						<div>
+					      	<label for="ville">Dans cette Ville :</label>
+							<select class="element champselect" name="ville" id="ville" >
+								<option value="">--Votre ville--</option>
+								<?php
+									include_once ( "../models/modelevenement.php" );
+									Select_Code_Postal_all();    
+								?>
+                    		</select> 
 						</div>
-   					
-		</div>
+						<br>
+					    <div >
+							<button class="champc bleu event" onclick="" >
+								Rechercher
+							</button>
+					    </div>
+   					 </form>		</div>
 	</div>
 </body>
 	<footer>

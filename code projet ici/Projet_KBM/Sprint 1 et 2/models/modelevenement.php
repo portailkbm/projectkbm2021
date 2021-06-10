@@ -217,6 +217,27 @@
         }  
     }
 
+    function Trie_code_postal($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `cp` LIKE "'.$select.'"');
+        $requete ->execute();
+
+         if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";                  
+            }
+        }
+    }
+
 
 
     /*

@@ -5,12 +5,8 @@
     if(!isset($_GET["id"])){
         include_once ("../models/event.php");
         return;
-    }
-    /* 
-    Select_Flyer($_GET["id"]); 
-    */
-    include_once ("../Views/page-evenement.php");  
+    }   
+    //Select_Flyer($_GET["id"]);
+    //include_once ("../Views/page-evenement.php");
+    include_once ("../Views/Telechargement.php");      
 ?>
-            
-
-       

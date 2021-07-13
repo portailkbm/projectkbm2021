@@ -1,6 +1,6 @@
 <?php 
     if (isset($_POST["login"]) && isset($_POST["mdp"])){
-        include 'account_management.php';
+        include '../models/account_management.php';
         $return = m_connexion_client($_POST["login"], $_POST["mdp"]);
         echo $return;
         switch ($return) {
@@ -30,15 +30,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style-connexion-main.css?v=<?php echo time() ?>" />
+    <link rel="stylesheet" href="../css/style-connexion-main.css?v=<?php echo time() ?>" />
     <title> KBM - CONNEXION</title>
 </head>
 <body class="orange">
     <div id="en-tete">
         <h1 id="titre"> Connexion </h1>
-       <a href="main.php"> <img id="logo-retour" src="Ressources/logo_retour.png" /> <a/>  
+       <a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> <a/>  
     </div>
-        <form id="formulaire" method="post" action="connexion_controller.php">
+        <form id="formulaire" method="post" action="../controlleur/connexion_controller.php">
             <div class="element conteneur">
                
 

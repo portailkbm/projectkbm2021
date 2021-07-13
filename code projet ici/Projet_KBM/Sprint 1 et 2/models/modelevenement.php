@@ -115,7 +115,13 @@
         {
             echo ' '.$_SESSION["resultat"]["libevent"].' ';
         } 
-        
+    }
+
+    function Suprimer_evenement($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('DELETE * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+
+        $_SESSION["resultat"] = $requete ->execute();
     }
 
     function Select_Debut_evenement($select){

@@ -13,7 +13,7 @@
 
     </div>
 
-
+    <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/inscription_controller.php">
     <div id=conteneurprincipale>
         <div id=conteneurformulaire>
             <div id="inul"></div>
@@ -143,7 +143,7 @@
             <?php
         }
     ?>
-    
+    </form>
 </body>
 </html>
 

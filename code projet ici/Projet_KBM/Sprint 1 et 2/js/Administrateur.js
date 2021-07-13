@@ -72,7 +72,7 @@ function apparitionSuppreimerevenement(){
 
 
 
-
+/*
 
 function Gestiondesproduits(){
 	document.getElementsByName('titretableau').innerHTML="Gestion des produits";
@@ -919,4 +919,4 @@ function Webmastering(){
 	var moitieD = document.querySelector('#moitieD');
 	moitieD.appendChild(div9);
 
-}
+}*/

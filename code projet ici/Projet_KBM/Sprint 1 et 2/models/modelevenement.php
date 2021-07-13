@@ -60,6 +60,28 @@
         }
     }
 
+    function m_inscription_event($nom, $prenom, $password_non_crypte, $email, $tel, $class_client, $pseudo, $ville, $cp){
+        $bdd= connection_bdd();
+        // On crypte le mot de passe
+        $password = md5($password_non_crypte);
+
+        $requete = $bdd->prepare("INSERT INTO `client`(`nomcli`, `prencli`, `telcli`, `mailcli`, `categoriecli`, `pseudocli`, `mdpcli`, `cp`) VALUES ('$nom', '$prenom', '$tel', '$email', '$class_client', '$pseudo', '$password', '$cp')");
+        $requete->execute();     
+    
+        $res = $bdd->prepare("SELECT * FROM client WHERE `nomcli` = '$nom'");
+        $res->execute();
+
+        $rows = $res->rowCount();
+
+        echo "requete : INSERT INTO `client`(`nomcli`, `prencli`, `telcli`, `mailcli`, `categoriecli`, `pseudocli`, `mdpcli`, `cp`) VALUES ('$nom', '$prenom', '$tel', '$email', '$class_client', '$pseudo', '$password', '$cp') <br>";
+        echo "rowCount: ".$rows."<br>";
+        if ($rows == 0) {
+          return 0;
+        }else{
+          return 1;
+        }
+    }
+
     function filter_date_futur()
     {
         $bdd= connection_bdd();

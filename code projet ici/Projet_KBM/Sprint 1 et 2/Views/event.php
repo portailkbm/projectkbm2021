@@ -62,6 +62,16 @@
 							include_once ("../models/modelevenement.php");
 							visualiser();
 						}
+						elseif (isset($_POST['ville']))
+						{
+							include_once ("../models/modelevenement.php");
+							Trie_code_postal($_POST['ville']);
+						}
+						elseif (isset($_POST['date']))
+						{
+							include_once ("../models/modelevenement.php");
+							Trie_date($_POST['date']);
+						}
 						else
 						{
 							include_once ("../models/modelevenement.php");
@@ -83,17 +93,31 @@
 					        <label for="date">À partir de :</label>
 							<input type="date" id="date" name="date" value="" min="2000-01-01" max="2023-12-31">
 						</div>
+						<div>
+						<button class="champc bleu event" onclick="">
+								Valider
+							</button>
+					    </div>
 						<br>
+						</form>
+						<form id="form" method="post">
 						<div>
 					      	<label for="ville">Dans cette Ville :</label>
-							<input type="text" name="ville" id="ville" placeholder="Entrer un nom de Ville" />
+							<select class="element champselect" name="ville" id="ville" >
+								<option value="">--Votre ville--</option>
+								<?php
+									include_once ( "../models/modelevenement.php" );
+									Select_Code_Postal_all();    
+								?>
+                    		</select> 
 						</div>
 						<br>
-					    <div class="champc bleu event">
-					        Rechercher
+					    <div >
+							<button class="champc bleu event" onclick="" >
+								Rechercher
+							</button>
 					    </div>
-   					 </form>
-		</div>
+   					 </form>		</div>
 	</div>
 </body>
 	<footer>
@@ -101,5 +125,3 @@
 			<a id="contact" href="page-pas-evenement.html"> Oups y'a rien</a>
 	</footer>
 </html>
-message.txt
-3 Ko

@@ -10,6 +10,18 @@
 		<title>KBM - Acceuile</title>
 	</head>
 	<body class="vert">
+	<div id=divopserstatue></div>
+		<div id="statue">
+			<div>
+				<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png"  width="70" height="80">
+
+			</div>
+			<div>
+				<p>Pseudo</p>
+				<p>adrresse@mail</p>
+			</div>
+		</div>
+	</div>
 	<div id="header">
 		<div class="tu"></div>
 		<div id="cent">

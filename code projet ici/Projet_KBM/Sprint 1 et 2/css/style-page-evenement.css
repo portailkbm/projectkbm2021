@@ -116,3 +116,18 @@ p{
 .flexh1{
   flex: 1;
 }
+
+
+/* code Colvil*/
+#conteneursatue{
+  display: flex;
+}
+#statue{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 1;
+}
+#divopserstatue{
+  flex: 1;
+}

@@ -95,3 +95,18 @@
   width: 3.5%;
   height: auto;
 }
+
+
+/* code Colvil*/
+#conteneursatue{
+	display: flex;
+  }
+  #statue{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex: 1;
+  }
+  #divopserstatue{
+	flex: 1;
+  }

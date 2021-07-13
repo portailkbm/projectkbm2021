@@ -194,10 +194,20 @@ element{
 /* ELEMENTS */
 
 
+
+
 /* code Colvil*/
-#conteneurstatue{
+#conteneursatue{
     display: flex;
-    background-color:#B7CC43
-}
+  }
+  #statue{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  #divopserstatue{
+    flex: 1;
+  }
 
 

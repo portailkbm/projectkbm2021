@@ -1,3 +1,79 @@
+function apparitionCreerevenement(){
+	// gestion apparition pour creer
+	if(document.getElementById("conteneurglobalinputCreer").style.display == 'none')
+	{
+		document.getElementById("conteneurglobalinputCreer").style.display = 'inline'
+	}
+	if(document.getElementById("conteneurglobalinputCreer").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputCreer").style.display = 'none'
+	}
+	// On vérifie si conteneurglobalinputModifier/supprimer sont afficher si oui on les ferme.
+	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
+	}
+	if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
+	}
+
+}
+
+function apparitionModifierevenement(){
+	// gestion apparition pour creer
+	if(document.getElementById("conteneurglobalinputModifier").style.display == 'none')
+	{
+		document.getElementById("conteneurglobalinputModifier").style.display = 'inline'
+	}
+	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
+	}
+	// On vérifie si conteneurglobalinputModifier/supprimer sont afficher si oui on les ferme.
+	if(document.getElementById("conteneurglobalinputCreer").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputCreer").style.display = 'none'
+	}
+	if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
+	}
+
+}
+
+function apparitionSuppreimerevenement(){
+	// gestion apparition pour creer
+	if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'none')
+	{
+		document.getElementById("conteneurglobalinputSupprimer").style.display = 'inline'
+	}
+	if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
+	}
+	// On vérifie si conteneurglobalinputModifier/supprimer sont afficher si oui on les ferme.
+	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
+	}
+	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
+	{
+		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 function Gestiondesproduits(){
 	document.getElementsByName('titretableau').innerHTML="Gestion des produits";
 

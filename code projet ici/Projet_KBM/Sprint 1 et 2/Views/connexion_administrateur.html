@@ -25,18 +25,18 @@
 			</div>
 			<div id ="contenueuractionevenement">
 				<div class="buttonevenement">
-					<button>Creer</button>
+					<button onclick="apparitionCreerevenement()" >Creer</button>
 				</div>
 
 				<div class="buttonevenement">
-					<button>Modifier</button>
+					<button onclick="apparitionModifierevenement()" >Modifier</button>
 				</div>
 				<div class="buttonevenement">
-					<button>Supprimer</button>
+					<button onclick="apparitionSuppreimerevenement()" >Supprimer</button>
 				</div>
 			</div>
 
-			<div id="conteneurglobalinputCreer">
+			<div id="conteneurglobalinputCreer" style = "display: none">
 				<div class="flexinput"></div>
 				<div class="conteneurinput">
 					Creer
@@ -69,7 +69,7 @@
 				<div class="flexinput"></div>
 			</div>
 
-			<div id="conteneurglobalinputModifier">
+			<div id="conteneurglobalinputModifier" style = "display: none">
 				<div class="flexinput"></div>
 				<div class="conteneurinput">
 					Modifier
@@ -102,7 +102,7 @@
 				<div class="flexinput"></div>
 			</div>
 
-			<div id="conteneurglobalinputSupprimer">
+			<div id="conteneurglobalinputSupprimer" style = "display: none">
 				<div class="flexinput"></div>
 				<div class="conteneurinput">
 					supprimer
@@ -138,6 +138,7 @@
 
 		</div>
 	</div>
+	<script  src="../js//Administrateur.js"></script>
 
 
 	<div style="display: none">
@@ -214,7 +215,6 @@
 
 	</div>
 	
-	<script type="text/javascript" src="js/Administrateur.js"></script>
 </body>
 
 </html>

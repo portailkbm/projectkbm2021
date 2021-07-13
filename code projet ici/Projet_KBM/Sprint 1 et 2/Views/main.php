@@ -87,10 +87,8 @@
 				</div>
 
 			</div>
-
-
-			
 		</div>
+		<div id="pcentre"></div>
 
 		<!--cote droit du site -->
 		<div id="pdroite">

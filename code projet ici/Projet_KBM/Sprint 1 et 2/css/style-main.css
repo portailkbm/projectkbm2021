@@ -41,15 +41,18 @@ a:hover { color: rgb(228, 168, 4); }
 }
 
 #pgauche{
-    flex: 1;
+    flex: 12;
     display:flex;
     flex-direction: column ;
     width: 500px;
 
 }
+#pcentre{
+    flex: 1;
+}
 
 #pdroite{
-    flex: 1;
+    flex: 12;
     display: flex;
     flex-direction: column;
     padding-top: 0.5em;   

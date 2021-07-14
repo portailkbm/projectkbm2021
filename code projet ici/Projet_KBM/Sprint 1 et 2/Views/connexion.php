@@ -53,11 +53,16 @@
                 essais membre : pseudo : M_pseudo mdp :lol<br>
                 essais responsable : pseudo : R_pseudo mdp :lol<br>
                 essais producteur : pseudo : P_pseudo mdp :lol<br>
+                <div class="texte">
+                    <p>
                 <?php 
-                if(isset($_SESSION['message'])){
-                    echo '<div class="texte">'.$_SESSION['message'].'</div>';
-                }
-            ?>
+                    session_start();                  
+                    if(isset($_SESSION['message'])){
+                        echo $_SESSION['message'];
+                    }
+                ?>
+                </p>
+                </div>
             </a>
             <div class="element conteneur">
                 <button class="champ vert" id="bouton" type="submit" >Connexion</button>

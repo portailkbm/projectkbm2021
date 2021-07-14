@@ -15,7 +15,7 @@
 		$_SESSION['login'] = $login;
 		$return = m_inscription_client($_POST["nom"], $_POST["prenom"], $_POST["mdp"], $_POST["mail"], $_POST["telephone"], 1, $login, $_POST["ville"], $_POST["cp"]);
 		if ($return == 1){
-			header('Location: models/inscription.php');
+			header('Location: ../Views/inscription_page2.php');
             exit();
 		}else{
 			echo "Erreur impossible d'inscrire le client.";

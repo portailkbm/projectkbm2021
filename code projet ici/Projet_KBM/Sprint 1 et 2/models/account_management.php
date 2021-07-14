@@ -156,7 +156,6 @@ function m_modifier_compte(){
           modification("cp", $_POST["cp"],1);
       } 
 }
-
 // Fonction de déconnexion
 function m_deconnexion(){
 

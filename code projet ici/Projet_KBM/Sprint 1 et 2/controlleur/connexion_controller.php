@@ -7,7 +7,9 @@
 	include ('../models/account_management.php');
     $return = m_connexion_client($_POST["login"], $_POST["mdp"]);
 	if ($return != 1){
-		include("../Views/main.php");
+		session_start();
+		$_SESSION['message']= "mdp incorect";
+		header('Location: ../Views/connexion.php');
 	}else{		
 		setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
 		if (isset($_COOKIE['pseudo']))

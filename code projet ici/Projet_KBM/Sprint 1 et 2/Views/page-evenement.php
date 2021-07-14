@@ -24,8 +24,15 @@
 					<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png" alt="image"  width="110px" height="130px">
 					</div>
 					<div>
-					<p>Pseudo</p>
-					<p>adresse@mail</p>
+						<p>
+							<?php 
+								session_start();
+								if(isset($_SESSION['pseudo'])){
+									echo $_SESSION['pseudo'];
+								}
+							?>
+						</p>
+						<p>adresse@mail</p>
 				</div>
 				</div>
 				

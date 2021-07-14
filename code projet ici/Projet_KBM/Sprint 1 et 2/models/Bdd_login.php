@@ -17,7 +17,6 @@ define("BD_NAME", "demen1587164");
 function connection_bdd() {
         try
         {
-           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
            $useur = 'root';
            $pass = 'root';
            

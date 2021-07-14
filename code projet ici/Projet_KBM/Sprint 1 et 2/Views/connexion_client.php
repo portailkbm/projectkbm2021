@@ -7,7 +7,7 @@
 	</head>
 <body >
 	<header>
-		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<a href="../Views/main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
 			<h1 id="titre">Client</h1>
 
@@ -26,7 +26,11 @@
 			<div>
 				<p>
                     <?php 
-                        echo $_SESSION["login"];
+                        if(isset($_SESSION['login'])){
+							//echo $_SESSION['login'];
+							echo $_SESSION['pseudo'];
+							
+						}
                     ?>
                 </p>
 				<p>adrresse@mail</p>

@@ -46,12 +46,19 @@ function m_connexion_client($pseudo, $password_non_crypte ){
     if($requete->rowCount() == 1){    
      //   session_start();
         while($donnee = $requete->fetch()){
+            $_SESSION["login"] = $pseudo;
+            return $donnee["categoriecli"];
+
+            /**
+             * Administrateur poste maj
+             */
+            /*
             if ($donnee["admin"] == 1){
                 $_SESSION["id_client"] = $donnee["idcli"];
                 $_SESSION["etat"]  = 1;
                 $_SESSION["login"] = $pseudo;
                 return $donnee["categoriecli"];
-            }        
+            }     */   
         }
         return 0;
     } else{

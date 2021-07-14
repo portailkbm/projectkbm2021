@@ -4,8 +4,20 @@
 	//include("../models/config.php");
 	//global $login_client,$mdp_client,$login_admin,$mdp_admin,$login_membre,$mdp_membre,$login_r,$mdp_r,$login_producteur,$mdp_producteur,$login_transporteur,$mdp_transporteur;
 
-	$_SESSION['login'] = $_POST["login"];
-	include("../Views/connexion_client.php");
+	include ('../models/account_management.php');
+    $return = m_connexion_client($_POST["login"], $_POST["mdp"]);
+	if ($return != 1){
+		include("../Views/main.php");
+	}else{		
+		setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
+		if (isset($_COOKIE['pseudo']))
+		{
+			session_start();
+			$_SESSION['pseudo'] = $_COOKIE['pseudo'];
+			$_SESSION['login'] = $_POST["login"];
+			include("../Views/connexion_client.php");
+		}
+    }
 
 
 /*

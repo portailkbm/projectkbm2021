@@ -19,8 +19,9 @@
 			<div>
 				<p>
 					<?php 
-						if(isset($_SESSION['login'])){
-							echo $_SESSION['login'];
+					    session_start();
+						if(isset($_SESSION['pseudo'])){
+							echo $_SESSION['pseudo'];
 						}
 					?>
 				</p>

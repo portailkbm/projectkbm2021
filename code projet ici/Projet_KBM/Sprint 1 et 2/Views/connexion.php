@@ -5,7 +5,7 @@
         echo $return;
         switch ($return) {
             case 1:
-                header('Location: connexion_client.html');
+                header('Location: connexion_client.php');
                 break;
             case 2:
                 header('Location: connexion_membre.html');

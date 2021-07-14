@@ -18,7 +18,14 @@
 
 					</div>
 					<div>
-						<p>Pseudo</p>
+						<p>
+							<?php 
+								session_start();
+								if(isset($_SESSION['pseudo'])){
+									echo $_SESSION['pseudo'];
+								}
+							?>
+						</p>
 						<p>adrresse@mail</p>
 					</div>
 				</div>

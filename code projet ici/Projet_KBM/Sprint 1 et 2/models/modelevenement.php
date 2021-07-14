@@ -10,7 +10,7 @@
            $useur = 'root';
            $pass = 'root';
            include_once("Bdd_login.php");
-           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
+           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , constant("BD_MDP") );
         }
         catch (Exception $e)
         {

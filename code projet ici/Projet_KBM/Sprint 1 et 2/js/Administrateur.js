@@ -16,7 +16,7 @@ function apparitionCreerevenement(){
 
 }
 
-window.onload = function apparitionModifierevenement(){
+function apparitionModifierevenement(){
 	// gestion apparition pour creer
 	if(document.getElementById("conteneurglobalinputModifier").style.display == 'none')
 	{

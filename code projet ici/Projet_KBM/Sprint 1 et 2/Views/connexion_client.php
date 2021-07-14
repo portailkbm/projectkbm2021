@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="../css/style-connexion-pageaccueil-main.css" />
+	   	<link rel="stylesheet" href="../css/style-connexion-admin.css?v=<?php echo time() ?>" />
 		<title>KBM-Client</title>
 	</head>
 <body >
@@ -38,8 +38,131 @@
 		</div>
 	</div>
 
-	<br>
-	<div id="centrale">
+	<div id="principale">
+		<div id="Evenement">
+			<div id="contenurtitre">
+				<h2>Evenement</h2>
+			</div>
+			<div id ="contenueuractionevenement">
+				<div class="buttonevenement">
+					<button onclick="apparitionCreerevenement()" >Creer</button>
+				</div>
+
+				<div class="buttonevenement">
+					<button onclick="apparitionModifierevenement()" >Modifier</button>
+				</div>
+				<div class="buttonevenement">
+					<button onclick="apparitionSuppreimerevenement()" >Supprimer</button>
+				</div>
+			</div>
+
+			<div id="conteneurglobalinputCreer" style = "display: none">
+				<div class="flexinput"></div>
+				<div class="conteneurinput">
+					Creer
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<br>
+					<div>
+						<button>valider</button>
+						<button>annuler</button>
+					</div>
+				</div>
+				<div class="flexinput"></div>
+			</div>
+
+			<div id="conteneurglobalinputModifier" style = "display: none">
+				<div class="flexinput"></div>
+				<div class="conteneurinput">
+					Modifier
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<br>
+					<div>
+						<button>valider</button>
+						<button>annuler</button>
+					</div>
+				</div>
+				<div class="flexinput"></div>
+			</div>
+
+			<div id="conteneurglobalinputSupprimer" style = "display: none">
+				<div class="flexinput"></div>
+				<div class="conteneurinput">
+					supprimer
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<br>
+					<div>
+						<button>valider</button>
+						<button>annuler</button>
+					</div>
+				</div>
+				<div class="flexinput"></div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+
+	<div id="centrale" style="display:none">
 		<div id="moitieG">
 			<h1 id="titre" name="titretableau">Gestion du compte</h1>
 			<div id="scroll">
@@ -97,7 +220,7 @@
 
 	</div>
 	
-	<script type="text/javascript" src="js/Client.js"></script>
+	<script type="text/javascript" src="js/Administrateur.js"></script>
 </body>
 
 </html>

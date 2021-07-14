@@ -1,23 +1,23 @@
 <?php 
     if (isset($_POST["login"]) && isset($_POST["mdp"])){
-        include '../models/account_management.php';
+        include ('../models/account_management.php');
         $return = m_connexion_client($_POST["login"], $_POST["mdp"]);
         echo $return;
         switch ($return) {
             case 1:
-                header('Location: View/connexion_client.html');
+                header('Location: connexion_client.html');
                 break;
             case 2:
-                header('Location: View/connexion_membre.html');
+                header('Location: connexion_membre.html');
                 break;
             case 3:
-                header('Location: View/connexion_producteur.html');   
+                header('Location: connexion_producteur.html');   
                 break;
             case 4:
-                header('Location: View/connexion_responsable.html');
+                header('Location: connexion_responsable.html');
                 break;
             case 5:
-                header('Location: View/connexion_administrateur.html');
+                header('Location: connexion_administrateur.html');
                 break;
             default:
                 header('Location: connexion.php');
@@ -38,7 +38,7 @@
         <h1 id="titre"> Connexion </h1>
        <a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>  
     </div>
-        <form id="formulaire" method="post" action="connexion_controller.php">
+        <form id="formulaire" method="post" action="../controlleur/connexion_controller.php">
             <div class="element conteneur">
                
 

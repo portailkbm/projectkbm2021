@@ -1,23 +1,8 @@
 <?php
-     session_start();
-     //session_start();
-// ne pas oublier de changer le host des 2 fonction
+    // session_start();
 
-    function connection_bdd() {
-        try
-        {
-           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
-           $useur = 'root';
-           $pass = 'root';
-           include_once("Bdd_login.php");
-           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , constant("BD_MDP") );
-        }
-        catch (Exception $e)
-        {
-                die('Erreur : ' . $e->getMessage());
-        }
-        return $bdd;
-    }
+include_once("Bdd_login.php");
+    
     function visualiser()
     {
         $bdd= connection_bdd();

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="../css/style-connexion-pageaccueil-main.css" />
+	   	<link rel="stylesheet" href="../css/style-connexion-pageaccueil-main.css?<?php echo time(); ?>" />
 		<title>KBM-Client</title>
 	</head>
 <body >
@@ -17,7 +17,7 @@
 	</header>
 	<br>
 	<div id="conteneursatue">
-		<div id=divopserstatue></div>
+		
 		<div id="statue">
 			<div>
 				<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png"  width="70" height="80">
@@ -31,7 +31,131 @@
 	</div>
 
 	<br>
-	<div id="centrale">
+
+	<div id="principale">
+		<div id="Evenement">
+			<div id="contenurtitre">
+				<h2>Evenement</h2>
+			</div>
+			<div id ="contenueuractionevenement">
+				<div class="buttonevenement">
+					<button onclick="apparitionCreerevenement()" >Creer</button>
+				</div>
+
+				<div class="buttonevenement">
+					<button onclick="apparitionModifierevenement()" >Modifier</button>
+				</div>
+				<div class="buttonevenement">
+					<button onclick="apparitionSuppreimerevenement()" >Supprimer</button>
+				</div>
+			</div>
+
+			<div id="conteneurglobalinputCreer"  style="display: inline">
+				<div class="flexinput"></div>
+				<div class="conteneurinput">
+					Creer
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<br>
+					<div>
+						<button>valider</button>
+						<button>annuler</button>
+					</div>
+				</div>
+				<div class="flexinput"></div>
+			</div>
+
+			<div id="conteneurglobalinputModifier" style = "display: inline">
+				<div class="flexinput"></div>
+				<div class="conteneurinput">
+					Modifier
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<br>
+					<div>
+						<button>valider</button>
+						<button>annuler</button>
+					</div>
+				</div>
+				<div class="flexinput"></div>
+			</div>
+
+			<div id="conteneurglobalinputSupprimer" style = "display: inline">
+				<div class="flexinput"></div>
+				<div class="conteneurinput">
+					supprimer
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<div>
+						Nom
+						<input type="text" id="name" name="name"  size="25">
+					</div>
+					<br>
+					<div>
+						<button>valider</button>
+						<button>annuler</button>
+					</div>
+				</div>
+				<div class="flexinput"></div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+	<div id="centrale" style="display:none">
 		<div id="moitieG">
 			<h1 id="titre" name="titretableau">Gestion du compte</h1>
 			<div id="scroll">
@@ -88,8 +212,8 @@
 
 
 	</div>
+	<script  src="../js/Administrateur.js"></script>
 	
-	<script type="text/javascript" src="js/Client.js"></script>
 </body>
 
 </html>

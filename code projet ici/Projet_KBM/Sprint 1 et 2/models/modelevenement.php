@@ -233,35 +233,6 @@
         }  
     }
 
-    function Select_Code_Postal_all(){
-
-        $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
-        $requete ->execute();
-
-        $_SESSION["resultat"] = $requete ->execute();
-        while($_SESSION["resultat"] = $requete->fetch())
-        {
-            echo '<option valeur="';
-            echo $_SESSION["resultat"]['cp'];
-            echo '">';
-            echo $_SESSION["resultat"]['cp'];
-            echo '</option>';
-        }  
-    }
-
-
-    function Select_code_postal($select){
-        $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
-        $requete ->execute();
-
-        $_SESSION["resultat"] = $requete ->execute();
-        while($_SESSION["resultat"] = $requete->fetch())
-        {
-            echo ' '.$_SESSION["resultat"]["cp"].' ';
-        }  
-    }
 
 
 

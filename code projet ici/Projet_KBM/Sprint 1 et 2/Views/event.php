@@ -2,34 +2,30 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="../css/style-evenement.css" />
+	   	<link rel="stylesheet" href="../css/style-evenement.css?<?php echo time(); ?>" />
 		<title>KBM-Evenement</title>
 	</head>
 <body class="vert">
 	<header>
 		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<h1 id="titre">Nos Évenements</h1>
 		<div id="wrapper">
-			<h1 id="titre">Nos Évenements</h1>
-			<br>
-			<div class="champc orange" id="infos">
-				Voir Plus
+			<div  id="infos">
 			</div>
-			<div id=divopserstatue></div>
-		<div id="statue">
-			<div>
-				<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png"  width="70" height="80">
+				<div id="statue">
+					<div>
+						<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png"  width="80" height="80">
 
-			</div>
-			<div>
-				<p>Pseudo</p>
-				<p>adrresse@mail</p>
-			</div>
-		</div>
-	</div>
+					</div>
+					<div>
+						<p>Pseudo</p>
+						<p>adrresse@mail</p>
+					</div>
+				</div>
 		</div>
 	</header>
-	<br>
-	<!-- C'est le code coter html a adapter qui envoie le tri dans le terminale-->
+	
+	<!-- C'est le code coter html a adapter qui envoie le tri dans le terminale
 	<div>
 		<form  action="" method="POST" >
 			<select name="trier" id="trier">
@@ -48,6 +44,7 @@
 			<input type ="submit" name="visualiser">
 		</form>
 	</div>
+-->
 	<!-- NE pas oublier de changer les host ds modelevenment et controleurevenement-->
 	<br>
 	<div id="centrale">

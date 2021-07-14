@@ -8,16 +8,32 @@
 	</head>
 <body class="vert"> 
 	<header>
-		<a href="../Views/event.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /></a>
+		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" alt="retour" /></a>
+		<h1 id="titre">Évenement</h1>
 		<div id="wrapper">
-			<h1 id="titre">Évenement</h1>
-			<p>
-				<?php
-						include_once ( "../models/modelevenement.php" );
-						Select_Flyer($_GET ["id"]);    
-				?>
-			</p>
+			<div id="divopserstatue">
+				<p>
+					<?php
+							include_once ( "../models/modelevenement.php" );
+							Select_Flyer($_GET ["id"]);    
+					?>
+				</p>
+			</div >
+				<div id="statue">
+					<div>
+					<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png" alt="image"  width="110px" height="130px">
+					</div>
+					<div>
+					<p>Pseudo</p>
+					<p>adresse@mail</p>
+				</div>
+				</div>
+				
+			</div>
+	
 		</div>
+		
+		
 
 	</header>
 

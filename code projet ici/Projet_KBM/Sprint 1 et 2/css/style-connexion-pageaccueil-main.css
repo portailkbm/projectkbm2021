@@ -11,6 +11,9 @@
   color: white;
 }
 
+body {
+  background-color: #80B650;
+}
 
 .champc{
   border:1px solid black;
@@ -122,3 +125,60 @@ table td {
 #divopserstatue{
   flex: 1;
 }
+
+
+#Evenement{
+  display: flex;
+  flex-direction: column;
+}
+#contenurtitre{
+  flex:1;
+}
+#contenueuractionevenement{
+  flex:1;
+  display:flex;
+  flex-direction: row;
+}
+.buttonevenement{
+  display:flex;
+  flex:1;
+  align-items:center;
+  justify-content:center;
+}
+button{
+  height:50px; 
+  width:150px;
+  border-radius: 5px;
+  background-color: #dc4e56;
+  font-size:large;
+}
+#conteneurglobalinputCreer{
+  display: flex;
+  padding: 3%;
+  background-color:#5A7F3A;
+  border-radius: 5px;
+}
+#conteneurglobalinputModifier{
+  display: flex;
+  padding: 3%;
+  background-color:#5A7F3A;
+  border-radius: 5px;
+}
+#conteneurglobalinputSupprimer{
+  display: flex;
+  padding: 3%;
+  background-color:#5A7F3A;
+  border-radius: 5px;
+}
+
+.conteneurinput{
+  display:flex;
+  flex-direction: column;
+  flex:1;
+  font-size:x-large
+}
+.flexinput{
+  flex:1;
+}
+
+

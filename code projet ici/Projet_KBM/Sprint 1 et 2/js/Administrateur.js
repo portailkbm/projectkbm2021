@@ -1,44 +1,32 @@
+
 function apparitionCreerevenement(){
 	// gestion apparition pour creer
-	if(document.getElementById("conteneurglobalinputCreer").style.display == 'none')
-	{
-		document.getElementById("conteneurglobalinputCreer").style.display = 'inline'
-	}
+	console.log("je m'amuse")
 	if(document.getElementById("conteneurglobalinputCreer").style.display == 'inline')
 	{
-		document.getElementById("conteneurglobalinputCreer").style.display = 'none'
+		document.getElementById("conteneurglobalinputCreer").style.display = 'none';
+		console.log("je m'amuse2")
 	}
-	// On vérifie si conteneurglobalinputModifier/supprimer sont afficher si oui on les ferme.
-	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
+	if(document.getElementById("conteneurglobalinputCreer").style.display == 'none')
 	{
-		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
+		document.getElementById("conteneurglobalinputCreer").style.display = 'inline';
+		console.log("je m'amuse1")
 	}
-	if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'inline')
-	{
-		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
-	}
+	
 
 }
 
-function apparitionModifierevenement(){
+window.onload = function apparitionModifierevenement(){
 	// gestion apparition pour creer
 	if(document.getElementById("conteneurglobalinputModifier").style.display == 'none')
 	{
-		document.getElementById("conteneurglobalinputModifier").style.display = 'inline'
+		document.getElementById("conteneurglobalinputModifier").style.display = 'block'
 	}
 	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
 	{
 		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
 	}
-	// On vérifie si conteneurglobalinputModifier/supprimer sont afficher si oui on les ferme.
-	if(document.getElementById("conteneurglobalinputCreer").style.display == 'inline')
-	{
-		document.getElementById("conteneurglobalinputCreer").style.display = 'none'
-	}
-	if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'inline')
-	{
-		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
-	}
+	
 
 }
 
@@ -52,15 +40,7 @@ function apparitionSuppreimerevenement(){
 	{
 		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
 	}
-	// On vérifie si conteneurglobalinputModifier/supprimer sont afficher si oui on les ferme.
-	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
-	{
-		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
-	}
-	if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
-	{
-		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
-	}
+	
 
 }
 

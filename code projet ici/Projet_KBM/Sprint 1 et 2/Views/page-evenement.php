@@ -120,6 +120,9 @@
 			<div id="divopserstatue">
 				<button>Supprimer</button>
 			</div>
+			<div id="divopserstatue">
+				<button>Archivé</button>
+			</div>
 		</div>
 		
 	</div>

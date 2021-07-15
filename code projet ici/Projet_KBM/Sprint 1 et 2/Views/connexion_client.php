@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	   	<link rel="stylesheet" href="../css/style-connexion-admin.css?v=<?php echo time() ?>" />
 		<title>KBM-Client</title>
 	</head>
@@ -9,7 +10,7 @@
 	<header>
 		<a href="../Views/main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
-			<h1 id="titre">Client</h1>
+			<h1 id="titre">Client(Changera par rapport aux statue du compte)</h1>
 
 		</div>
 		
@@ -41,7 +42,7 @@
 	<div id="principale">
 		<div id="Evenement">
 			<div id="contenurtitre">
-				<h2>Evenement</h2>
+				<h2>Evenement(visible que par l'administratr)</h2>
 			</div>
 			<div id ="contenueuractionevenement">
 				<div class="buttonevenement">
@@ -56,106 +57,115 @@
 				</div>
 			</div>
 
-			<div id="conteneurglobalinputCreer" style = "display: none">
-				<div class="flexinput"></div>
-				<div class="conteneurinput">
-					Creer
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
+			<div id="conteneurglobalinputCreer" style = "display:inline">
+				<div class = "conteneurevenement">
+					<div class="flexinput"></div>
+					<div class="conteneurinput">
+						<h2>Creer un envenement :</h2>
+						<br>
+						<div>
+							Date debut :
+							<input id="date" type="date" value="2017-06-01">
+						</div>
+						<div>
+							Date de fin :
+							<input id="date" type="date" value="2017-06-01">
+						</div>
+						<div>
+							<label for="appt-time"> Heure de debut :</label>
+							<input id="appt-time" type="time" name="timedebut" value="13:30">
+						</div>
+						<div>
+							<label for="appt-time"> Heure de fin :</label>
+							<input id="appt-time" type="time" name="timefin" value="13:30">
+						</div>
+						<div>
+							Nom Evenement
+							<input type="text" id="name" name="nameevnement"  size="25">
+						</div>
+						<div>
+							Code Postal
+							<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
+								<option value="">--Votre Code Postal--</option>
+								<?php
+									include_once ( "../models/modelevenement.php" );
+									Select_Code_Postal_all();    
+								?>
+							</select> 
+						</div>
+						<br>
+						<div>
+							<button>valider</button>
+							<button>annuler</button>
+						</div>
 					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<br>
-					<div>
-						<button>valider</button>
-						<button>annuler</button>
-					</div>
+					<div class="flexinput"></div>
 				</div>
-				<div class="flexinput"></div>
 			</div>
 
 			<div id="conteneurglobalinputModifier" style = "display: none">
-				<div class="flexinput"></div>
-				<div class="conteneurinput">
-					Modifier
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
+				<div class = "conteneurevenement">
+					<div class="flexinput"></div>
+					<div class="conteneurinput">
+						<div class="celules">
+							<table class="table">
+								<thead>
+									<tr>
+										<th  scope="col">Organisateur</th>
+										<th  scope="col">Activités</th>
+										<th  scope="col">Lieux</th>
+										<th  scope="col">Date</th>
+									</tr>
+								</thead>
+								<tbody id="pointsTable" aligne="center">
+									<marquee behavior="scroll" direction="down">
+									</marquee>
+									<?php
+									include_once ("../models/modelevenement.php");
+									visualiser();
+									?>
+								</tbody>
+							</table> 
+						</div>
 					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<br>
-					<div>
-						<button>valider</button>
-						<button>annuler</button>
-					</div>
+					<div class="flexinput"></div>
 				</div>
-				<div class="flexinput"></div>
 			</div>
 
 			<div id="conteneurglobalinputSupprimer" style = "display: none">
-				<div class="flexinput"></div>
-				<div class="conteneurinput">
-					supprimer
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
+				<div class = "conteneurevenement">
+					<div class="flexinput"></div>
+					<div class="conteneurinput">
+						supprimer
+						<div>
+							Nom
+							<input type="text" id="name" name="name"  size="25">
+						</div>
+						<div>
+							Nom
+							<input type="text" id="name" name="name"  size="25">
+						</div>
+						<div>
+							Nom
+							<input type="text" id="name" name="name"  size="25">
+						</div>
+						<div>
+							Nom
+							<input type="text" id="name" name="name"  size="25">
+						</div>
+						<div>
+							Nom
+							<input type="text" id="name" name="name"  size="25">
+						</div>
+						<br>
+						<div>
+							<button>valider</button>
+							<button>annuler</button>
+						</div>
 					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<div>
-						Nom
-						<input type="text" id="name" name="name"  size="25">
-					</div>
-					<br>
-					<div>
-						<button>valider</button>
-						<button>annuler</button>
+					<div class="flexinput"></div>
 					</div>
 				</div>
-				<div class="flexinput"></div>
-			</div>
-
-
 		</div>
 	</div>
 
@@ -220,7 +230,7 @@
 
 	</div>
 	
-	<script type="text/javascript" src="js/Administrateur.js"></script>
+	<script  src="../js/Administrateur.js"></script>
 </body>
 
 </html>

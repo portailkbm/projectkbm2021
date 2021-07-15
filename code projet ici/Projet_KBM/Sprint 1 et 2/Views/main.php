@@ -7,6 +7,7 @@
 		
 		<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 		<link rel="stylesheet" href="../css/style-main.css?v=<?php echo time() ?>" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<title>KBM - Acceuile</title>
 	</head>
 	<body class="vert">
@@ -26,6 +27,9 @@
 					?>
 				</p>
 				<p>adrresse@mail</p>
+				<div >
+					<button>Deconnexion</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -104,16 +108,17 @@
 				<div><a href="inscription.php" class="champc bleu">Inscription </a></div>
 				<div><a href="connexion.php" class="champc rouge">Connexion </a></div>
 			</div>
+			<!-- code tableau-->
 			<div>
 			<h2 style="text-align: center;">Evenement</h2>
 			<div class="celules">
-				<table>
+				<table class="table">
 					<thead>
 						<tr>
-							<th id="Organisateur">Organisateur</th>
-							<th id="activités">Activités</th>
-							<th id="lieux">Lieux</th>
-							<th id="dates">Dates</th>
+							<th  scope="col">Organisateur</th>
+							<th  scope="col">Activités</th>
+							<th  scope="col">Lieux</th>
+							<th  scope="col">Dates</th>
 						</tr>
 					</thead>
 					<tbody id="pointsTable" aligne="center">

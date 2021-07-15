@@ -17,7 +17,7 @@ function apparitionModifierevenement(){
 	// gestion apparition pour creer
 	if(document.getElementById("conteneurglobalinputModifier").style.display == 'none')
 	{
-		document.getElementById("conteneurglobalinputModifier").style.display = 'block'
+		document.getElementById("conteneurglobalinputModifier").style.display = 'inline'
 	}else if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
 	{
 		document.getElementById("conteneurglobalinputModifier").style.display = 'none'

@@ -27,6 +27,9 @@
 							?>
 						</p>
 						<p>adrresse@mail</p>
+						<div >
+							<button>Deconnexion</button>
+						</div>
 					</div>
 				</div>
 		</div>

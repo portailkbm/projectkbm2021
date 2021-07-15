@@ -19,6 +19,8 @@ body {
 #Evenement{
     display: flex;
     flex-direction: column;
+    background-color:  #68af29;
+    border-radius: 5px;
 }
 #contenurtitre{
     flex:1;
@@ -42,14 +44,17 @@ button{
     font-size:large;
 }
 #conteneurglobalinputCreer{
-    display: flex;
-    padding: 3%;
     background-color:#5A7F3A;
     border-radius: 5px;
+}
+.conteneurevenement{
+  display: flex;
+  flex-direction: row;
 }
 #conteneurglobalinputModifier{
     display: flex;
     padding: 3%;
+    flex-direction: row;
     background-color:#5A7F3A;
     border-radius: 5px;
 }
@@ -63,11 +68,48 @@ button{
 .conteneurinput{
     display:flex;
     flex-direction: column;
-    flex:1;
+    flex:2;
     font-size:x-large
 }
 .flexinput{
     flex:1;
+}
+/*Css tableau*/
+/* DECO */
+.celules {
+  width: 100%; /* pour les TESTS */
+  margin:0 auto;
+
+}
+table {
+  text-align: center;
+  width: 100%;
+  border-collapse:collapse;
+  font-size: 85%;
+  font-family:Arial,sans-serif;
+}
+table th {
+  padding:5px 1px;
+  background: #ccc;
+  border: 1px solid #666;
+}
+table td {
+  border: 1px solid #ccc;
+  padding:8px 3px;
+}
+/* table à entête fixe */
+thead{
+  display: block;
+  width: 100%;
+}
+tbody{
+  height:20em; /* hauteur imposée */
+  width: 100%;
+  overflow-y: scroll;
+  display: block;
+}
+table th, table td {
+  width:10%;
 }
 
 

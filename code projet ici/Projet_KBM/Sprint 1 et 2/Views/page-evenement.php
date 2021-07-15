@@ -6,7 +6,7 @@
 	   	<link rel="stylesheet" href="../css/style-page-evenement.css?<?php echo time(); ?>" />
 		<title>KBM-Evenement</title>
 	</head>
-<body class="vert"> 
+<body > 
 	<header>
 		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" alt="retour" /></a>
 		<h1 id="titre">Évenement</h1>
@@ -21,7 +21,7 @@
 			</div >
 				<div id="statue">
 					<div>
-					<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png" alt="image"  width="110px" height="130px">
+					<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png" alt="image"  width="90px" height="120px">
 					</div>
 					<div>
 						<p>
@@ -33,6 +33,9 @@
 							?>
 						</p>
 						<p>adresse@mail</p>
+						<div >
+							<button>Deconnexion</button>
+						</div>
 				</div>
 				</div>
 				
@@ -110,6 +113,15 @@
 			include_once ( "../models/modelevenement.php" );
 			Select_Flyer_Evenement($_GET ["id"]);
 		?>
+		<div id="actiondelimitation">
+			<div id="divopserstatue">
+				<button>Modifier</button>
+			</div>
+			<div id="divopserstatue">
+				<button>Supprimer</button>
+			</div>
+		</div>
+		
 	</div>
 </body>
 </html>

@@ -14,7 +14,9 @@
     background-color: #048b9a;
 }
 
-
+body{
+    background-color:#80B650;
+  }
 
 
 #logo-retour{
@@ -125,4 +127,19 @@ p{
 }
 #divopserstatue{
   flex: 1;
+  justify-content:space-around;
+  display: flex;
+}
+/*CSS correspondant aux action admin*/
+#actiondelimitation{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+button{
+  height:50px; 
+  width:150px;
+  border-radius: 5px;
+  background-color: #dc4e56;
+  font-size:large;
 }

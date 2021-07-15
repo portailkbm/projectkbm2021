@@ -175,7 +175,7 @@ include_once("Bdd_login.php");
     function Select_Code_Postal_all(){
 
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
+        $requete = $bdd->prepare('SELECT * FROM ville');
         $requete ->execute();
 
         $_SESSION["resultat"] = $requete ->execute();
@@ -218,6 +218,11 @@ include_once("Bdd_login.php");
         }  
     }
 
+    function Cree_Evenement($lib,$deb,$fin,$hd,$hf,$cp){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('INSERT INTO `evenement` (`libevent`,`debutevent`,`finevent`,`debutevent_hr`,`finevent_hr`,`cp`)VALUES('$lib','$deb','$fin','$hd','$hf','$cp') ');
+        $requete ->execute();
+    }
 
 
 

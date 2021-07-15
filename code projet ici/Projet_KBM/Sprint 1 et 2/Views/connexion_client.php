@@ -57,51 +57,53 @@
 				</div>
 			</div>
 
-			<div id="conteneurglobalinputCreer" style = "display:inline">
-				<div class = "conteneurevenement">
-					<div class="flexinput"></div>
-					<div class="conteneurinput">
-						<h2>Creer un envenement :</h2>
-						<br>
-						<div>
-							Date debut :
-							<input id="date" type="date" value="2017-06-01">
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/envent_crea.php">
+				<div id="conteneurglobalinputCreer" style = "display:inline">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<h2>Creer un envenement :</h2>
+							<br>
+							<div>
+								Date debut :
+								<input id="date" type="date" name="date_debut" value="2017-06-01">
+							</div>
+							<div>
+								Date de fin :
+								<input id="date" type="date" name="date_fin" value="2017-06-01">
+							</div>
+							<div>
+								<label for="appt-time"> Heure de debut :</label>
+								<input id="appt-time" type="time" name="timedebut" value="13:30">
+							</div>
+							<div>
+								<label for="appt-time"> Heure de fin :</label>
+								<input id="appt-time" type="time" name="timefin" value="13:30">
+							</div>
+							<div>
+								Nom Evenement
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Code Postal
+								<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
+									<option value="">--Votre Code Postal--</option>
+									<?php
+										include_once ( "../models/modelevenement.php" );
+										Select_Code_Postal_all();    
+									?>
+								</select> 
+							</div>
+							<br>
+							<div>
+								<button type="submit" >valider</button>
+								<button>annuler</button>
+							</div>
 						</div>
-						<div>
-							Date de fin :
-							<input id="date" type="date" value="2017-06-01">
-						</div>
-						<div>
-							<label for="appt-time"> Heure de debut :</label>
-							<input id="appt-time" type="time" name="timedebut" value="13:30">
-						</div>
-						<div>
-							<label for="appt-time"> Heure de fin :</label>
-							<input id="appt-time" type="time" name="timefin" value="13:30">
-						</div>
-						<div>
-							Nom Evenement
-							<input type="text" id="name" name="nameevnement"  size="25">
-						</div>
-						<div>
-							Code Postal
-							<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
-								<option value="">--Votre Code Postal--</option>
-								<?php
-									include_once ( "../models/modelevenement.php" );
-									Select_Code_Postal_all();    
-								?>
-							</select> 
-						</div>
-						<br>
-						<div>
-							<button>valider</button>
-							<button>annuler</button>
-						</div>
+						<div class="flexinput"></div>
 					</div>
-					<div class="flexinput"></div>
 				</div>
-			</div>
+			</form>
 
 			<div id="conteneurglobalinputModifier" style = "display: none">
 				<div class = "conteneurevenement">

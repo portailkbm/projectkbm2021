@@ -159,10 +159,13 @@ function m_modifier_compte(){
 // Fonction de déconnexion
 function m_deconnexion(){
 
-    unset($_SESSION["id_client"]);
-    unset($_SESSION["etat"]);
+    session_start();
+    //unset($_SESSION["id_client"]);
+    //unset($_SESSION["etat"]);
+    unset($_SESSION["login"]);
+    unset($_SESSION["pseudo"]);
     session_destroy();
     
     //Redirection vers la page de connexion
-    header("Location:login.php");
+    header("Location: ../Views/main.php");
 }

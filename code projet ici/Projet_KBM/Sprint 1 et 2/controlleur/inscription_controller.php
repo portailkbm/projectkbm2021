@@ -8,7 +8,7 @@
     
 	if($mdp!=$cmdp){
 		$_SESSION['message']="Veiller à ce que le mot de passe et sa confirmation soient identiques";
-		include("models/inscription.php");
+		include("../Views/inscription.php");
 	}
 	else{
 		$login="C_".$pseudo;

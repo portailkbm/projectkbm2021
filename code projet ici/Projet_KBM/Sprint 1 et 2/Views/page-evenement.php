@@ -34,7 +34,7 @@
 						</p>
 						<p>adresse@mail</p>
 						<div >
-							<button>Deconnexion</button>
+							<button onclick="window.location.href='../controlleur/controleur_deconnexion.php';">Deconnexion</button>
 						</div>
 				</div>
 				</div>

@@ -124,6 +124,60 @@
 				<button>Archivé</button>
 			</div>
 		</div>
+		<!-- Vue afficher par le bouton modifier -->
+		<div id="conteneurglobalinputCreer" style = "display:inline">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<h2>Modifier l'evenements :</h2>
+							<br>
+							<div>
+								Date debut :
+								<input id="date" type="date" name="date_debut" value="2017-06-01">
+							</div>
+							<div>
+								Date de fin :
+								<input id="date" type="date" name="date_fin" value="2017-06-01">
+							</div>
+							<div>
+								<label for="appt-time"> Heure de debut :</label>
+								<input id="appt-time" type="time" name="timedebut" value="13:30">
+							</div>
+							<div>
+								<label for="appt-time"> Heure de fin :</label>
+								<input id="appt-time" type="time" name="timefin" value="13:30">
+							</div>
+							<div>
+								Nom Evenement
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Code Postal
+								<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
+									<option value="">--Votre Code Postal--</option>
+									<?php
+										include_once ( "../models/modelevenement.php" );
+										Select_Code_Postal_all();    
+									?>
+								</select> 
+							</div>
+							<div>
+								Organisateur
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Contact
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="apparitionCreerevenement()">annuler</button>
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
 		
 	</div>
 </body>

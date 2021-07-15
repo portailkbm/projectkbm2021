@@ -120,10 +120,10 @@
 								<tbody id="pointsTable" aligne="center">
 									<marquee behavior="scroll" direction="down">
 									</marquee>
-									<?php
-									include_once ("../models/modelevenement.php");
-									visualiser();
-									?>
+										<?php
+											include_once ("../models/modelevenement.php");
+											visualiser();
+										?>
 								</tbody>
 							</table> 
 						</div>

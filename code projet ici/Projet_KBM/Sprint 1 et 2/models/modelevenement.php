@@ -217,11 +217,11 @@ include_once("Bdd_login.php");
             echo '<img src="data:image/jpeg;base64,'.base64_encode( $_SESSION["resultat"]['flyer'] ).'"/>';
         }  
     }
-
+// ligne 223 bugger
     function Cree_Evenement($lib,$deb,$fin,$hd,$hf,$cp){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('INSERT INTO `evenement` (`libevent`,`debutevent`,`finevent`,`debutevent_hr`,`finevent_hr`,`cp`)VALUES('$lib','$deb','$fin','$hd','$hf','$cp') ');
-        $requete ->execute();
+        //$requete = $bdd->prepare('INSERT INTO `evenement` (`libevent`,`debutevent`,`finevent`,`debutevent_hr`,`finevent_hr`,`cp`)VALUES('$lib','$deb','$fin','$hd','$hf','$cp') ');
+        //$requete ->execute();
     }
 
     function Modifier_Evenement($lib,$deb,$fin,$hd,$hf,$cp,$select){

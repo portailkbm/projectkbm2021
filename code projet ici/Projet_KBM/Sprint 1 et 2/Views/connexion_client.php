@@ -58,7 +58,7 @@
 			</div>
 
 			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/envent_crea.php">
-				<div id="conteneurglobalinputCreer" style = "display:inline">
+				<div id="conteneurglobalinputCreer" style = "display:none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -96,8 +96,8 @@
 							</div>
 							<br>
 							<div>
-								<button type="submit" >valider</button>
-								<button>annuler</button>
+								<button type="submit">valider</button>
+								<button onclick="apparitionCreerevenement()">annuler</button>
 							</div>
 						</div>
 						<div class="flexinput"></div>

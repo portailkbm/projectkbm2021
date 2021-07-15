@@ -143,3 +143,10 @@ button{
   background-color: #dc4e56;
   font-size:large;
 }
+#button{
+  height:50px; 
+  width:150px;
+  border-radius: 5px;
+  background-color: #dc4e56;
+  font-size:large;
+}

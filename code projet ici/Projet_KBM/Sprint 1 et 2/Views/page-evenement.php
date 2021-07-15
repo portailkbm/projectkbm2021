@@ -118,7 +118,7 @@
 				<button>Modifier</button>
 			</div>
 			<div id="divopserstatue">
-				<button>Supprimer</button>
+				<button onclick="../controlleur/sup_event.php">Supprimer</button>
 			</div>
 			<div id="divopserstatue">
 				<button>Archivé</button>

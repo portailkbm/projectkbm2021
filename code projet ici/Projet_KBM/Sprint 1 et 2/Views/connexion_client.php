@@ -57,8 +57,8 @@
 				</div>
 			</div>
 
-			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/envent_crea.php">
-				<div id="conteneurglobalinputCreer" style = "display:none">
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_crea.php">
+				<div id="conteneurglobalinputCreer" style = "display: inline">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -105,7 +105,7 @@
 				</div>
 			</form>
 
-			<div id="conteneurglobalinputModifier" style = "display: none">
+			<div id="conteneurglobalinputModifier" style = "display: inline">
 				<div class = "conteneurevenement">
 					<div class="flexinput"></div>
 					<div class="conteneurinput">
@@ -134,7 +134,7 @@
 				</div>
 			</div>
 
-			<div id="conteneurglobalinputSupprimer" style = "display: none">
+			<div id="conteneurglobalinputSupprimer" style = "display: inline">
 				<div class = "conteneurevenement">
 					<div class="flexinput"></div>
 					<div class="conteneurinput">

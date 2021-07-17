@@ -65,6 +65,13 @@
 							<h2>Creer un envenement :</h2>
 							<br>
 							<div>
+								Activer/Desactiver évènement
+								<label class="switch">
+									<input type="checkbox">
+									<span class="slider round"></span>
+								</label>
+							</div>
+							<div>
 								Date debut :
 								<input id="date" type="date" name="date_debut" value="2017-06-01">
 							</div>

@@ -7,7 +7,8 @@ function apparitionCreerevenement(){
 	}else if(document.getElementById("conteneurglobalinputCreer").style.display == 'none')
 	{
 		document.getElementById("conteneurglobalinputCreer").style.display = 'inline';
-		
+		document.getElementById("conteneurglobalinputModifier").style.display = 'none';
+		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none';
 	}
 	
 
@@ -18,9 +19,11 @@ function apparitionModifierevenement(){
 	if(document.getElementById("conteneurglobalinputModifier").style.display == 'none')
 	{
 		document.getElementById("conteneurglobalinputModifier").style.display = 'inline'
+		document.getElementById("conteneurglobalinputCreer").style.display = 'none';
+		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
 	}else if(document.getElementById("conteneurglobalinputModifier").style.display == 'inline')
 	{
-		document.getElementById("conteneurglobalinputModifier").style.display = 'none'
+		document.getElementById("conteneurglobalinputModifier").style.display = 'none';
 	}
 	
 
@@ -31,6 +34,8 @@ function apparitionSuppreimerevenement(){
 	if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'none')
 	{
 		document.getElementById("conteneurglobalinputSupprimer").style.display = 'inline'
+		document.getElementById("conteneurglobalinputModifier").style.display = 'none';
+		document.getElementById("conteneurglobalinputCreer").style.display = 'none';
 	}else if(document.getElementById("conteneurglobalinputSupprimer").style.display == 'inline')
 	{
 		document.getElementById("conteneurglobalinputSupprimer").style.display = 'none'
@@ -38,6 +43,10 @@ function apparitionSuppreimerevenement(){
 	
 
 }
+// fonction pour la gestion de la production
+
+
+
 
 
 

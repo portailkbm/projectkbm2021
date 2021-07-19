@@ -10,7 +10,7 @@
 	<header>
 		<a href="../Views/main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
-			<h1 id="titre">Client(Changera par rapport aux statue du compte)</h1>
+			<h1 id="titre">Client(Changera par rapport au statut du compte)</h1>
 
 		</div>
 		
@@ -39,12 +39,12 @@
 		</div>
 	</div>
 
-	<div id="principale">
+	<div id="principale"> <!-- option pour l'administrateurs uniquement-->
 		<div id="Evenement">
 			<div id="contenurtitre">
-				<h2>Evenement(visible que par l'administratr)</h2>
+				<h2>Evenement(visible que par l'admin)</h2>
 			</div>
-			<div id ="contenueuractionevenement">
+			<div class ="contenueuractionevenement">
 				<div class="buttonevenement">
 					<button onclick="apparitionCreerevenement()" >Creer</button>
 				</div>
@@ -58,7 +58,7 @@
 			</div>
 
 			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_crea.php">
-				<div id="conteneurglobalinputCreer" style = "display: inline">
+				<div id="conteneurglobalinputCreer" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -112,7 +112,7 @@
 				</div>
 			</form>
 
-			<div id="conteneurglobalinputModifier" style = "display: inline">
+			<div id="conteneurglobalinputModifier" style = "display: none">
 				<div class = "conteneurevenement">
 					<div class="flexinput"></div>
 					<div class="conteneurinput">
@@ -141,7 +141,7 @@
 				</div>
 			</div>
 
-			<div id="conteneurglobalinputSupprimer" style = "display: inline">
+			<div id="conteneurglobalinputSupprimer" style = "display: none">
 				<div class = "conteneurevenement">
 					<div class="flexinput"></div>
 					<div class="conteneurinput">
@@ -176,6 +176,337 @@
 					</div>
 				</div>
 		</div>
+
+
+		<div id = "Production">
+			<h1>Production</h1>
+			<div class="contenueuractionevenement">
+
+				<div class="buttonevenement">
+					<button>Producteur</button>
+				</div>
+
+				
+				<div class="buttonevenement">
+					<button>Exploitation</button>
+				</div>
+
+				
+				<div class="buttonevenement">
+					<button>Produits</button>
+				</div>
+				
+			</div>
+
+
+			<!-- choix option pour producteur -->
+
+			<div id="choixproducteur" style="display:none">
+				<div class="contenueuractionevenement" style ="background-color:#68af29">
+
+					<div class="buttonevenement" >
+						<button>Ajouter</button>
+					</div>
+
+
+					<div class="buttonevenement">
+						<button>Modifier</button>
+					</div>
+
+
+					<div class="buttonevenement">
+						<button>supprimer</button>
+					</div>
+
+				</div>
+
+			</div>
+				<!-- Creation producteur -->
+				<div id="conteneurglobalinputCreer" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<h2>Ajouter un producteur :</h2>
+							<br>
+							
+							<div>
+								<label for="pet-select">Civilité:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">--choix--</option>
+									<option value="Mr">MR</option>
+									<option value="Mme">Mme</option>
+								</select>
+							</div>
+							<div>
+								Nom :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Prenom :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Mobile :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Fixe :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Adresse mail :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Adresse :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="apparitionCreerevenement()">annuler</button>
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+
+					<!-- Modifier producteur -->
+				<div id="modifier_producteur" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<div class="celules">
+								<table class="table">
+									<thead>
+										<tr>
+											<th  scope="col">Organisateur</th>
+											<th  scope="col">Activités</th>
+											<th  scope="col">Lieux</th>
+											<th  scope="col">Date</th>
+										</tr>
+									</thead>
+									<tbody id="pointsTable" aligne="center">
+										<marquee behavior="scroll" direction="down">
+										</marquee>
+											<?php
+												include_once ("../models/modelevenement.php");
+												visualiser();
+											?>
+									</tbody>
+								</table> 
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+
+
+
+				
+
+			<!-- choix option pour Produit -->
+
+			<div id="choixproducteur" style="display:none">
+				<div class="contenueuractionevenement" style ="background-color:#68af29">
+
+					<div class="buttonevenement" >
+						<button>Ajouter</button>
+					</div>
+
+
+					<div class="buttonevenement">
+						<button>Modifier</button>
+					</div>
+
+
+					<div class="buttonevenement">
+						<button>supprimer</button>
+					</div>
+
+				</div>
+
+			</div>
+				<!-- Creation Produit -->
+				<div id="conteneurglobalinputCreer" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<h2>Ajouter un produit :</h2>
+							<br>
+							
+							<div>
+								Nom scientifique:
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							<div>
+								Nom local:
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							
+							
+							<div>
+								<label for="pet-select">Type de produit :</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">--choix--</option>
+									<option value="Mr">type1</option>
+									<option value="Mme">type2</option>
+								</select>
+							</div>
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="apparitionCreerevenement()">annuler</button>
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+
+					<!-- Modifier produit -->
+				<div id="modifier_producteur" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<div class="celules">
+								<table class="table">
+									<thead>
+										<tr>
+											<th  scope="col">Organisateur</th>
+											<th  scope="col">Activités</th>
+											<th  scope="col">Lieux</th>
+											<th  scope="col">Date</th>
+										</tr>
+									</thead>
+									<tbody id="pointsTable" aligne="center">
+										<marquee behavior="scroll" direction="down">
+										</marquee>
+											<?php
+												include_once ("../models/modelevenement.php");
+												visualiser();
+											?>
+									</tbody>
+								</table> 
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+
+
+
+				
+
+			<!-- choix option pour Exploitation -->
+
+			<div id="choixproducteur" style="display:none">
+				<div class="contenueuractionevenement" style ="background-color:#68af29">
+
+					<div class="buttonevenement" >
+						<button>Ajouter</button>
+					</div>
+
+
+					<div class="buttonevenement">
+						<button>Modifier</button>
+					</div>
+
+
+					<div class="buttonevenement">
+						<button>supprimer</button>
+					</div>
+
+				</div>
+
+			</div>
+				<!-- Creation Exploitation -->
+				<div id="conteneurglobalinputCreer" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<h2>Ajouter une Exploitation :</h2>
+							<br>
+							
+							<div>
+								Nom :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							
+							<div>
+								<label for="pet-select">Ville:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">--choix--</option>
+									<option value="pap">pap</option>
+									<option value="lamentin">lamentin</option>
+								</select>
+							</div>
+							<div>
+								<label for="pet-select">Type d'Exploitation :</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">--choix--</option>
+									<option value="Mr">type1</option>
+									<option value="Mme">type2</option>
+								</select>
+							</div>
+							
+							
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="apparitionCreerevenement()">annuler</button>
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+
+					<!-- Modifier producteur -->
+				<div id="modifier_producteur" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<div class="celules">
+								<table class="table">
+									<thead>
+										<tr>
+											<th  scope="col">Organisateur</th>
+											<th  scope="col">Activités</th>
+											<th  scope="col">Lieux</th>
+											<th  scope="col">Date</th>
+										</tr>
+									</thead>
+									<tbody id="pointsTable" aligne="center">
+										<marquee behavior="scroll" direction="down">
+										</marquee>
+											<?php
+												include_once ("../models/modelevenement.php");
+												visualiser();
+											?>
+									</tbody>
+								</table> 
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+
+
+		</div>
+
+
+		 <!-- option pour l'administrateurs et le producteurs-->
+		 fonctionnalité producteurs en cours de developpement
+
+
+
+
+
+
+
 	</div>
 
 

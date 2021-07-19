@@ -1,13 +1,15 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8" />
 		
 		<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 		<link rel="stylesheet" href="../css/style-main.css?v=<?php echo time() ?>" />
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 		<title>KBM - Acceuile</title>
 	</head>
 	<body class="vert">
@@ -50,9 +52,9 @@
 				<div class="separenavjaune"></div>
 				<div class="elemenrnav"><a href="">Bokantag</a></div>
 				<div class="separenavjaune"></div>
-				<div class="elemenrnav"><a href="">Produits</a></div>
+				<div class="elemenrnav"><a href="Produits.php">Produits</a></div>
 				<div class="separenavjaune"></div>
-				<div class="elemenrnav"><a href="">Producteur</a></div>
+				<div class="elemenrnav"><a href="Producteurs.php">Producteur</a></div>
 			</div>
 		</div>
 		<div class="tu"></div>
@@ -111,26 +113,26 @@
 			<!-- code tableau-->
 			<div>
 			<h2 style="text-align: center;">Evenement</h2>
-			<div class="celules">
-				<table class="table">
-					<thead>
-						<tr>
-							<th  scope="col">Organisateur</th>
-							<th  scope="col">Activités</th>
-							<th  scope="col">Lieux</th>
-							<th  scope="col">Dates</th>
-						</tr>
-					</thead>
-					<tbody id="pointsTable" aligne="center">
-						<marquee behavior="scroll" direction="down">
-						</marquee>
-						<?php
-						include_once ("../models/modelevenement.php");
-						visualiser();
-						?>
-					</tbody>
-				</table> 
-			</div>
+				<div class="celules">
+					<table class="table">
+						<thead>
+							<tr>
+								<th  scope="col">Organisateur</th>
+								<th  scope="col">Activités</th>
+								<th  scope="col">Lieux</th>
+								<th  scope="col">Dates</th>
+							</tr>
+						</thead>
+						<tbody id="pointsTable" aligne="center">
+							<marquee behavior="scroll" direction="down">
+							</marquee>
+							<?php
+							include_once ("../models/modelevenement.php");
+							visualiser();
+							?>
+						</tbody>
+					</table> 
+				</div>
 			</div>
 
 			

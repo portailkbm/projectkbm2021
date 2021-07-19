@@ -142,7 +142,7 @@ thead{
     width: 100%;
   }
   tbody{
-    height:10em; /* hauteur imposée */
+    height:23em; /* hauteur imposée */
     width: 100%;
     overflow-y: scroll;
     display: block;

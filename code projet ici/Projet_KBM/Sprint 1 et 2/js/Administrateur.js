@@ -121,7 +121,7 @@ function apparitionproduit(){
 // option produit
 
 function apparition_ajout_produit(){
-	// gestion apparition pour creer
+	// gestion apparition pour ajout produit
 	if(document.getElementById("ajouter_produits").style.display == 'none')
 	{
 		document.getElementById("ajouter_produits").style.display = 'inline'
@@ -133,7 +133,7 @@ function apparition_ajout_produit(){
 }
 
 function apparition_Modifier_produit(){
-	// gestion apparition pour creer
+	// gestion apparition pour modifier produit
 	if(document.getElementById("modifier_produit").style.display == 'none')
 	{
 		document.getElementById("modifier_produit").style.display = 'inline'

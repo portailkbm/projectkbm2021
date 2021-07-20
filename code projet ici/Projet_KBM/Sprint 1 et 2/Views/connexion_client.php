@@ -313,12 +313,12 @@
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
 					<div class="buttonevenement" >
-						<button>Ajouter</button>
+						<button onclick="apparition_ajout_produit()">Ajouter</button>
 					</div>
 
 
 					<div class="buttonevenement">
-						<button>Modifier</button>
+						<button onclick="apparition_Modifier_produit()" >Modifier</button>
 					</div>
 
 
@@ -465,7 +465,7 @@
 					</div>
 				</div>
 
-					<!-- Modifier producteur -->
+					<!-- Modifier exploitation -->
 				<div id="modifier_exploitation" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>

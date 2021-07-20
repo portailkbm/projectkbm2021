@@ -47,12 +47,77 @@ function apparitionSuppreimerevenement(){
 
 
 
+function apparitionchoixproduction(){
+	// gestion apparition pour creer
+	if(document.getElementById("choixproducteur").style.display == 'none')
+	{
+		document.getElementById("choixproducteur").style.display = 'inline'
+		
+	}else if(document.getElementById("choixproducteur").style.display == 'inline')
+	{
+		document.getElementById("choixproducteur").style.display = 'none'
+	}
+	
+
+}
 
 
 
+// fonction pour la gestion de l'exploitation
+
+function apparitionexploitation(){
+	// gestion apparition pour creer
+	if(document.getElementById("choixpexploitation").style.display == 'none')
+	{
+		document.getElementById("choixpexploitation").style.display = 'inline'
+		
+	}else if(document.getElementById("choixpexploitation").style.display == 'inline')
+	{
+		document.getElementById("choixpexploitation").style.display = 'none'
+	}
+}
+// option admin exploitation
+
+function apparition_ajout_exploitation(){
+	// gestion apparition pour creer
+	if(document.getElementById("ajouter_exploitation").style.display == 'none')
+	{
+		document.getElementById("ajouter_exploitation").style.display = 'inline'
+		
+	}else if(document.getElementById("ajouter_exploitation").style.display == 'inline')
+	{
+		document.getElementById("ajouter_exploitation").style.display = 'none'
+	}
+}
+function  apparition_modifier_exploitation(){
+	// gestion apparitio pour creer
+	if(document.getElementById("modifier_exploitation").style.display == 'none')
+	{
+		document.getElementById("modifier_exploitation").style.display = 'inline'
+		
+	}else if(document.getElementById("modifier_exploitation").style.display == 'inline')
+	{
+		document.getElementById("modifier_exploitation").style.display = 'none'
+	}
+}
 
 
+// fonction pour la gestion des produits
 
+
+function apparitionproduit(){
+	// gestion apparition pour creer
+	if(document.getElementById("choixproduit").style.display == 'none')
+	{
+		document.getElementById("choixproduit").style.display = 'inline'
+		
+	}else if(document.getElementById("choixproduit").style.display == 'inline')
+	{
+		document.getElementById("choixproduit").style.display = 'none'
+	}
+	
+
+}
 
 
 

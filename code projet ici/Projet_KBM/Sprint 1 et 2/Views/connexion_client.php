@@ -183,17 +183,17 @@
 			<div class="contenueuractionevenement">
 
 				<div class="buttonevenement">
-					<button>Producteur</button>
+					<button  onclick="apparitionchoixproduction()" >Producteur</button>
 				</div>
 
 				
 				<div class="buttonevenement">
-					<button>Exploitation</button>
+					<button onclick="apparitionchoixexploitation()" >Exploitation</button>
 				</div>
 
 				
 				<div class="buttonevenement">
-					<button>Produits</button>
+					<button onclick="apparitionproduit()" >Produits</button>
 				</div>
 				
 			</div>
@@ -202,15 +202,16 @@
 			<!-- choix option pour producteur -->
 
 			<div id="choixproducteur" style="display:none">
+			<h3>Production</h3>
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
 					<div class="buttonevenement" >
-						<button>Ajouter</button>
+						<button onclick="apparition_ajouter_producteur()" >Ajouter</button>
 					</div>
 
 
 					<div class="buttonevenement">
-						<button>Modifier</button>
+						<button onclick="apparition_modifier_producteur()" >Modifier</button>
 					</div>
 
 
@@ -222,7 +223,7 @@
 
 			</div>
 				<!-- Creation producteur -->
-				<div id="conteneurglobalinputCreer" style = "display: none">
+				<div id="ajouter_producteur" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -308,7 +309,7 @@
 
 			<!-- choix option pour Produit -->
 
-			<div id="choixproducteur" style="display:none">
+			<div id="choixproduit" style="display:none">
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
 					<div class="buttonevenement" >
@@ -329,7 +330,7 @@
 
 			</div>
 				<!-- Creation Produit -->
-				<div id="conteneurglobalinputCreer" style = "display: none">
+				<div id="ajouter_produits" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -366,7 +367,7 @@
 				</div>
 
 					<!-- Modifier produit -->
-				<div id="modifier_producteur" style = "display: none">
+				<div id="modifier_produit" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -401,16 +402,16 @@
 
 			<!-- choix option pour Exploitation -->
 
-			<div id="choixproducteur" style="display:none">
+			<div id="choixpexploitation" style="display:none">
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
 					<div class="buttonevenement" >
-						<button>Ajouter</button>
+						<button onclick="apparition_ajout_exploitation()" >Ajouter</button>
 					</div>
 
 
 					<div class="buttonevenement">
-						<button>Modifier</button>
+						<button onclick="apparition_modifier_exploitation()" >Modifier</button>
 					</div>
 
 
@@ -422,7 +423,7 @@
 
 			</div>
 				<!-- Creation Exploitation -->
-				<div id="conteneurglobalinputCreer" style = "display: none">
+				<div id="ajouter_exploitation" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -465,7 +466,7 @@
 				</div>
 
 					<!-- Modifier producteur -->
-				<div id="modifier_producteur" style = "display: none">
+				<div id="modifier_exploitation" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">

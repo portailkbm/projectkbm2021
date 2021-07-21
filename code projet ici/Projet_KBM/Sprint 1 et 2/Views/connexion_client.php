@@ -502,17 +502,17 @@
 
 		 <!-- option pour le producteurs-->
 		
-		 	<div id="choixpexploitation" style="display:inline">
+		 	<div id="choixproducteur" style="display:inline">
 		 		<h2>Producteurs</h2>
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
 					<div class="buttonevenement" >
-						<button onclick="apparition_ajout_exploitation()">Ajouter</button>
+						<button onclick="apparition_ajouter_produit_vente()">Ajouter</button>
 					</div>
 
 
 					<div class="buttonevenement">
-						<button onclick="apparition_modifier_exploitation()">visualiser</button>
+						<button onclick="apparition_visualiser_produit()">visualiser</button>
 					</div>
 
 				</div>

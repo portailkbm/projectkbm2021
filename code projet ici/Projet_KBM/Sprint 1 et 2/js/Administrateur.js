@@ -143,6 +143,29 @@ function apparition_Modifier_produit(){
 		document.getElementById("modifier_produit").style.display = 'none'
 	}
 }
+// js apparition producteur
+function apparition_ajouter_produit_vente(){
+	// gestion apparition pour modifier produit
+	if(document.getElementById("ajouter_produit_vente").style.display == 'none')
+	{
+		document.getElementById("ajouter_produit_vente").style.display = 'inline'
+		
+	}else if(document.getElementById("ajouter_produit_vente").style.display == 'inline')
+	{
+		document.getElementById("ajouter_produit_vente").style.display = 'none'
+	}
+}
+function apparition_visualiser_produit(){
+	// gestion apparition pour modifier produit
+	if(document.getElementById("visualiser_produit").style.display == 'none')
+	{
+		document.getElementById("visualiser_produit").style.display = 'inline'
+		
+	}else if(document.getElementById("visualiser_produit").style.display == 'inline')
+	{
+		document.getElementById("visualiser_produit").style.display = 'none'
+	}
+}
 
 /*
 

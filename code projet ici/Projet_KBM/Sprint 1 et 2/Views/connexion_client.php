@@ -499,8 +499,83 @@
 		</div>
 
 
-		 <!-- option pour l'administrateurs et le producteurs-->
-		 fonctionnalité producteurs en cours de developpement
+
+		 <!-- option pour le producteurs-->
+		
+		 	<div id="choixpexploitation" style="display:inline">
+		 		<h2>Producteurs</h2>
+				<div class="contenueuractionevenement" style ="background-color:#68af29">
+
+					<div class="buttonevenement" >
+						<button onclick="apparition_ajout_exploitation()">Ajouter</button>
+					</div>
+
+
+					<div class="buttonevenement">
+						<button onclick="apparition_modifier_exploitation()">visualiser</button>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!--ajouter un produits a la vente-->
+			<div id="ajouter_produit_vente" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<h2>Ajouter un produit a la vente :</h2>
+							<br>
+							
+							<div>
+								<label for="pet-select">produits:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<option value="pap">produit1</option>
+									<option value="lamentin">produit2</option>
+								</select>
+								Qte
+								<input type="int" id="name" name="name"  size="3">
+							</div>
+							
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="">annuler</button>
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+				<!--visualiser les produits -->
+				<div id="visualiser_produit" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<div class="celules">
+								<table class="table">
+									<thead>
+										<tr>
+											<th  scope="col">nom sc</th>
+											<th  scope="col">nom local</th>
+											<th  scope="col">Qte</th>
+										</tr>
+									</thead>
+									<tbody id="pointsTable" aligne="center">
+										<marquee behavior="scroll" direction="down">
+										</marquee>
+											<?php
+												include_once ("../models/modelevenement.php");
+												visualiser();
+											?>
+									</tbody>
+								</table> 
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
 
 
 

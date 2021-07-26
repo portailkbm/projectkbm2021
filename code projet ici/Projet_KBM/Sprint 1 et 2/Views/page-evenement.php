@@ -115,7 +115,7 @@
 		?>
 		<div id="actiondelimitation">
 			<div id="divopserstatue">
-				<button onclick="apparitionModifier()">Modifier</button>
+				<button onclick="Modifier()">Modifier</button>
 			</div>
 			<div id="divopserstatue">
 				<input type="button" value="Supprimer" id="button" onClick="window.location.href='../controlleur/sup_event.php'">
@@ -125,7 +125,8 @@
 			</div>
 		</div>
 		<!-- Vue afficher par le bouton modifier -->
-		<div id="Modifierenvenement" style = "display:none">
+		
+		<div id="Modifier-page-evenement" style = "display:none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">

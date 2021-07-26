@@ -188,7 +188,7 @@
 
 				
 				<div class="buttonevenement">
-					<button onclick="apparitionchoixexploitation()" >Exploitation</button>
+					<button onclick="apparitionexploitation()" >Exploitation</button>
 				</div>
 
 				

@@ -125,8 +125,8 @@
 			</div>
 		</div>
 		<!-- Vue afficher par le bouton modifier -->
-		
-		<div id="Modifier-page-evenement" style = "display:none">
+
+		<div id="Modifier-page-evenement" style = "display:inline">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">

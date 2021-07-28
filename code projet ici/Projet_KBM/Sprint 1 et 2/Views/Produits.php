@@ -49,7 +49,7 @@
 							<th  scope="col">Nom scientifique</th>
 							<th  scope="col">Nom local</th>
 							<th  scope="col">Type</th>
-							<th  scope="col">Exploitant</th>
+							<th  scope="col">Exploitation</th>
 						</tr>
 					</thead>
 					<tbody id="pointsTable" aligne="center">

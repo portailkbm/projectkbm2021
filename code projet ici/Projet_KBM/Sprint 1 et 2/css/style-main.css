@@ -16,7 +16,7 @@
     background-color: beige;
 }
 a { color: yellow; } /* CSS link color */
-a:hover { color: rgb(228, 168, 4); }
+a:hover { color: yellow; }
 
 
 

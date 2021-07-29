@@ -140,42 +140,34 @@
 					<div class="flexinput"></div>
 				</div>
 			</div>
-
-			<div id="conteneurglobalinputSupprimer" style = "display: none">
-				<div class = "conteneurevenement">
-					<div class="flexinput"></div>
-					<div class="conteneurinput">
-						supprimer
-						<div>
-							Nom
-							<input type="text" id="name" name="name"  size="25">
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_crea.php">
+				<div id="conteneurglobalinputSupprimer" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							Selectionner un évènement à supprimer
+							<div>
+									
+									<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
+										<option value="">--Votre Code Postal--</option>
+										<?php
+											include_once ( "../models/modelevenement.php" );
+											Select_Code_Postal_all();    
+										?>
+									</select> 
+								</div>
+							
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="apparitionSuppreimerevenement()">annuler</button>
+							</div>
 						</div>
-						<div>
-							Nom
-							<input type="text" id="name" name="name"  size="25">
+						<div class="flexinput"></div>
 						</div>
-						<div>
-							Nom
-							<input type="text" id="name" name="name"  size="25">
-						</div>
-						<div>
-							Nom
-							<input type="text" id="name" name="name"  size="25">
-						</div>
-						<div>
-							Nom
-							<input type="text" id="name" name="name"  size="25">
-						</div>
-						<br>
-						<div>
-							<button>valider</button>
-							<button>annuler</button>
-						</div>
-					</div>
-					<div class="flexinput"></div>
 					</div>
 				</div>
-		</div>
+			</form>
 
 
 		<div id = "Production">
@@ -202,7 +194,7 @@
 			<!-- choix option pour producteur -->
 
 			<div id="choixproducteur" style="display:none">
-			<h3>Production</h3>
+			<h3>Producteur</h3>
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
 					<div class="buttonevenement" >
@@ -503,8 +495,13 @@
 
 
 		</div>
+		<br>
 
+		<h2> fonctionnalite disponible uniquement pour le producteur ici</h2>
 
+<br>
+<br>
+<br>
 
 		 <!-- option pour le producteurs-->
 		
@@ -513,12 +510,12 @@
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
 					<div class="buttonevenement" >
-						<button onclick="apparition_ajouter_produit_vente()">Ajouter</button>
+						<button onclick="apparition_ajouter_produit_producteur()">Ajouter</button>
 					</div>
 
 
 					<div class="buttonevenement">
-						<button onclick="apparition_visualiser_produit()">visualiser</button>
+						<button onclick="apparition_visualiser_produit_producteur()">visualiser</button>
 					</div>
 
 				</div>

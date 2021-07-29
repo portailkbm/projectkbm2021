@@ -143,9 +143,33 @@ function apparition_Modifier_produit(){
 		document.getElementById("modifier_produit").style.display = 'none'
 	}
 }
-// js apparition producteur
-function apparition_ajouter_produit_vente(){
-	// gestion apparition pour modifier produit
+// js apparition producteur de production
+function apparition_ajouter_producteur(){
+	
+	if(document.getElementById("ajouter_producteur").style.display == 'none')
+	{
+		document.getElementById("ajouter_producteur").style.display = 'inline'
+		
+	}else if(document.getElementById("ajouter_producteur").style.display == 'inline')
+	{
+		document.getElementById("ajouter_producteur").style.display = 'none'
+	}
+}
+function apparition_modifier_producteur(){
+	
+	if(document.getElementById("modifier_producteur").style.display == 'none')
+	{
+		document.getElementById("modifier_producteur").style.display = 'inline'
+		
+	}else if(document.getElementById("modifier_producteur").style.display == 'inline')
+	{
+		document.getElementById("modifier_producteur").style.display = 'none'
+	}
+}
+
+// Apparition producteur option
+function apparition_ajouter_produit_producteur(){
+	
 	if(document.getElementById("ajouter_produit_vente").style.display == 'none')
 	{
 		document.getElementById("ajouter_produit_vente").style.display = 'inline'
@@ -155,8 +179,8 @@ function apparition_ajouter_produit_vente(){
 		document.getElementById("ajouter_produit_vente").style.display = 'none'
 	}
 }
-function apparition_visualiser_produit(){
-	// gestion apparition pour modifier produit
+function apparition_visualiser_produit_producteur(){
+	
 	if(document.getElementById("visualiser_produit").style.display == 'none')
 	{
 		document.getElementById("visualiser_produit").style.display = 'inline'

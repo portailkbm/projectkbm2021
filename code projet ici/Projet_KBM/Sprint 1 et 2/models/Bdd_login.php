@@ -17,7 +17,7 @@ define("BD_NAME", "demen1587164");
 
 define("BD_USER", "root");
 define("BD_MDP", "");
-define("BD_NAME", "test");
+define("BD_NAME", "demenjala");
 
 
 

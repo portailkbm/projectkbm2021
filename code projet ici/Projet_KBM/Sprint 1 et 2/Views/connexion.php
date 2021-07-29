@@ -81,7 +81,9 @@
         toujours mette la liasoin du fichiers apres ton code html
 
         tu peux envoyer des variables dans le code js
+        
         <button onclick="teste(ton parametre si besion)" >test</button>
+        
         si tu mets un parametre tu dois faire de meme avec la fonction js
             --->
         <div>

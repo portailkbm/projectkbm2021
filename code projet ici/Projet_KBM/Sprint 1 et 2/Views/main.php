@@ -11,6 +11,10 @@
 		<title>KBM - Acceuile</title>
 	</head>
 	<body class="vert">
+		<div class="titrepage">
+			<h1>Nou Kantan vwè'w</h1>
+		</div>
+		
 	<div id=divopserstatue></div>
 		<div id="statue">
 			<div>
@@ -65,7 +69,6 @@
 
 			<div id="conteneurtitre">
 				<div id="titre">
-				<p>Nou Kantan vwè'w</p>
 				</div>	
 			</div>
 

@@ -41,10 +41,10 @@
         }
     }
 
-    function CreerProduit($ns,$nl,$slt)
+    function CreerProduit($ns,$nl,$slt,$nf)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("INSERT INTO `exploitation` (`nomsavan`,`nomkreyol`,`descproduit`) VALUES ('$ns','$nl','$slt')");
+        $requete = $bdd->prepare("INSERT INTO `produit` (`nomkreyol`,`nomfranse`,`nomsavan`,`descproduit`) VALUES ('$nl','$nf','$ns','$slt')");
         $requete ->execute();   
     }
 

@@ -340,18 +340,22 @@
 								
 								<div>
 									Nom scientifique:
-									<input type="text" id="ns" name="name"  size="25">
+									<input type="text" id="ns" name="ns"  size="25">
+								</div>
+								<div>
+									Nom français:
+									<input type="text" id="nf" name="nf"  size="25">
 								</div>
 								<div>
 									Nom local:
-									<input type="text" id="nl" name="name"  size="25">
+									<input type="text" id="nl" name="nl"  size="25">
 								</div>
 								
 								
 								<div>
 									<label for="pet-select">Type de produit :</label>
 
-									<select name="pets" id="slt">
+									<select name="slt" id="slt">
 										<option value="">--choix--</option>
 										<option value="Fruit">Fruit</option>
 										<option value="Légume">Légume</option>
@@ -387,8 +391,8 @@
 										<marquee behavior="scroll" direction="down">
 										</marquee>
 											<?php
-												include_once ("../models/modelevenement.php");
-												visualiser();
+												include_once ("../models/modelproduit.php");
+												VisualiserProduit();
 											?>
 									</tbody>
 								</table> 

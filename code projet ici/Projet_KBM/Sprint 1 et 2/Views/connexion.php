@@ -68,6 +68,33 @@
                 <button class="champ vert" id="bouton" type="submit" >Connexion</button>
             </div>
         </form>
+
+        <!--
+
+        Pour lancer un code js il faut juste lier le fichiers js à la page.
+       exemple de fichiers js tu mets le chemin dans le src
+
+        <script src="../js/jquery-2.1.4.min.js"></script>
+
+        Je vais creer un fichier js qui va qui s'appel test avec une fonction et te mettre un bouton dans la page.html
+
+        toujours mette la liasoin du fichiers apres ton code html
+
+        tu peux envoyer des variables dans le code js
+        <button onclick="teste(ton parametre si besion)" >test</button>
+        si tu mets un parametre tu dois faire de meme avec la fonction js
+            --->
+        <div>
+            <h1>button test</h1>
+            <button onclick="teste()" >test</button>  
+                     
+
+        </div>
+
+        <script src="test.js"></script>s
+           
+
+
 </body>
 
 

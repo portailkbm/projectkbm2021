@@ -330,41 +330,43 @@
 
 			</div>
 				<!-- Creation Produit -->
-				<div id="ajouter_produits" style = "display: none">
-					<div class = "conteneurevenement">
-						<div class="flexinput"></div>
-						<div class="conteneurinput">
-							<h2>Ajouter un produit :</h2>
-							<br>
-							
-							<div>
-								Nom scientifique:
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Nom local:
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							
-							
-							<div>
-								<label for="pet-select">Type de produit :</label>
+				<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ctl_crea_prod.php">
+					<div id="ajouter_produits" style = "display: none">
+						<div class = "conteneurevenement">
+							<div class="flexinput"></div>
+							<div class="conteneurinput">
+								<h2>Ajouter un produit :</h2>
+								<br>
+								
+								<div>
+									Nom scientifique:
+									<input type="text" id="ns" name="name"  size="25">
+								</div>
+								<div>
+									Nom local:
+									<input type="text" id="nl" name="name"  size="25">
+								</div>
+								
+								
+								<div>
+									<label for="pet-select">Type de produit :</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">--choix--</option>
-									<option value="Mr">type1</option>
-									<option value="Mme">type2</option>
-								</select>
+									<select name="pets" id="slt">
+										<option value="">--choix--</option>
+										<option value="Fruit">Fruit</option>
+										<option value="Légume">Légume</option>
+									</select>
+								</div>
+								<br>
+								<div>
+									<button type="submit">valider</button>
+									<button onclick="apparitionCreerevenement()">annuler</button>
+								</div>
 							</div>
-							<br>
-							<div>
-								<button type="submit">valider</button>
-								<button onclick="apparitionCreerevenement()">annuler</button>
-							</div>
+							<div class="flexinput"></div>
 						</div>
-						<div class="flexinput"></div>
 					</div>
-				</div>
+				</form>
 
 					<!-- Modifier produit -->
 				<div id="modifier_produit" style = "display: none">
@@ -520,6 +522,7 @@
 			</div>
 
 			<!--ajouter un produits a la vente-->
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_ajout_produit.php">
 			<div id="ajouter_produit_vente" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
@@ -532,8 +535,10 @@
 
 								<select name="pets" id="pet-select">
 									<option value="">-----choix------</option>
-									<option value="pap">produit1</option>
-									<option value="lamentin">produit2</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
 								</select>
 								Qte
 								<input type="int" id="name" name="name"  size="3">
@@ -548,6 +553,7 @@
 						<div class="flexinput"></div>
 					</div>
 				</div>
+			</form>
 				<!--visualiser les produits -->
 				<div id="visualiser_produit" style = "display: none">
 					<div class = "conteneurevenement">
@@ -559,6 +565,7 @@
 										<tr>
 											<th  scope="col">nom sc</th>
 											<th  scope="col">nom local</th>
+											<th  scope="col">type</th>
 											<th  scope="col">Qte</th>
 										</tr>
 									</thead>
@@ -566,8 +573,8 @@
 										<marquee behavior="scroll" direction="down">
 										</marquee>
 											<?php
-												include_once ("../models/modelevenement.php");
-												visualiser();
+												include_once ("../models/modelproduit.php");
+												VisualiserProduit();
 											?>
 									</tbody>
 								</table> 

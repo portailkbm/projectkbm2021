@@ -24,6 +24,39 @@
         }
     }
 
+    function SelectProduit()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM produit');
+        $requete ->execute();   
+    
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo '<option valeur="';
+            echo $_SESSION["resultat"]['nomfranse'];
+            echo '">';
+            echo $_SESSION["resultat"]['nomfranse'];
+            echo '</option>';
+        }
+    }
+
+    function CreerProduit($ns,$nl,$slt)
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("INSERT INTO `exploitation` (`nomsavan`,`nomkreyol`,`descproduit`) VALUES ('$ns','$nl','$slt')");
+        $requete ->execute();   
+    }
+
+    function AddProduitToExploitation($prd,$qte)
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("INSERT INTO `exploitation` (`libevent`,`debutevent`) VALUES ('$prd','$qte')");
+        $requete ->execute();   
+    }
+
+
+
     function VisualiserProducteur()
     {
         $bdd= connection_bdd();

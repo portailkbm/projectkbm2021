@@ -24,6 +24,36 @@
         }
     }
 
+    function VisualiserProduitSup()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM produit');
+        $requete ->execute();
+
+        if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["nomsavan"];
+                echo "</td><td><a href='../controlleur/sup_produit.php?id=".$donnee["idproduit"]."'>";
+                echo $donnee["nomkreyol"];
+                echo "</a></td><td>";
+                echo $donnee["descproduit"];
+                echo "</td><td>";
+                echo $donnee["stock"];
+                echo "</td></tr>";
+            }
+        }
+    }
+
+    function Supprimer_Produit($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('DELETE FROM `produit` WHERE `idproduit` LIKE "'.$select.'"');
+        $requete ->execute(); 
+    }
+
     function SelectProduit()
     {
         $bdd= connection_bdd();
@@ -78,11 +108,11 @@
         }
     }
 
-    function CreerProducteur($lib,$deb,$fin,$hd,$hf,$cp)
+    function CreerProducteur($nom,$prcenom,$mob,$fixe,$mail,$adresse,$civil,$cp)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("INSERT INTO `producteur` (`libevent`,`debutevent`,`finevent`,`debutevent_hr`,`finevent_hr`,`cp`) VALUES ('$lib','$deb','$fin','$hd','$hf','$cp') ");
-        $requete ->execute();
+        $requete = $bdd->prepare("INSERT INTO `producteur` (`nomprod`,`telprod`,`mailprod`,`cp`,`prenomprod`,`adresse`) VALUES ('$nom','$mob','$mail','$cp','$prcenom','$adresse') ");
+       // $requete ->execute();
 
         if ( $requete ->execute())
         {
@@ -99,9 +129,30 @@
         $requete ->execute();
     }
 
+    function VisualiserProducteurSup()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM producteur');
+        $requete ->execute();
+
+        if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["nomprod"];
+                echo "</td><td><a href='../controlleur/sup_producteur.php?id=".$donnee["idprod"]."'>";
+                echo $donnee["telprod"];
+                echo "</a></td><td>";
+                echo $donnee["mailprod"];
+                echo "</td></tr>";
+            }
+        }
+    }
+    
      function SupprimerProducteur($select){
 
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('DELETE * FROM `producteur` WHERE `idprod` LIKE "'.$select.'"');
+        $requete = $bdd->prepare('DELETE FROM `producteur` WHERE `idprod` LIKE "'.$select.'"');
         $requete ->execute(); 
     }

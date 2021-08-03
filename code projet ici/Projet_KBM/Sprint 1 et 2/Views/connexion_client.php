@@ -240,55 +240,67 @@
 
 			</div>
 				<!-- Creation producteur -->
-				<div id="ajouter_producteur" style = "display: none">
-					<div class = "conteneurevenement">
-						<div class="flexinput"></div>
-						<div class="conteneurinput">
-							<h2>Ajouter un producteur :</h2>
-							<br>
-							
-							<div>
-								<label for="pet-select">Civilité:</label>
+				<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/crea_producteur_ctrl.php">
+					<div id="ajouter_producteur" style = "display: none">
+						<div class = "conteneurevenement">
+							<div class="flexinput"></div>
+							<div class="conteneurinput">
+								<h2>Ajouter un producteur :</h2>
+								<br>
+								
+								<div>
+									<label for="pet-select">Civilité:</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">--choix--</option>
-									<option value="Mr">MR</option>
-									<option value="Mme">Mme</option>
-								</select>
+									<select name="civil" id="pet-select">
+										<option value="">--choix--</option>
+										<option value="Mr">MR</option>
+										<option value="Mme">Mme</option>
+									</select>
+								</div>
+								<div>
+									Nom :
+									<input type="text" id="name" name="nom"  size="25">
+								</div>
+								<div>
+									Prenom :
+									<input type="text" id="name" name="prenom"  size="25">
+								</div>
+								<div>
+									Mobile :
+									<input type="text" id="name" name="mobile"  size="25">
+								</div>
+								<div>
+									Fixe :
+									<input type="text" id="name" name="fixe"  size="25">
+								</div>
+								<div>
+									Adresse mail :
+									<input type="text" id="name" name="mail"  size="25">
+								</div>
+								<div>
+									Adresse :
+									<input type="text" id="name" name="ad"  size="25">
+								</div>
+								<div>
+								Code Postal
+									<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
+										<option value="">--Votre Code Postal--</option>
+										<?php
+											include_once ( "../models/modelevenement.php" );
+											Select_Code_Postal_all();    
+										?>
+									</select> +
+							    </div>
+								<br>
+								<div>
+									<button type="submit">valider</button>
+									<button onclick="apparitionCreerevenement()">annuler</button>
+								</div>
 							</div>
-							<div>
-								Nom :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Prenom :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Mobile :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Fixe :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Adresse mail :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Adresse :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<br>
-							<div>
-								<button type="submit">valider</button>
-								<button onclick="apparitionCreerevenement()">annuler</button>
-							</div>
+							<div class="flexinput"></div>
 						</div>
-						<div class="flexinput"></div>
 					</div>
-				</div>
+				</form> 
 
 					<!-- Modifier producteur -->
 				<div id="modifier_producteur" style = "display: none">
@@ -317,6 +329,40 @@
 							</div>
 						</div>
 						<div class="flexinput"></div>
+					</div>
+				</div>
+
+
+				<!-- Supression producteur -->
+				<div id="conteneurglobalinputSupprimer" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+							<div class="conteneurinput">
+								Selectionner un évènement à supprimer
+
+								<div class="celules">
+									<table class="table">
+										<thead>
+											<tr>
+												<th  scope="col">Organisateur</th>
+												<th  scope="col">Activités</th>
+												<th  scope="col">Lieux</th>
+												<th  scope="col">Date</th>
+											</tr>
+										</thead>
+										<tbody id="pointsTable" aligne="center">
+											<marquee behavior="scroll" direction="down">
+											</marquee>
+												<?php
+													include_once ("../models/modelevenement.php");
+													Visualiser_Sup();
+												?>
+										</tbody>
+									</table> 
+								</div>
+							</div> 
+						<div class="flexinput"></div>
+						</div>
 					</div>
 				</div>
 

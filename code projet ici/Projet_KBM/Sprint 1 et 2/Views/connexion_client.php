@@ -146,23 +146,48 @@
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
 							Selectionner un évènement à supprimer
+
+							<div class="celules">
+							<table class="table">
+								<thead>
+									<tr>
+										<th  scope="col">Organisateur</th>
+										<th  scope="col">Activités</th>
+										<th  scope="col">Lieux</th>
+										<th  scope="col">Date</th>
+									</tr>
+								</thead>
+								<tbody id="pointsTable" aligne="center">
+									<marquee behavior="scroll" direction="down">
+									</marquee>
+										<?php
+											include_once ("../models/modelevenement.php");
+											Visualiser_Sup();
+										?>
+								</tbody>
+							</table> 
+						</div>
+
+
+
+							<!--
 							<div>
 									
 									<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
 										<option value="">--Votre Code Postal--</option>
 										<?php
-											include_once ( "../models/modelevenement.php" );
-											Select_Code_Postal_all();    
+											//include_once ( "../models/modelevenement.php" );
+											//Select_Code_Postal_all();    
 										?>
 									</select> 
-								</div>
+							</div>
 							
 							<br>
 							<div>
 								<button type="submit">valider</button>
 								<button onclick="apparitionSuppreimerevenement()">annuler</button>
-							</div>
-						</div>
+							</div> -->
+						</div> 
 						<div class="flexinput"></div>
 						</div>
 					</div>

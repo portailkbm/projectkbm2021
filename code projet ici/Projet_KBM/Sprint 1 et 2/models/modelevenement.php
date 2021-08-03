@@ -6,7 +6,7 @@ include_once("Bdd_login.php");
     function visualiser()
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
+        $requete = $bdd->prepare('SELECT * FROM evenement');
         $requete ->execute();
 
         if ( $requete ->execute())
@@ -24,6 +24,27 @@ include_once("Bdd_login.php");
         }
     }
     
+    function visualiser_Sup()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM evenement');
+        $requete ->execute();
+
+        if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevensup.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
+            }
+        }
+    }
+
     function filter($trier)
     {
         $bdd= connection_bdd();
@@ -238,7 +259,7 @@ include_once("Bdd_login.php");
      function Supprimer_Evenement($select){
 
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('DELETE * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete = $bdd->prepare('DELETE FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
         $requete ->execute(); 
     }
     

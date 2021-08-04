@@ -1,0 +1,217 @@
+
+
+
+.rouge{
+    background-color: #dc4e56;
+}
+
+.vert{
+    background-color: #80B650;
+}
+
+.bleu{
+    background-color: #048b9a;
+}
+.beige{
+    background-color: beige;
+}
+a { color: yellow; } /* CSS link color */
+a:hover { color: yellow; }
+
+.titrepage{
+    font-weight: bold;
+    font-size: 2.2em;
+    text-align: center;
+    color: yellow;
+}
+
+.champc{
+	border-radius:8px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color: black;
+	font-family:Calibri, sans-serif;
+	font-size:17px;
+	padding:16px 5px;
+    text-align: center;
+    width: 100px;
+    float: right;
+}
+
+
+#principale{
+    display: flex;
+    flex-direction: row;
+}
+
+#pgauche{
+    flex: 12;
+    display:flex;
+    flex-direction: column ;
+    width: 500px;
+
+}
+#pcentre{
+    flex: 1;
+}
+
+#pdroite{
+    flex: 12;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5em;   
+}
+#titre{
+    font-family: Calibri, sans-serif;
+    font-size: 3em;
+    flex: 1;
+}
+#contnav{
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+    padding: 0.5em;
+}
+#cent{
+    justify-content: center;
+    display: flex;
+    flex: 5;
+}
+.tu{
+    flex: 1;
+}
+.elemenrnav{
+    flex: 10;
+    color: chartreuse;
+}
+.separenavjaune{
+    background-color: yellow;
+    width: 3px;
+    height: 1.1em;
+    flex: 1;
+}
+#conteneurslide{
+    flex: 1;
+    min-width: 550px;
+    min-height: 300px;
+}
+
+
+.diapo{
+    position: relative;
+    overflow: hidden;
+}
+
+#nav-droite, #nav-gauche{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3em;
+}
+
+#nav-droite{
+    right: 20px;
+}
+#nav-gauche{
+    left: 20px;
+}
+.elements{
+    display: flex;
+    transition: 1s linear;
+}
+
+.element{
+    flex: 1 0 100%;
+    position: relative;
+}
+
+.element > img{
+    width: 100%;
+}
+
+.caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255,255,255,0.4);
+    padding: 30px;
+}
+
+/* table à entête fixe */
+thead{
+    display: block;
+    width: 100%;
+  }
+  tbody{
+    height:23em; /* hauteur imposée */
+    width: 100%;
+    overflow-y: scroll;
+    display: block;
+  }
+  table th, table td {
+    width:10%;
+  }
+  /* ---------------------- */
+  /* DECO */
+  .celules {
+    width: 100%; /* pour les TESTS */
+    margin:0 auto;
+  
+  }
+  table {
+    text-align: center;
+    width: 100%;
+    border-collapse:collapse;
+    font-size: 85%;
+    font-family:Arial,sans-serif;
+  }
+  table th {
+    padding:5px 1px;
+    background: #ccc;
+    border: 1px solid #666;
+  }
+  table td {
+    border: 1px solid #ccc;
+    padding:8px 3px;
+  }
+  
+  #Organisateur{
+      width: 10em;
+  }
+  
+  
+  #activités{
+  
+      width: 20em;
+  }
+  
+  #lieux{
+      width: 15em;
+  }
+  
+  #dates{
+  
+      width: 5em;
+  
+  }
+  
+  /* ---------------------- */
+  
+
+/* code Colvil*/
+#conteneursatue{
+    display: flex;
+  }
+  #statue{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  #divopserstatue{
+    flex: 1;
+  }

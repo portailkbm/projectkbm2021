@@ -1,0 +1,184 @@
+/* COULEURS */
+.rouge{
+    background-color: #dc4e56;
+}
+
+.vert{
+    background-color: #80B650;
+}
+
+.blanc{
+  color: white;
+}
+
+body {
+  background-color: #80B650;
+}
+
+.champc{
+  border:1px solid black;
+  font-family:Calibri, sans-serif;
+  font-size:17px;
+  padding:16px 5px;
+    text-align: center;
+    width: 100px;
+    float: right;
+
+}
+
+#titre{
+    font-family: Calibri, sans-serif;
+    color: black;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+
+#logo-retour{
+  position: absolute;
+  width: 3.5%;
+  height: auto;
+}
+
+
+#wrapper{
+  width: 100%;
+    margin:0 auto;
+    padding: 0 10px;
+    padding-bottom: 100px;
+}
+
+#infos{
+  margin-right: 7%;
+}
+
+#moitieG{
+  width: 75%;
+  height: 450px;
+  
+}
+
+#scroll{
+  overflow-y: scroll;
+  height: 450px;
+}
+
+
+#moitieD{
+  border:1px solid black;
+  width: 20%;
+  height: 530px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#centrale{
+  display: flex;
+  justify-content: space-between;
+}
+
+.event{
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 75%;
+}
+
+
+table {
+  border:1px solid black;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-collapse:collapse;
+  font-size: 85%;
+  font-family:Arial,sans-serif;
+
+}
+
+
+table th {
+  padding:5px 1px;
+  background: #ccc;
+  border: 1px solid #666;
+}
+
+
+table td {
+  border: 5px solid #ccc;
+  padding:8px 3px;
+  background-color: white;
+}
+/* code Colvil*/
+#conteneursatue{
+  display: flex;
+}
+#statue{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 1;
+}
+#divopserstatue{
+  flex: 1;
+}
+
+
+#Evenement{
+  display: flex;
+  flex-direction: column;
+}
+#contenurtitre{
+  flex:1;
+}
+#contenueuractionevenement{
+  flex:1;
+  display:flex;
+  flex-direction: row;
+}
+.buttonevenement{
+  display:flex;
+  flex:1;
+  align-items:center;
+  justify-content:center;
+}
+button{
+  height:50px; 
+  width:150px;
+  border-radius: 5px;
+  background-color: #dc4e56;
+  font-size:large;
+}
+#conteneurglobalinputCreer{
+  display: flex;
+  padding: 3%;
+  background-color:#5A7F3A;
+  border-radius: 5px;
+}
+#conteneurglobalinputModifier{
+  display: flex;
+  padding: 3%;
+  background-color:#5A7F3A;
+  border-radius: 5px;
+}
+#conteneurglobalinputSupprimer{
+  display: flex;
+  padding: 3%;
+  background-color:#5A7F3A;
+  border-radius: 5px;
+}
+
+.conteneurinput{
+  display:flex;
+  flex-direction: column;
+  flex:1;
+  font-size:x-large
+}
+.flexinput{
+  flex:1;
+}
+
+

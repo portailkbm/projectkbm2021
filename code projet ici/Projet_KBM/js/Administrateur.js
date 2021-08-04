@@ -191,6 +191,46 @@ function apparition_visualiser_produit_producteur(){
 	}
 }
 
+/*gestion supprimer*/
+
+function apparition_supprimerProducteur(){
+	
+	if(document.getElementById("supprimerProducteur").style.display == 'none')
+	{
+		document.getElementById("supprimerProducteur").style.display = 'inline'
+		
+	}else if(document.getElementById("supprimerProducteur").style.display == 'inline')
+	{
+		document.getElementById("supprimerProducteur").style.display = 'none'
+	}
+}
+
+
+function apparition_supprimerProduit(){
+	
+	if(document.getElementById("supprimerProduit").style.display == 'none')
+	{
+		document.getElementById("supprimerProduit").style.display = 'inline'
+		
+	}else if(document.getElementById("supprimerProduit").style.display == 'inline')
+	{
+		document.getElementById("supprimerProduit").style.display = 'none'
+	}
+}
+
+
+function apparition_SupprimerExploitation(){
+	
+	if(document.getElementById("supprimerExploitation").style.display == 'none')
+	{
+		document.getElementById("supprimerExploitation").style.display = 'inline'
+		
+	}else if(document.getElementById("supprimerExploitation").style.display == 'inline')
+	{
+		document.getElementById("supprimerExploitation").style.display = 'none'
+	}
+}
+
 /*
 
 function Gestiondesproduits(){

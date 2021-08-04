@@ -167,26 +167,6 @@
 								</tbody>
 							</table> 
 						</div>
-
-
-
-							<!--
-							<div>
-									
-									<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
-										<option value="">--Votre Code Postal--</option>
-										<?php
-											//include_once ( "../models/modelevenement.php" );
-											//Select_Code_Postal_all();    
-										?>
-									</select> 
-							</div>
-							
-							<br>
-							<div>
-								<button type="submit">valider</button>
-								<button onclick="apparitionSuppreimerevenement()">annuler</button>
-							</div> -->
 						</div> 
 						<div class="flexinput"></div>
 						</div>
@@ -233,7 +213,7 @@
 
 
 					<div class="buttonevenement">
-						<button>supprimer</button>
+						<button onclick="apparition_supprimerProducteur()" >supprimer</button>
 					</div>
 
 				</div>
@@ -334,11 +314,11 @@
 
 
 				<!-- Supression producteur -->
-				<div id="conteneurglobalinputSupprimer" style = "display: none">
+				<div id="supprimerProducteur" style = "display: none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 							<div class="conteneurinput">
-								Selectionner un évènement à supprimer
+								Selectionner un évènement à supprimer producteur
 
 								<div class="celules">
 									<table class="table">
@@ -386,7 +366,7 @@
 
 
 					<div class="buttonevenement">
-						<button>supprimer</button>
+						<button onclick="apparition_supprimerProduit()">supprimer</button>
 					</div>
 
 				</div>
@@ -465,6 +445,39 @@
 					</div>
 				</div>
 
+				<!-- Supression produit -->
+				<div id="supprimerProduit" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+							<div class="conteneurinput">
+								Selectionner un évènement à supprimer produit :
+
+								<div class="celules">
+									<table class="table">
+										<thead>
+											<tr>
+												<th  scope="col">Organisateur</th>
+												<th  scope="col">Activités</th>
+												<th  scope="col">Lieux</th>
+												<th  scope="col">Date</th>
+											</tr>
+										</thead>
+										<tbody id="pointsTable" aligne="center">
+											<marquee behavior="scroll" direction="down">
+											</marquee>
+												<?php
+													include_once ("../models/modelevenement.php");
+													Visualiser_Sup();
+												?>
+										</tbody>
+									</table> 
+								</div>
+							</div> 
+						<div class="flexinput"></div>
+						</div>
+					</div>
+				</div>
+
 
 
 				
@@ -485,7 +498,7 @@
 
 
 					<div class="buttonevenement">
-						<button>supprimer</button>
+						<button  onclick="apparition_SupprimerExploitation()">supprimer</button>
 					</div>
 
 				</div>
@@ -563,6 +576,40 @@
 						<div class="flexinput"></div>
 					</div>
 				</div>
+
+
+				<div id="supprimerExploitation" style = "display: none">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+							<div class="conteneurinput">
+								Selectionner un évènement à supprimer producteur
+
+								<div class="celules">
+									<table class="table">
+										<thead>
+											<tr>
+												<th  scope="col">Organisateur</th>
+												<th  scope="col">Activités</th>
+												<th  scope="col">Lieux</th>
+												<th  scope="col">Date</th>
+											</tr>
+										</thead>
+										<tbody id="pointsTable" aligne="center">
+											<marquee behavior="scroll" direction="down">
+											</marquee>
+												<?php
+													include_once ("../models/modelevenement.php");
+													Visualiser_Sup();
+												?>
+										</tbody>
+									</table> 
+								</div>
+							</div> 
+						<div class="flexinput"></div>
+						</div>
+					</div>
+				</div>
+
 
 
 		</div>

@@ -133,6 +133,18 @@
 							<h2>Modifier l'evenements :</h2>
 							<br>
 							<div>
+								<label for="pet-select">Producteur:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								
+							</div>
+							<div>
 								Date debut :
 								<input id="date" type="date" name="date_debut" value="2017-06-01">
 							</div>

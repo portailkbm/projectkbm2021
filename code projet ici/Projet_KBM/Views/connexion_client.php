@@ -374,6 +374,7 @@
 			</div>
 				<!-- Creation Produit -->
 				<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ctl_crea_prod.php">
+
 					<div id="ajouter_produits" style = "display: none">
 						<div class = "conteneurevenement">
 							<div class="flexinput"></div>
@@ -416,34 +417,68 @@
 				</form>
 
 					<!-- Modifier produit -->
-				<div id="modifier_produit" style = "display: none">
-					<div class = "conteneurevenement">
-						<div class="flexinput"></div>
-						<div class="conteneurinput">
-							<div class="celules">
-								<table class="table">
-									<thead>
-										<tr>
-											<th  scope="col">Organisateur</th>
-											<th  scope="col">Activités</th>
-											<th  scope="col">Lieux</th>
-											<th  scope="col">Date</th>
-										</tr>
-									</thead>
-									<tbody id="pointsTable" aligne="center">
-										<marquee behavior="scroll" direction="down">
-										</marquee>
-											<?php
-												include_once ("../models/modelproduit.php");
-												VisualiserProduit();
-											?>
-									</tbody>
-								</table> 
+				
+					
+					<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ctl_crea_prod.php">
+					<div id="modifier_produit" style = "display: none">
+						
+							<div class = "conteneurevenement">
+								<div class="flexinput"></div>
+								<div class="conteneurinput">
+									<h2>modifier un produit :</h2>
+									<div>
+									
+								</div>
+									<br>
+									<div>
+								<label for="pet-select">Produit:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								
 							</div>
+									
+									<div>
+										Nom scientifique:
+										<input type="text" id="ns" name="ns"  size="25">
+									</div>
+									<div>
+										Nom français:
+										<input type="text" id="nf" name="nf"  size="25">
+									</div>
+									<div>
+										Nom local:
+										<input type="text" id="nl" name="nl"  size="25">
+									</div>
+									
+									
+									<div>
+										<label for="pet-select">Type de produit :</label>
+
+										<select name="slt" id="slt">
+											<option value="">--choix--</option>
+											<option value="Fruit">Fruit</option>
+											<option value="Légume">Légume</option>
+										</select>
+									</div>
+									<br>
+									<div>
+										<button type="submit">valider</button>
+										<button onclick="apparitionCreerevenement()">annuler</button>
+									</div>
+								</div>
+								<div class="flexinput"></div>
+							</div>
+						
 						</div>
-						<div class="flexinput"></div>
-					</div>
-				</div>
+					</form>
+
+			
 
 				<!-- Supression produit -->
 				<div id="supprimerProduit" style = "display: none">
@@ -511,6 +546,18 @@
 						<div class="conteneurinput">
 							<h2>Ajouter une Exploitation :</h2>
 							<br>
+							<div>
+								<label for="pet-select">Producteur:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								
+							</div>
 							
 							<div>
 								Nom :
@@ -552,29 +599,67 @@
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
-							<div class="celules">
-								<table class="table">
-									<thead>
-										<tr>
-											<th  scope="col">Organisateur</th>
-											<th  scope="col">Activités</th>
-											<th  scope="col">Lieux</th>
-											<th  scope="col">Date</th>
-										</tr>
-									</thead>
-									<tbody id="pointsTable" aligne="center">
-										<marquee behavior="scroll" direction="down">
-										</marquee>
-											<?php
-												include_once ("../models/modelevenement.php");
-												visualiser();
-											?>
-									</tbody>
-								</table> 
+							<h2>Modifier une Exploitation :</h2>
+							<br>
+							<div>
+								<label for="pet-select">Exploitation:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								
+							</div>
+							<div>
+								<label for="pet-select">Producteur:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								
+							</div>
+							
+							<div>
+								Nom :
+								<input type="text" id="name" name="name"  size="25">
+							</div>
+							
+							<div>
+								<label for="pet-select">Ville:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">--choix--</option>
+									<option value="pap">pap</option>
+									<option value="lamentin">lamentin</option>
+								</select>
+							</div>
+							<div>
+								<label for="pet-select">Type d'Exploitation :</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">--choix--</option>
+									<option value="Mr">type1</option>
+									<option value="Mme">type2</option>
+								</select>
+							</div>
+							
+							
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="apparitionCreerevenement()">annuler</button>
 							</div>
 						</div>
 						<div class="flexinput"></div>
 					</div>
+					
 				</div>
 
 
@@ -648,6 +733,18 @@
 						<div class="conteneurinput">
 							<h2>Ajouter un produit a la vente :</h2>
 							<br>
+							<div>
+								<label for="pet-select">Exploitation:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								
+							</div>
 							
 							<div>
 								<label for="pet-select">produits:</label>
@@ -662,6 +759,7 @@
 								Qte
 								<input type="int" id="name" name="name"  size="3">
 							</div>
+
 							
 							<br>
 							<div>

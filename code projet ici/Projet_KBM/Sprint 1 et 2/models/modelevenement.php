@@ -1,26 +1,12 @@
 <?php
+    // session_start();
 
-// ne pas oublier de changer le host des 2 fonction
-
-    function connection_bdd() {
-        try
-        {
-           // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
-           $useur = 'root';
-           $pass = '';
-           include_once("Bdd_login.php");
-           $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
-        }
-        catch (Exception $e)
-        {
-                die('Erreur : ' . $e->getMessage());
-        }
-        return $bdd;
-    }
+include_once("Bdd_login.php");
+    
     function visualiser()
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM evenement WHERE visevent = 1');
+        $requete = $bdd->prepare('SELECT * FROM evenement');
         $requete ->execute();
 
         if ( $requete ->execute())
@@ -38,6 +24,27 @@
         }
     }
     
+    function visualiser_Sup()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM evenement');
+        $requete ->execute();
+
+        if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevensup.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";
+            }
+        }
+    }
+
     function filter($trier)
     {
         $bdd= connection_bdd();
@@ -168,6 +175,7 @@
 
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
+
         {
             echo ' '.$_SESSION["resultat"]["desevent"].' ';
         }  
@@ -201,7 +209,60 @@
             echo '</option>';
         }
     }
+    function Test ()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "1"');
+        $requete ->execute();
+        $_SESSION["resultat"] = $requete ->execute();
 
+        if ( $_SESSION["resultat"] = $requete->fetch())
+        {
+            while($donnee = $requete->fetch())
+            {
+              $test = $_SESSION["resultat"]['flyer'];
+            }
+        }
+        
+    }
+
+    function Select_FL_Evenement($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo '<img src="data:image/jpeg;base64,'.base64_encode( $_SESSION["resultat"]['flyer'] ).'"/>';
+        }  
+    }
+// ligne 223 bugger
+    function Cree_Evenement($lib,$deb,$fin,$hd,$hf,$cp){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("INSERT INTO `evenement` (`libevent`,`debutevent`,`finevent`,`debutevent_hr`,`finevent_hr`,`cp`) VALUES ('$lib','$deb','$fin','$hd','$hf','$cp') ");
+     /*   $requete = $bdd->prepare('INSERT INTO `evenement` (`idevent`, `classement`, `typeevent`,
+         `libevent`, `desevent`, `photoevent`, `flyer`, `debutevent`, `debutevent_hr`,
+          `finevent`, `finevent_hr`, `cr_event`, `visevent`, `cp`, `idlak`, `idassoc`) VALUES (NULL,
+           NULL, NULL, $lib, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ``, NULL, NULL) ');*/
+        
+        $requete ->execute();
+    }
+
+    function Modifier_Evenement($lib,$deb,$fin,$hd,$hf,$cp,$select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('UPDATE `evenement` SET libevent = `$lib`,debutevent=`$deb`,finevent=`$fin`,debutevent_hr=`$hd`,finevent_hr=`$hf`,cp=`$cp` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute();
+    }
+
+     function Supprimer_Evenement($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('DELETE FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+        $requete ->execute(); 
+    }
+    
     function Select_Flyer_Evenement($select){
 
         $bdd= connection_bdd();
@@ -217,42 +278,38 @@
         }  
     }
 
-    function Trie_code_postal($select){
+/*
+    function Select_Flyer_Evenement($select){
 
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `cp` LIKE "'.$select.'"');
+        $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
         $requete ->execute();
 
-         if ( $requete ->execute())
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
         {
-            while($donnee = $requete->fetch())
-            {
-                echo "<tr><td>";
-                echo $donnee["debutevent"];
-                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
-                echo $donnee["libevent"];
-                echo "</a></td><td>";
-                echo $donnee["cp"];
-                echo "</td></tr>";                  
-            }
-        }
-    }
+            //echo '<p class="fichier"><strong>'.htmlspecialchars($_SESSION["resultat"]['date']).'</strong> : <a href="'.$_SESSION["resultat"]['fichier'].'">'. htmlspecialchars($_SESSION["resultat"]['fichier']).'</a></p>';
+            echo '<a href='.$_SESSION["resultat"]['date'].' download="">télécharcher le lien</a>';
+           
+        }  
+    }*/
 
 
 
     /*
-                echo ' id = '.$donnee["idevent"].'</br>';
-                echo ' type = '.$donnee["typeevent"].'</br>';
-                echo ' lib = '.$donnee["libevent"].'</br>';
-                echo ' des = '.$donnee["desevent"].'</br>';
-                echo ' photo = '.$donnee["photoevent"].'</br>';
-                echo ' flyer = '.$donnee["flyer"].'</br>';
-                echo ' debut = '.$donnee["debutevent"].'</br>';
-                echo ' debut_hr = '.$donnee["debutevent_hr"].'</br>';
-                echo ' fin = '.$donnee["finevent"].'</br>';
-                echo ' fin_fr = '.$donnee["finevent_hr"].'</br>';
-                echo ' cr_event = '.$donnee["cr_event"].'</br>';
-                echo ' visevent = '.$donnee["visevent"].'</br>';
-                echo ' code postale = '.$donnee["cp"].'</br>';
-                echo ' idlak = '.$donnee["idlak"].'</br></br>'; */
+    echo ' id = '.$donnee["idevent"].'</br>';
+    echo ' type = '.$donnee["typeevent"].'</br>';
+    echo ' lib = '.$donnee["libevent"].'</br>';
+    echo ' des = '.$donnee["desevent"].'</br>';
+    echo ' photo = '.$donnee["photoevent"].'</br>';
+    echo ' flyer = '.$donnee["flyer"].'</br>';
+    echo ' debut = '.$donnee["debutevent"].'</br>';
+    echo ' debut_hr = '.$donnee["debutevent_hr"].'</br>';
+    echo ' fin = '.$donnee["finevent"].'</br>';
+    echo ' fin_fr = '.$donnee["finevent_hr"].'</br>';
+    echo ' cr_event = '.$donnee["cr_event"].'</br>';
+    echo ' visevent = '.$donnee["visevent"].'</br>';
+    echo ' code postale = '.$donnee["cp"].'</br>';
+    echo ' idlak = '.$donnee["idlak"].'</br></br>'; 
+    */
 ?>

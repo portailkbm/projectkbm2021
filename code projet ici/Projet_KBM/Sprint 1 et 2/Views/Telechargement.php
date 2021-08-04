@@ -2,7 +2,32 @@
 
     include_once ("../models/modelevenement.php");
     $bdd= connection_bdd();
-    $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "5"');
+    $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$_GET ["id"].'"');
+    $requete ->execute();
+    $_SESSION["resultat"] = $requete ->execute();
+  
+
+    while($_SESSION["resultat"] = $requete->fetch())
+    {
+       $file = $_SESSION["resultat"]["flyer"];
+    }
+
+
+    header('Content-Type: application/pdf');
+
+    // Il sera nommé downloaded.pdf
+    header('Content-Disposition: attachment; filename="Téléchargement.pdf"');
+
+    // Le source du PDF original.pdf
+    //readfile($test);
+    readfile($file);
+
+
+
+/*
+    include_once ("../models/modelevenement.php");
+    $bdd= connection_bdd();
+    $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$_GET ["id"].'"');
     $requete ->execute();
     $_SESSION["resultat"] = $requete ->execute();
   
@@ -10,9 +35,19 @@
     while($_SESSION["resultat"] = $requete->fetch())
     {
        
+        $test = $_SESSION["resultat"]['flyer'];
+        //$test = base64_encode( $_SESSION["resultat"]['flyer'] );
+
+        echo $_SESSION["resultat"]['idevent'];
+        $base64 = base64_encode($_SESSION["resultat"]['flyer']);
+        //$file = base64_decode($base64);
+        $file = base64_decode($_SESSION["resultat"]['flyer']);
+        //echo  base64_encode( $_SESSION["resultat"]["flyer"] );
+
+        //echo   $_SESSION["resultat"]["flyer"];
     }
 
-  /*  
+    
     header('Content-Type: application/pdf') ; // A confirmer
     header('Content-Disposition: inline; filename="nom_du_fichier.pdf"') ;
     header('Content-Length: ' . strlen($test)) ;
@@ -39,7 +74,7 @@
 
 */
 
-
+/*
     // téléchargement fonctionel
 
     $file = "../Ressources/test.pdf";
@@ -52,7 +87,7 @@
     // Le source du PDF original.pdf
     //readfile($test);
     readfile($file);
-
+*/
  /*   // Le chemin du fichier (path) 
   $file = "../Ressources/test.pdf"; 
     

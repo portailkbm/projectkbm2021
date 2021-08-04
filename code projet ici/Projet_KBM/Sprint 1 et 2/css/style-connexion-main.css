@@ -14,6 +14,9 @@
 .vert{
     background-color: #c3d948
 }
+#centrale{
+    display: none;
+}
 
 
 #titre{
@@ -85,3 +88,18 @@ form{
 
     text-align: center;
 }
+
+
+/* code Colvil*/
+#conteneursatue{
+    display: flex;
+  }
+  #statue{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  #divopserstatue{
+    flex: 1;
+  }

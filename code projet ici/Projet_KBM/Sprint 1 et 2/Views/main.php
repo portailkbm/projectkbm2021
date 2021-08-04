@@ -1,15 +1,42 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8" />
 		
 		<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-		<link rel="stylesheet" href="../css/style-main.css?v=<?php echo time() ?>" />
+		<link rel="stylesheet" href="../css/style-main.css?v=<?php echo time()?>" />
+
 		<title>KBM - Acceuile</title>
 	</head>
 	<body class="vert">
+		<div class="titrepage">
+			<h1>Nou Kantan vwè'w</h1>
+		</div>
+		
+	<div id=divopserstatue></div>
+		<div id="statue">
+			<div>
+				<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png"  width="70" height="80">
+
+			</div>
+			<div>
+				<p>
+					<?php 
+					    session_start();
+						if(isset($_SESSION['pseudo'])){
+							echo $_SESSION['pseudo'];
+						}
+					?>
+				</p>
+				<p>adrresse@mail</p>
+				<div >
+					<button onclick="window.location.href='../controlleur/controleur_deconnexion.php';">Deconnexion</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="header">
 		<div class="tu"></div>
 		<div id="cent">
@@ -27,9 +54,9 @@
 				<div class="separenavjaune"></div>
 				<div class="elemenrnav"><a href="">Bokantag</a></div>
 				<div class="separenavjaune"></div>
-				<div class="elemenrnav"><a href="">Produits</a></div>
+				<div class="elemenrnav"><a href="Produits.php">Produits</a></div>
 				<div class="separenavjaune"></div>
-				<div class="elemenrnav"><a href="">Producteur</a></div>
+				<div class="elemenrnav"><a href="Producteurs.php">Producteur</a></div>
 			</div>
 		</div>
 		<div class="tu"></div>
@@ -42,7 +69,6 @@
 
 			<div id="conteneurtitre">
 				<div id="titre">
-				<p>Nou Kantan vwè'w</p>
 				</div>	
 			</div>
 
@@ -75,10 +101,8 @@
 				</div>
 
 			</div>
-
-
-			
 		</div>
+		<div id="pcentre"></div>
 
 		<!--cote droit du site -->
 		<div id="pdroite">
@@ -87,27 +111,29 @@
 				<div><a href="inscription.php" class="champc bleu">Inscription </a></div>
 				<div><a href="connexion.php" class="champc rouge">Connexion </a></div>
 			</div>
+			<!-- code tableau-->
 			<div>
 			<h2 style="text-align: center;">Evenement</h2>
-			<div class="celules">
-				<table>
-					<thead>
-						<tr>
-							<th id="activités">Activités</th>
-							<th id="lieux">Lieux</th>
-							<th id="dates">Dates</th>
-						</tr>
-					</thead>
-					<tbody id="pointsTable" aligne="center">
-						<marquee behavior="scroll" direction="down">
-						</marquee>
-						<?php
-						include_once ("../models/modelevenement.php");
-						visualiser();
-						?>
-					</tbody>
-				</table> 
-			</div>
+				<div class="celules">
+					<table class="table">
+						<thead>
+							<tr>
+								<th  scope="col">Organisateur</th>
+								<th  scope="col">Activités</th>
+								<th  scope="col">Lieux</th>
+								<th  scope="col">Dates</th>
+							</tr>
+						</thead>
+						<tbody id="pointsTable" aligne="center">
+							<marquee behavior="scroll" direction="down">
+							</marquee>
+							<?php
+							include_once ("../models/modelevenement.php");
+							visualiser();
+							?>
+						</tbody>
+					</table> 
+				</div>
 			</div>
 
 			

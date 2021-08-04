@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style-inscription.css" />
+    <link rel="stylesheet" href="../css/style-inscription.css" />
     <title> KBM - Inscription </title>
 </head>
 <body>
     <body class="rouge">
     <div id="en-tete">
         <h1 id="titre"> Inscription </h1>
-        <a href="main.html"> <img id="logo-retour" src="Ressources/logo_retour.png" /> </a>  
+        <a href="main.php"> <img id="logo-retour" src="Ressources/logo_retour.png" /> </a>  
     </div>
     <form id="formulaire" method="post" action="inscription_page2.html" >
         <div class="element conteneur" id="ligne1">
@@ -49,7 +49,7 @@
                 echo'Votre pseudo pour vous connecter sera : '.$_SESSION['login'];
             ?>
         </p>
-        <button id="bouton-acceuil" onclick="window.location.href = 'main.html'"> Accueil </button>
+        <button id="bouton-acceuil" onclick="window.location.href = 'main.php'"> Accueil </button>
         <button id="bouton-annuler" onclick="window.location.href = 'inscription.php'"> Annuler </button>
     </div>
 </body>

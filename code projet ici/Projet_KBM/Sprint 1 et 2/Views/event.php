@@ -1,23 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-	   	<link rel="stylesheet" href="../css/style-evenement.css" />
+	   	<link rel="stylesheet" href="../css/style-evenement.css?<?php echo time(); ?>" />
 		<title>KBM-Evenement</title>
 	</head>
 <body class="vert">
 	<header>
 		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<h1 id="titre">Nos Évenements</h1>
 		<div id="wrapper">
-			<h1 id="titre">Nos Évenements</h1>
-			<br>
-			<div class="champc orange" id="infos">
-				Voir Plus
+			<div  id="infos">
 			</div>
+				<div id="statue">
+					<div>
+						<img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png"  width="80" height="80">
+
+					</div>
+					<div>
+						<p>
+							<?php 
+								session_start();
+								if(isset($_SESSION['pseudo'])){
+									echo $_SESSION['pseudo'];
+								}
+							?>
+						</p>
+						<p>adrresse@mail</p>
+						<div >
+							<button onclick="window.location.href='../controlleur/controleur_deconnexion.php';">Deconnexion</button>
+						</div>
+					</div>
+				</div>
 		</div>
 	</header>
-	<br>
-	<!-- C'est le code coter html a adapter qui envoie le tri dans le terminale-->
+	
+	<!-- C'est le code coter html a adapter qui envoie le tri dans le terminale
 	<div>
 		<form  action="" method="POST" >
 			<select name="trier" id="trier">
@@ -36,6 +54,7 @@
 			<input type ="submit" name="visualiser">
 		</form>
 	</div>
+-->
 	<!-- NE pas oublier de changer les host ds modelevenment et controleurevenement-->
 	<br>
 	<div id="centrale">
@@ -101,5 +120,3 @@
 			<a id="contact" href="page-pas-evenement.html"> Oups y'a rien</a>
 	</footer>
 </html>
-message.txt
-3 Ko

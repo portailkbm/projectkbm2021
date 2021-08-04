@@ -1,6 +1,22 @@
 <?php
     include_once("Bdd_login.php");
 
+    function connection_bdd() {
+            try
+            {
+                // $bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', 'root');
+                $useur = 'root';
+                $pass = '';
+                include_once("Bdd_login.php");
+                $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , $pass);
+            }
+            catch (Exception $e)
+            {
+                    die('Erreur : ' . $e->getMessage());
+            }
+            return $bdd;
+    }
+
 // m_function_name : fonction model
 // c_function_name : fonction controleur (à faire)
 
@@ -43,6 +59,7 @@ function m_connexion_client($pseudo, $password_non_crypte ){
     $password = md5($password_non_crypte);
 
     // PASSWORD A RECRYPTER !!!!!!!!
+<<<<<<< HEAD
     $requete = $bdd->prepare("SELECT * FROM client WHERE pseudocli = '".$pseudo."' AND mdpcli = '".$password."'");
     $requete->execute();
 
@@ -62,6 +79,19 @@ function m_connexion_client($pseudo, $password_non_crypte ){
                 $_SESSION["login"] = $pseudo;
                 return $donnee["categoriecli"];
             }     */   
+=======
+    $requete = $bdd->prepare("SELECT * FROM personne WHERE pseudocli = '".$pseudo."' AND mdpcli = '".$password."'");
+    $requete->execute();
+
+    if($requete->rowCount() == 1){    
+        session_start();
+        while($donnee = $requete->fetch()){
+            if ($donnee["admin"] == 1){
+                $_SESSION["id_client"] = $donnee["idcli"];
+                $_SESSION["etat"]  = 1; 
+                return $donnee["categoriecli"];
+            }        
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
         }
         return 0;
     } else{

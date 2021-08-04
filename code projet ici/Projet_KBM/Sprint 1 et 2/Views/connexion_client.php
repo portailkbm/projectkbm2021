@@ -2,15 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+<<<<<<< HEAD
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	   	<link rel="stylesheet" href="../css/style-connexion-admin.css?v=<?php echo time() ?>" />
+=======
+	   	<link rel="stylesheet" href="../css/style-connexion-pageaccueil-main.css" />
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 		<title>KBM-Client</title>
 	</head>
 <body >
 	<header>
+<<<<<<< HEAD
 		<a href="../Views/main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
 			<h1 id="titre">Client(Changera par rapport au statut du compte)</h1>
+=======
+		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
+		<div id="wrapper">
+			<h1 id="titre">Client</h1>
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 
 		</div>
 		
@@ -27,11 +37,15 @@
 			<div>
 				<p>
                     <?php 
+<<<<<<< HEAD
                         if(isset($_SESSION['login'])){
 							//echo $_SESSION['login'];
 							echo $_SESSION['pseudo'];
 							
 						}
+=======
+                        echo $_SESSION["login"];
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
                     ?>
                 </p>
 				<p>adrresse@mail</p>
@@ -39,6 +53,7 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 	<div id="principale"> <!-- option pour l'administrateurs uniquement-->
 		<div id="Evenement">
 			<div id="contenurtitre">
@@ -861,6 +876,10 @@
 
 
 	<div id="centrale" style="display:none">
+=======
+	<br>
+	<div id="centrale">
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 		<div id="moitieG">
 			<h1 id="titre" name="titretableau">Gestion du compte</h1>
 			<div id="scroll">
@@ -918,7 +937,11 @@
 
 	</div>
 	
+<<<<<<< HEAD
 	<script  src="../js/Administrateur.js"></script>
+=======
+	<script type="text/javascript" src="js/Client.js"></script>
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 </body>
 
 </html>

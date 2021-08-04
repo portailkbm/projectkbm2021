@@ -3,6 +3,7 @@
     include_once ("../models/modelevenement.php");
     $bdd= connection_bdd();
     $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$_GET ["id"].'"');
+<<<<<<< HEAD
     $requete ->execute();
     $_SESSION["resultat"] = $requete ->execute();
   
@@ -28,6 +29,8 @@
     include_once ("../models/modelevenement.php");
     $bdd= connection_bdd();
     $requete = $bdd->prepare('SELECT * FROM `evenement` WHERE `idevent` LIKE "'.$_GET ["id"].'"');
+=======
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
     $requete ->execute();
     $_SESSION["resultat"] = $requete ->execute();
   

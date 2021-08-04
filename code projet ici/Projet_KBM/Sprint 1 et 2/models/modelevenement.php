@@ -67,6 +67,28 @@ include_once("Bdd_login.php");
         }
     }
 
+    function m_inscription_event($nom, $prenom, $password_non_crypte, $email, $tel, $class_client, $pseudo, $ville, $cp){
+        $bdd= connection_bdd();
+        // On crypte le mot de passe
+        $password = md5($password_non_crypte);
+
+        $requete = $bdd->prepare("INSERT INTO `client`(`nomcli`, `prencli`, `telcli`, `mailcli`, `categoriecli`, `pseudocli`, `mdpcli`, `cp`) VALUES ('$nom', '$prenom', '$tel', '$email', '$class_client', '$pseudo', '$password', '$cp')");
+        $requete->execute();     
+    
+        $res = $bdd->prepare("SELECT * FROM client WHERE `nomcli` = '$nom'");
+        $res->execute();
+
+        $rows = $res->rowCount();
+
+        echo "requete : INSERT INTO `client`(`nomcli`, `prencli`, `telcli`, `mailcli`, `categoriecli`, `pseudocli`, `mdpcli`, `cp`) VALUES ('$nom', '$prenom', '$tel', '$email', '$class_client', '$pseudo', '$password', '$cp') <br>";
+        echo "rowCount: ".$rows."<br>";
+        if ($rows == 0) {
+          return 0;
+        }else{
+          return 1;
+        }
+    }
+
     function filter_date_futur()
     {
         $bdd= connection_bdd();
@@ -122,7 +144,13 @@ include_once("Bdd_login.php");
         {
             echo ' '.$_SESSION["resultat"]["libevent"].' ';
         } 
-        
+    }
+
+    function Suprimer_evenement($select){
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('DELETE * FROM `evenement` WHERE `idevent` LIKE "'.$select.'"');
+
+        $_SESSION["resultat"] = $requete ->execute();
     }
 
     function Select_Debut_evenement($select){
@@ -288,11 +316,46 @@ include_once("Bdd_login.php");
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
         {
+<<<<<<< HEAD
             //echo '<p class="fichier"><strong>'.htmlspecialchars($_SESSION["resultat"]['date']).'</strong> : <a href="'.$_SESSION["resultat"]['fichier'].'">'. htmlspecialchars($_SESSION["resultat"]['fichier']).'</a></p>';
             echo '<a href='.$_SESSION["resultat"]['date'].' download="">télécharcher le lien</a>';
            
         }  
     }*/
+=======
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";                  
+            }
+        }
+    }
+    function Trie_date($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM `evenement`  WHERE `debutevent` >=  "'.$select.'"');
+        $requete ->execute();
+
+         if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["debutevent"];
+                echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
+                echo $donnee["libevent"];
+                echo "</a></td><td>";
+                echo $donnee["cp"];
+                echo "</td></tr>";                  
+            }
+        }
+    }
+>>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 
 
 

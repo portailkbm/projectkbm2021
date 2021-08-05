@@ -80,12 +80,12 @@
 						{
 							include_once ("../models/modelevenement.php");
 							visualiser();
-						}
+						}/*
 						elseif (isset($_POST['ville']))
 						{
 							include_once ("../models/modelevenement.php");
 							Trie_code_postal($_POST['ville']);
-						}
+						}*/
 						elseif (isset($_POST['date']))
 						{
 							include_once ("../models/modelevenement.php");

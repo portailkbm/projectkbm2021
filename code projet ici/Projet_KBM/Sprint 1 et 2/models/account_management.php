@@ -59,7 +59,6 @@ function m_connexion_client($pseudo, $password_non_crypte ){
     $password = md5($password_non_crypte);
 
     // PASSWORD A RECRYPTER !!!!!!!!
-<<<<<<< HEAD
     $requete = $bdd->prepare("SELECT * FROM client WHERE pseudocli = '".$pseudo."' AND mdpcli = '".$password."'");
     $requete->execute();
 
@@ -79,19 +78,6 @@ function m_connexion_client($pseudo, $password_non_crypte ){
                 $_SESSION["login"] = $pseudo;
                 return $donnee["categoriecli"];
             }     */   
-=======
-    $requete = $bdd->prepare("SELECT * FROM personne WHERE pseudocli = '".$pseudo."' AND mdpcli = '".$password."'");
-    $requete->execute();
-
-    if($requete->rowCount() == 1){    
-        session_start();
-        while($donnee = $requete->fetch()){
-            if ($donnee["admin"] == 1){
-                $_SESSION["id_client"] = $donnee["idcli"];
-                $_SESSION["etat"]  = 1; 
-                return $donnee["categoriecli"];
-            }        
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
         }
         return 0;
     } else{

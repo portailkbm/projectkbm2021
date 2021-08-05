@@ -316,13 +316,6 @@ include_once("Bdd_login.php");
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
         {
-<<<<<<< HEAD
-            //echo '<p class="fichier"><strong>'.htmlspecialchars($_SESSION["resultat"]['date']).'</strong> : <a href="'.$_SESSION["resultat"]['fichier'].'">'. htmlspecialchars($_SESSION["resultat"]['fichier']).'</a></p>';
-            echo '<a href='.$_SESSION["resultat"]['date'].' download="">télécharcher le lien</a>';
-           
-        }  
-    }*/
-=======
             while($donnee = $requete->fetch())
             {
                 echo "<tr><td>";
@@ -334,7 +327,7 @@ include_once("Bdd_login.php");
                 echo "</td></tr>";                  
             }
         }
-    }
+    }*/
     function Trie_date($select){
 
         $bdd= connection_bdd();
@@ -355,7 +348,6 @@ include_once("Bdd_login.php");
             }
         }
     }
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 
 
 

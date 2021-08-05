@@ -14,7 +14,6 @@
     </div>
 
     <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/inscription_controller.php">
-<<<<<<< HEAD
         <div id=conteneurprincipale>
             <div id=conteneurformulaire>
                 <div id="inul"></div>
@@ -41,47 +40,6 @@
                         <input  class="element champ" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe" required pattern=".*\S.*" />
                     </div>
 
-=======
-    <div id=conteneurprincipale>
-        <div id=conteneurformulaire>
-            <div id="inul"></div>
-            <div id="gformulaire">
-                <div>
-                    <p>Nom</p>
-                    <input  class="element champ" type="text" name="nom" id="nom" placeholder="Votre nom" required pattern=".*\S.*" />
-                </div>
-                <div>
-                    <p>Pseudo</p>
-                <input  class="element champ" type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo" required pattern=".*\S.*"  />
-                </div>
-                <div>
-                    <p>Mail</p>
-                    <input style="width: 16em;"  class="element mail" type="email" name="mail" id="mail" placeholder="Votre mail" required pattern=".*\S.*" /> 
-                </div>
-                <div>
-                    <p>Ville</p>
-                    <input  class="element champ" type="text" name="ville" id="ville" placeholder="Votre ville" required pattern=".*\S.*"  />
-                </div>
-
-                <div>
-                    <p>Mots de passe</p>
-                    <input  class="element champ" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe" required pattern=".*\S.*" />
-                </div>
-
-            </div>
-
-            <div id="dformulaire">
-                <div>
-                    <p>Prenom</p>
-                    <input  class="element champ" type="text" name="prenom" id="prenom" placeholder="Votre prénom" required pattern=".*\S.*"  />
-                </div>
-                <div>
-                    <p>Téléphone (+33;+590...)</p>
-                    <input  class="element champ" type="tel" name="telephone" id="telephone" placeholder="Votre telephone"  required pattern="[+]{1}[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{3}"/>
-                </div>
-                <div>
-                    <p style="font-size: xx-large; color: #dc4e56 ;">Tous les champs sont obligatiore</p>
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
                 </div>
 
                 <div id="dformulaire">

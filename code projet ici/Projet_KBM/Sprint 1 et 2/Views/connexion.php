@@ -1,10 +1,6 @@
 <?php 
     if (isset($_POST["login"]) && isset($_POST["mdp"])){
-<<<<<<< HEAD
         include ('../models/account_management.php');
-=======
-        include '../models/account_management.php';
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
         $return = m_connexion_client($_POST["login"], $_POST["mdp"]);
         echo $return;
         switch ($return) {
@@ -40,11 +36,7 @@
 <body class="orange">
     <div id="en-tete">
         <h1 id="titre"> Connexion </h1>
-<<<<<<< HEAD
        <a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>  
-=======
-       <a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> <a/>  
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
     </div>
         <form id="formulaire" method="post" action="../controlleur/connexion_controller.php">
             <div class="element conteneur">

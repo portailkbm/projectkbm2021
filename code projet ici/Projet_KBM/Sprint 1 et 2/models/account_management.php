@@ -1,6 +1,6 @@
 <?php
     include_once("Bdd_login.php");
-
+/*
     function connection_bdd() {
             try
             {
@@ -15,7 +15,7 @@
                     die('Erreur : ' . $e->getMessage());
             }
             return $bdd;
-    }
+    }*/
 
 // m_function_name : fonction model
 // c_function_name : fonction controleur (à faire)

@@ -2,25 +2,15 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-<<<<<<< HEAD
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	   	<link rel="stylesheet" href="../css/style-connexion-admin.css?v=<?php echo time() ?>" />
-=======
-	   	<link rel="stylesheet" href="../css/style-connexion-pageaccueil-main.css" />
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 		<title>KBM-Client</title>
 	</head>
 <body >
 	<header>
-<<<<<<< HEAD
 		<a href="../Views/main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
 			<h1 id="titre">Client(Changera par rapport au statut du compte)</h1>
-=======
-		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
-		<div id="wrapper">
-			<h1 id="titre">Client</h1>
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 
 		</div>
 		
@@ -37,15 +27,11 @@
 			<div>
 				<p>
                     <?php 
-<<<<<<< HEAD
                         if(isset($_SESSION['login'])){
 							//echo $_SESSION['login'];
 							echo $_SESSION['pseudo'];
 							
 						}
-=======
-                        echo $_SESSION["login"];
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
                     ?>
                 </p>
 				<p>adrresse@mail</p>
@@ -53,7 +39,6 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
 	<div id="principale"> <!-- option pour l'administrateurs uniquement-->
 		<div id="Evenement">
 			<div id="contenurtitre">
@@ -349,8 +334,8 @@
 											<marquee behavior="scroll" direction="down">
 											</marquee>
 												<?php
-													include_once ("../models/modelevenement.php");
-													Visualiser_Sup();
+													include_once ("../models/modelproduit.php");
+													VisualiserProducteurSup();
 												?>
 										</tbody>
 									</table> 
@@ -516,8 +501,8 @@
 											<marquee behavior="scroll" direction="down">
 											</marquee>
 												<?php
-													include_once ("../models/modelevenement.php");
-													Visualiser_Sup();
+													include_once ("../models/modelproduit.php");
+													VisualiserProduitSup();
 												?>
 										</tbody>
 									</table> 
@@ -555,128 +540,144 @@
 
 			</div>
 				<!-- Creation Exploitation -->
-				<div id="ajouter_exploitation" style = "display: none">
-					<div class = "conteneurevenement">
-						<div class="flexinput"></div>
-						<div class="conteneurinput">
-							<h2>Ajouter une Exploitation :</h2>
-							<br>
-							<div>
-								<label for="pet-select">Producteur:</label>
+				<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/crea_exploitation.php">
+					<div id="ajouter_exploitation" style = "display: none">
+						<div class = "conteneurevenement">
+							<div class="flexinput"></div>
+							<div class="conteneurinput">
+								<h2>Ajouter une Exploitation :</h2>
+								<br>
+								<div>
+									<label for="pet-select">Producteur:</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">-----choix------</option>
-									<?php
-									   include_once ("../models/modelproduit.php");
-									   SelectProduit();
-									?>	
-								</select>
+									<select name="prod" id="pet-select">
+										<option value="">-----choix------</option>
+										<?php
+										include_once ("../models/modelproduit.php");
+										SelectProducteur();
+										?>	
+									</select>
+									
+								</div>
 								
-							</div>
-							
-							<div>
-								Nom :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							
-							<div>
-								<label for="pet-select">Ville:</label>
+								<div>
+									Nom :
+									<input type="text" id="name" name="nom"  size="25">
+								</div>
+								<div>
+									Surface :
+									<input type="text" id="name" name="surface"  size="25">
+								</div>
+								
+								<div>
+									<label for="pet-select">Ville:</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">--choix--</option>
-									<option value="pap">pap</option>
-									<option value="lamentin">lamentin</option>
-								</select>
-							</div>
-							<div>
-								<label for="pet-select">Type d'Exploitation :</label>
+									<select name="cp" id="pet-select">
+										<option value="">--choix--</option>
+										<?php
+											include_once ( "../models/modelevenement.php" );
+											Select_Code_Postal_all();    
+										?>	
+									</select>
+								</div>
+								<div>
+									<label for="pet-select">Type d'Exploitation :</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">--choix--</option>
-									<option value="Mr">type1</option>
-									<option value="Mme">type2</option>
-								</select>
+									<select name="type" id="pet-select">
+										<option value="">--choix--</option>
+										<option value="Mr">type1</option>
+										<option value="Mme">type2</option>
+									</select>
+								</div>
+								
+								
+								<br>
+								<div>
+									<button type="submit">valider</button>
+									<button onclick="apparitionCreerevenement()">annuler</button>
+								</div>
 							</div>
-							
-							
-							<br>
-							<div>
-								<button type="submit">valider</button>
-								<button onclick="apparitionCreerevenement()">annuler</button>
-							</div>
+							<div class="flexinput"></div>
 						</div>
-						<div class="flexinput"></div>
 					</div>
-				</div>
+				</form>
 
 					<!-- Modifier exploitation -->
-				<div id="modifier_exploitation" style = "display: none">
-					<div class = "conteneurevenement">
-						<div class="flexinput"></div>
-						<div class="conteneurinput">
-							<h2>Modifier une Exploitation :</h2>
-							<br>
-							<div>
-								<label for="pet-select">Exploitation:</label>
+				<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/crea_exploitation.php">
+					<div id="modifier_exploitation" style = "display: none">
+						<div class = "conteneurevenement">
+							<div class="flexinput"></div>
+							<div class="conteneurinput">
+								<h2>Modifier une Exploitation :</h2>
+								<br>
+								<div>
+									<label for="pet-select">Exploitation:</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">-----choix------</option>
-									<?php
-									   include_once ("../models/modelproduit.php");
-									   SelectProduit();
-									?>	
-								</select>
+									<select name="exp" id="pet-select">
+										<option value="">-----choix------</option>
+										<?php
+										include_once ("../models/modelproduit.php");
+										SelectExploitation();
+										?>	
+									</select>
+									
+								</div>
+								<div>
+									<label for="pet-select">Producteur:</label>
+
+									<select name="prod" id="pet-select">
+										<option value="">-----choix------</option>
+										<?php
+										include_once ("../models/modelproduit.php");
+										SelectProducteur();
+										?>	
+									</select>
+									
+								</div>
 								
-							</div>
-							<div>
-								<label for="pet-select">Producteur:</label>
-
-								<select name="pets" id="pet-select">
-									<option value="">-----choix------</option>
-									<?php
-									   include_once ("../models/modelproduit.php");
-									   SelectProduit();
-									?>	
-								</select>
+								<div>
+									Nom :
+									<input type="text" id="name" name="nom"  size="25">
+								</div>
+								<div>
+									Surface :
+									<input type="text" id="name" name="surface"  size="25">
+								</div>
 								
-							</div>
-							
-							<div>
-								Nom :
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							
-							<div>
-								<label for="pet-select">Ville:</label>
+								<div>
+									<label for="pet-select">Ville:</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">--choix--</option>
-									<option value="pap">pap</option>
-									<option value="lamentin">lamentin</option>
-								</select>
-							</div>
-							<div>
-								<label for="pet-select">Type d'Exploitation :</label>
+									<select name="cp" id="pet-select">
+										<option value="">--choix--</option>
+										<?php
+											include_once ( "../models/modelevenement.php" );
+											Select_Code_Postal_all();    
+										?>	
+									</select>
+								</div>
+								<div>
+									<label for="pet-select">Type d'Exploitation :</label>
 
-								<select name="pets" id="pet-select">
-									<option value="">--choix--</option>
-									<option value="Mr">type1</option>
-									<option value="Mme">type2</option>
-								</select>
+									<select name="type" id="pet-select">
+										<option value="">--choix--</option>
+										<option value="Mr">type1</option>
+										<option value="Mme">type2</option>
+									</select>
+								</div>
+								
+								
+								<br>
+								<div>
+									<button type="submit">valider</button>
+									<button onclick="apparitionCreerevenement()">annuler</button>
+								</div>
 							</div>
-							
-							
-							<br>
-							<div>
-								<button type="submit">valider</button>
-								<button onclick="apparitionCreerevenement()">annuler</button>
-							</div>
+							<div class="flexinput"></div>
 						</div>
-						<div class="flexinput"></div>
+						
 					</div>
-					
-				</div>
-
+				</form>
+			
 
 				<div id="supprimerExploitation" style = "display: none">
 					<div class = "conteneurevenement">
@@ -876,10 +877,6 @@
 
 
 	<div id="centrale" style="display:none">
-=======
-	<br>
-	<div id="centrale">
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 		<div id="moitieG">
 			<h1 id="titre" name="titretableau">Gestion du compte</h1>
 			<div id="scroll">
@@ -937,11 +934,7 @@
 
 	</div>
 	
-<<<<<<< HEAD
 	<script  src="../js/Administrateur.js"></script>
-=======
-	<script type="text/javascript" src="js/Client.js"></script>
->>>>>>> 22e3521df6bfcf2ffac1b5bf8150c9c7cb31abd6
 </body>
 
 </html>

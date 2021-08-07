@@ -29,9 +29,7 @@ define("BD_NAME", "demenjala");
 function connection_bdd() {
         try
         {
-           $useur = 'root';
-           $pass = 'root';
-           
+           $useur = 'root';      
            $bdd = new PDO('mysql:host=localhost;dbname='.constant("BD_NAME").';charset=utf8', $useur , constant("BD_MDP") );
         }
         catch (Exception $e)

@@ -156,3 +156,67 @@
         $requete = $bdd->prepare('DELETE FROM `producteur` WHERE `idprod` LIKE "'.$select.'"');
         $requete ->execute(); 
     }
+
+    function SelectProducteur()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM producteur');
+        $requete ->execute();   
+    
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo '<option valeur="';
+            echo $_SESSION["resultat"]['nomprod'];
+            echo '">';
+            echo $_SESSION["resultat"]['nomprod'];
+            echo '</option>';
+        }
+    }
+
+
+    function CreerExploitation($nom,$cp,$type,$surface,$prod)
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("INSERT INTO `exploitation` (`nomex`,`ville`,`type`,`surface`,`nomproducteur`) VALUES ('$nom','$cp','$type','$surface','$prod') ");
+        //$requete ->execute();
+
+        if ( $requete ->execute())
+        {
+            return 1;
+        }else
+        {
+            return 0;
+        }
+    }
+
+    function SelectExploitation()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM exploitation');
+        $requete ->execute();   
+    
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            echo '<option valeur="';
+            echo $_SESSION["resultat"]['nomex'];
+            echo '">';
+            echo $_SESSION["resultat"]['nomex'];
+            echo '</option>';
+        }
+    }
+
+    function ModifierExploitation($nom,$cp,$type,$surface,$prod,$exp)
+    {
+        $bdd= connection_bdd();
+       // $requete = $bdd->prepare("INSERT INTO `exploitation` (`nomex`,`ville`,`type`,`surface`,`nomproducteur`) VALUES ('$nom','$cp','$type','$surface','$prod') ");
+        $requete = $bdd->prepare("UPDATE `exploitation` SET `nomex`=[value-1],`ville`=[value-2],`type`=[value-3],`surface`=[value-4],`nomproducteur`=[value-5],`id`=[value-6] WHERE `id` LIKE '1'  ");
+        if ( $requete ->execute())
+        {
+            return 1;
+        }else
+        {
+            return 0;
+        }
+    }

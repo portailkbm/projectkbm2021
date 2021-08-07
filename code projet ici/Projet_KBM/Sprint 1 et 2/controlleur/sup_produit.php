@@ -1,6 +1,6 @@
 <?php
     include_once ("../models/config.php");
-    include_once ("../models/modelevenement.php");
+    include_once ("../models/modelproduit.php");
 
     if(!isset($_GET["id"])){
         include_once ("../models/event.php");

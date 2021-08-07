@@ -27,6 +27,7 @@
 			<div>
 				<p>
                     <?php 
+					    session_start();
                         if(isset($_SESSION['login'])){
 							//echo $_SESSION['login'];
 							echo $_SESSION['pseudo'];
@@ -699,8 +700,8 @@
 											<marquee behavior="scroll" direction="down">
 											</marquee>
 												<?php
-													include_once ("../models/modelevenement.php");
-													Visualiser_Sup();
+													include_once ("../models/modelproduit.php");
+													VisualiserExploitationSup()
 												?>
 										</tbody>
 									</table> 

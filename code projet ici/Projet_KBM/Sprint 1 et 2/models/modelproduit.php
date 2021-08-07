@@ -78,6 +78,26 @@
         $requete ->execute();   
     }
 
+    function ModifierProduit($ns,$nl,$slt,$nf,$select)
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("UPDATE `produit` SET `nomkreyol` = '$nl',`nomfranse` ='$nf',`nomsavan`='$ns',`descproduit`='$slt' WHERE `idprod` LIKE '$select'");
+        $requete ->execute();   
+    }
+
+    function SelectIdProduit($ex)
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("SELECT * FROM produit WHERE `nomfranse` LIKE '$ex'");
+        $requete ->execute();   
+    
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+        return $_SESSION["resultat"]['idproduit'];  
+        }  
+    }
+
     function AddProduitToExploitation($prd,$qte)
     {
         $bdd= connection_bdd();
@@ -123,11 +143,33 @@
         }
     }
 
-    function ModifierProducteur($lib,$deb,$fin,$hd,$hf,$cp,$select){
+    function ModifierProducteur($nom,$prcenom,$mob,$fixe,$mail,$adresse,$civil,$cp,$select){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('UPDATE `producteur` SET libevent = `$lib`,debutevent=`$deb`,finevent=`$fin`,debutevent_hr=`$hd`,finevent_hr=`$hf`,cp=`$cp` WHERE `idprod` LIKE "'.$select.'"');
+        $requete = $bdd->prepare("UPDATE `producteur` SET `nomprod` = '$nom',`telprod` ='$mob',`mailprod`='$mail',`cp`='$cp',`prenomprod`='$prcenom'`,`adresse`='$adresse' WHERE `idprod` LIKE '$select'");
         $requete ->execute();
+
+        if ( $requete ->execute())
+        {
+            return 1;
+        }else
+        {
+            return 0;
+        }
     }
+
+    function SelectIdProducteur($ex)
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("SELECT * FROM producteur WHERE `nomprod` LIKE '$ex'");
+        $requete ->execute();   
+    
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+        return $_SESSION["resultat"]['idprod'];  
+        }  
+    }
+    
 
     function VisualiserProducteurSup()
     {
@@ -174,7 +216,6 @@
         }
     }
 
-
     function CreerExploitation($nom,$cp,$type,$surface,$prod)
     {
         $bdd= connection_bdd();
@@ -200,18 +241,30 @@
         while($_SESSION["resultat"] = $requete->fetch())
         {
             echo '<option valeur="';
-            echo $_SESSION["resultat"]['nomex'];
+            echo $_SESSION["resultat"]['id'];
             echo '">';
             echo $_SESSION["resultat"]['nomex'];
             echo '</option>';
         }
     }
 
+    function SelectId($ex)
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("SELECT * FROM exploitation WHERE `nomex` LIKE '$ex'");
+        $requete ->execute();   
+    
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+        return $_SESSION["resultat"]['id'];  
+        }  
+    }
+
     function ModifierExploitation($nom,$cp,$type,$surface,$prod,$exp)
     {
         $bdd= connection_bdd();
-       // $requete = $bdd->prepare("INSERT INTO `exploitation` (`nomex`,`ville`,`type`,`surface`,`nomproducteur`) VALUES ('$nom','$cp','$type','$surface','$prod') ");
-        $requete = $bdd->prepare("UPDATE `exploitation` SET `nomex`=[value-1],`ville`=[value-2],`type`=[value-3],`surface`=[value-4],`nomproducteur`=[value-5],`id`=[value-6] WHERE `id` LIKE '1'  ");
+        $requete = $bdd->prepare("UPDATE `exploitation` SET `nomex`='$nom',`ville`='$cp',`type`='$type',`surface`='$surface',`nomproducteur`='$prod' WHERE `id` LIKE '$exp'  ");
         if ( $requete ->execute())
         {
             return 1;
@@ -219,4 +272,32 @@
         {
             return 0;
         }
+    }
+
+    function VisualiserExploitationSup()
+    {
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('SELECT * FROM exploitation');
+        $requete ->execute();
+
+        if ( $requete ->execute())
+        {
+            while($donnee = $requete->fetch())
+            {
+                echo "<tr><td>";
+                echo $donnee["nomex"];
+                echo "</td><td><a href='../controlleur/sup_exploitation.php?id=".$donnee["id"]."'>";
+                echo $donnee["ville"];
+                echo "</a></td><td>";
+                echo $donnee["surface"];
+                echo "</td></tr>";
+            }
+        }
+    }
+
+    function Supprimer_Exploitation($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare('DELETE FROM `exploitation` WHERE `id` LIKE "'.$select.'"');
+        $requete ->execute(); 
     }

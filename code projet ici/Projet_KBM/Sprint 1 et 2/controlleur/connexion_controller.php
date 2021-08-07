@@ -17,8 +17,8 @@
 			session_start();
 			$_SESSION['pseudo'] = $_COOKIE['pseudo'];
 			$_SESSION['login'] = $_POST["login"];
-			include("../Views/connexion_client.php");
-			//header('Location: ../Views/connexion_client.php');
+			//include("../Views/connexion_client.php");
+			header('Location: ../Views/connexion_client.php');
 		}
     }
 

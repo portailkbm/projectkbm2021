@@ -81,8 +81,16 @@
     function ModifierProduit($ns,$nl,$slt,$nf,$select)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("UPDATE `produit` SET `nomkreyol` = '$nl',`nomfranse` ='$nf',`nomsavan`='$ns',`descproduit`='$slt' WHERE `idprod` LIKE '$select'");
-        $requete ->execute();   
+        $requete = $bdd->prepare("UPDATE `produit` SET `nomkreyol` = '$nl',`nomfranse` ='$nf',`nomsavan`='$ns',`descproduit`='$slt' WHERE `idproduit` LIKE '$select'");
+        $requete ->execute();
+
+         if ( $requete ->execute())
+        {
+            return 1;
+        }else
+        {
+            return 0;
+        }   
     }
 
     function SelectIdProduit($ex)
@@ -145,7 +153,7 @@
 
     function ModifierProducteur($nom,$prcenom,$mob,$fixe,$mail,$adresse,$civil,$cp,$select){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("UPDATE `producteur` SET `nomprod` = '$nom',`telprod` ='$mob',`mailprod`='$mail',`cp`='$cp',`prenomprod`='$prcenom'`,`adresse`='$adresse' WHERE `idprod` LIKE '$select'");
+        $requete = $bdd->prepare("UPDATE `producteur` SET `nomprod` = '$nom',`telprod` ='$mob',`mailprod`='$mail',`cp`='$cp',`prenomprod`='$prcenom',`adresse`='$adresse' WHERE `idprod` LIKE '$select'");
         $requete ->execute();
 
         if ( $requete ->execute())

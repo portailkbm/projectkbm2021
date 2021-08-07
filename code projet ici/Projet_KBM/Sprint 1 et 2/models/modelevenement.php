@@ -277,10 +277,10 @@ include_once("Bdd_login.php");
         
         $requete ->execute();
     }
-
+  
     function Modifier_Evenement($lib,$deb,$fin,$hd,$hf,$cp,$select){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('UPDATE `evenement` SET libevent = `$lib`,debutevent=`$deb`,finevent=`$fin`,debutevent_hr=`$hd`,finevent_hr=`$hf`,cp=`$cp` WHERE `idevent` LIKE "'.$select.'"');
+        $requete = $bdd->prepare("UPDATE `evenement` SET `libevent` = '$lib',`debutevent`='$deb',`finevent`='$fin',`debutevent_hr`='$hd',`finevent_hr`='$hf',`cp`='$cp' WHERE `idevent` LIKE '$select'");
         $requete ->execute();
     }
 

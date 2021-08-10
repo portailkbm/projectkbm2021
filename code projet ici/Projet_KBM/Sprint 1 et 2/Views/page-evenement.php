@@ -195,6 +195,15 @@
 				</div>
 			</form>
 
+			<!-- Le type d'encodage des données, enctype, DOIT être spécifié comme ce qui suit -->
+<form enctype="multipart/form-data" action="../controlleur/test.php" method="post">
+  <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
+  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+  <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
+  Envoyez ce fichier : <input name="file" type="file" />
+  <input type="submit" value="Envoyer le fichier" />
+</form>
+
 			<!--
 		<div id="Modifier-page-evenement" style = "display:inline">
 					<div class = "conteneurevenement">
@@ -208,8 +217,8 @@
 								<select name="pets" id="pet-select">
 									<option value="">-----choix------</option>
 									<?php
-									   include_once ("../models/modelproduit.php");
-									   SelectProduit();
+									  // include_once ("../models/modelproduit.php");
+									  // SelectProduit();
 									?>	
 								</select>
 								

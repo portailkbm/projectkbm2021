@@ -306,6 +306,13 @@ include_once("Bdd_login.php");
         }  
     }
 
+    function Inset_pdf($lib){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("INSERT INTO `evenement` (`flyer`) VALUES ('$lib')");
+        $requete ->execute();
+    }
+
 /*
     function Select_Flyer_Evenement($select){
 

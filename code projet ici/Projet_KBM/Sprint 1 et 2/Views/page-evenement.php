@@ -18,6 +18,14 @@
 							Select_Flyer($_GET ["id"]);    
 					?>
 				</p>
+
+				<p>
+				<img id="logo-retour" src="
+				<?php
+				    include_once ( "../models/modelevenement.php" );
+					Select_Flyer($_GET ["id"]); 
+				?>" alt="retour" />
+				</p>
 			</div >
 				<div id="statue">
 					<div>
@@ -133,6 +141,8 @@
 						<div class="conteneurinput">
 							<h2>Creer un envenement :</h2>
 							<br>
+							Envoyez un fichier png : <input name="file" type="file" /> </br>
+                            Envoyez un fichier pdf : <input name="file2" type="file" /> </br>
 							<div>
 								Activer/Desactiver évènement
 								<label class="switch">
@@ -198,7 +208,7 @@
 			<!-- Le type d'encodage des données, enctype, DOIT être spécifié comme ce qui suit -->
 <form enctype="multipart/form-data" action="../controlleur/test.php" method="post">
   <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
-  
+
  <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" />-->
 
   <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->

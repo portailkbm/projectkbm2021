@@ -8,15 +8,15 @@
         $file_destination = '../Ressources/'.$file_name;
 
 
-        $extension_autorisees = array('.png' , '.jpeg','.jpg');
+        $extension_autorisees = array('.png' ,'PNG','JPEG','JPG', '.jpeg','.jpg');
         
         if(in_array($file_extension,$extension_autorisees)){
             if(move_uploaded_file($file_tmp_name,$file_destination )){
                 include_once ("../models/modelevenement.php");
                 Inset_pdf($file_destination);
-                echo "uplode reussi ";
+                echo "uplode reussi image";
             }else{
-                echo "uplode echouer ";
+                echo "uplode echouer image";
             }
         }else{
             echo "ceci n'est pas un ficier jpeg ou png";
@@ -34,9 +34,9 @@
             if(move_uploaded_file($file_tmp_name,$file_destination )){
                 include_once ("../models/modelevenement.php");
                 Inset_pdf($file_destination);
-                echo "uplode reussi ";
+                echo "uplode reussi pdf";
             }else{
-                echo "uplode echouer ";
+                echo "uplode echouer pdf";
             }
         }else{
             echo "ceci n'est pas un ficier pdf";

@@ -200,8 +200,9 @@
   <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
   <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
   <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
-  Envoyez ce fichier : <input name="file" type="file" />
-  <input type="submit" value="Envoyer le fichier" />
+  Envoyez un fichier png : <input name="file" type="file" /> </br>
+  Envoyez un fichier pdf : <input name="file2" type="file" /> </br>
+  <input type="submit" value="Envoyer les fichier" />
 </form>
 
 			<!--

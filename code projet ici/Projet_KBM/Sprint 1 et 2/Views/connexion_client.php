@@ -767,7 +767,7 @@
 		</div>
 		<br>
 
-		<h2> fonctionnalite disponible uniquement pour le producteur ici</h2>
+		<h2> fonctionnalite disponible uniquement pour le producteur ici ====================================================================================</h2>
 
 <br>
 <br>
@@ -795,6 +795,7 @@
 			<!--ajouter un produits a la vente-->
 			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_ajout_produit.php">
 			<div id="ajouter_produit_vente" style = "display: none">
+			<h1>Ajouter un produit à la vente</h1>
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -838,6 +839,102 @@
 					</div>
 				</div>
 			</form>
+
+
+
+<h1>Modification production</h1>
+
+			
+			<!--ajouter un produits a la vente-->
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_ajout_produit.php">
+			<div id="ajouter_productuitmodifenoinp" style = "display: inline">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							<h2>Modifier un produit a la vente :</h2>
+							<br>
+							<div>
+								<label for="pet-select">Exploitation:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								
+							</div>
+							
+							<div>
+								<label for="pet-select">produits:</label>
+
+								<select name="pets" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduit.php");
+									   SelectProduit();
+									?>	
+								</select>
+								Qte
+								<input type="int" id="name" name="name"  size="3">
+							</div>
+
+							
+							<br>
+							<div>
+								<button type="submit">valider</button>
+								<button onclick="">annuler</button>
+							</div>
+						</div>
+						<div class="flexinput"></div>
+					</div>
+				</div>
+			</form>
+
+
+
+
+
+
+
+<h1>partie supprimer prosuction</h1>
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_crea.php">
+				<div id="conteneursuppproduc" style = "display: inline">
+					<div class = "conteneurevenement">
+						<div class="flexinput"></div>
+						<div class="conteneurinput">
+							Selectionner un évènement à supprimer
+
+							<div class="celules">
+							<table class="table">
+								<thead>
+									<tr>
+										<th  scope="col">Organisateur</th>
+										<th  scope="col">Activités</th>
+										<th  scope="col">Lieux</th>
+										<th  scope="col">Date</th>
+									</tr>
+								</thead>
+								<tbody id="pointsTable" aligne="center">
+									<marquee behavior="scroll" direction="down">
+									</marquee>
+										<?php
+											include_once ("../models/modelevenement.php");
+											Visualiser_Sup();
+										?>
+								</tbody>
+							</table> 
+						</div>
+						</div> 
+						<div class="flexinput"></div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+
+
 				<!--visualiser les produits -->
 				<div id="visualiser_produit" style = "display: none">
 					<div class = "conteneurevenement">

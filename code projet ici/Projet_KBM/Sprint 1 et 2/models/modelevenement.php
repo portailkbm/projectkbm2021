@@ -280,7 +280,7 @@ include_once("Bdd_login.php");
   
     function Modifier_Evenement($lib,$deb,$fin,$hd,$hf,$cp,$select,$img,$flyer){
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("UPDATE `evenement` SET `libevent` = '$lib',`flyer` = '$flyer',`debutevent`='$deb',`finevent`='$fin',`debutevent_hr`='$hd',`finevent_hr`='$hf',`cp`='$cp',`imagevent`='$$img' WHERE `idevent` LIKE '$select'");
+        $requete = $bdd->prepare("UPDATE `evenement` SET `libevent` = '$lib',`flyer` = '$flyer',`debutevent`='$deb',`finevent`='$fin',`debutevent_hr`='$hd',`finevent_hr`='$hf',`cp`='$cp',`imagevent`='$img' WHERE `idevent` LIKE '$select'");
         $requete ->execute();
     }
 
@@ -310,6 +310,13 @@ include_once("Bdd_login.php");
 
         $bdd= connection_bdd();
         $requete = $bdd->prepare("INSERT INTO `evenement` (`flyer`) VALUES ('$lib')");
+        //$requete = $bdd->prepare("UPDATE `evenement` SET `flyer` = '$flyer',`imagevent`='$img' WHERE `idevent` LIKE '$select'");
+        $requete ->execute();
+    }
+    function Inset_pdf2($flyer,$img,$select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("UPDATE `evenement` SET `flyer` = '$flyer',`imagevent`='$img' WHERE `idevent` LIKE '$select'");
         $requete ->execute();
     }
 

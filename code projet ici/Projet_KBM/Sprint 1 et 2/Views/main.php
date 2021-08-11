@@ -46,7 +46,7 @@
 				<div class="separenavjaune"></div>
 				<div class="elemenrnav"><a href="demenjala.html">Demenjala</a></div>
 				<div class="separenavjaune"></div>
-				<div class="elemenrnav"><a href="">Lakou</a></div>
+				<div class="elemenrnav"><a href="lakou.html">Lakou</a></div>
 				<div class="separenavjaune"></div>
 				<div class="elemenrnav"><a href="event.php">Evenements</a></div>
 				<div class="separenavjaune"></div>

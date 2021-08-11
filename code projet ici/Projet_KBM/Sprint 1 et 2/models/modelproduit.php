@@ -63,8 +63,8 @@
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
         {
-            echo '<option valeur="';
-            echo $_SESSION["resultat"]['nomfranse'];
+            echo '<option value="';
+            echo $_SESSION["resultat"]['idproduit'];
             echo '">';
             echo $_SESSION["resultat"]['nomfranse'];
             echo '</option>';
@@ -248,7 +248,7 @@
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
         {
-            echo '<option valeur="';
+            echo '<option value="';
             echo $_SESSION["resultat"]['id'];
             echo '">';
             echo $_SESSION["resultat"]['nomex'];

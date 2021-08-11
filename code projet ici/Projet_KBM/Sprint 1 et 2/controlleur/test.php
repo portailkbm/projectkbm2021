@@ -13,13 +13,13 @@
         if(in_array($file_extension,$extension_autorisees)){
             if(move_uploaded_file($file_tmp_name,$file_destination )){
                 include_once ("../models/modelevenement.php");
-                Inset_pdf($file_destination);
-                echo "uplode reussi image";
+                Inset_img($file_destination,$_GET ["id"]);
+                echo "uplode reussi image     ";
             }else{
-                echo "uplode echouer image";
+                echo "uplode echouer image    ";
             }
         }else{
-            echo "ceci n'est pas un ficier jpeg ou png";
+            echo "ceci n'est pas un ficier jpeg ou png   ";
         }
 
         $file_name = $_FILES ['file2']['name'];
@@ -33,10 +33,10 @@
         if(in_array($file_extension,$extension_autorisees)){
             if(move_uploaded_file($file_tmp_name,$file_destination )){
                 include_once ("../models/modelevenement.php");
-                Inset_pdf($file_destination);
-                echo "uplode reussi pdf";
+                Inset_pdf($file_destination,$_GET ["id"]);
+                echo "uplode reussi pdf   ";
             }else{
-                echo "uplode echouer pdf";
+                echo "uplode echouer pdf   ";
             }
         }else{
             echo "ceci n'est pas un ficier pdf";

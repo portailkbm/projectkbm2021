@@ -793,7 +793,7 @@
 			</div>
 
 			<!--ajouter un produits a la vente-->
-			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_ajout_produit.php">
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
 			<div id="ajouter_produit_vente" style = "display: none">
 			<h1>Ajouter un produit à la vente</h1>
 					<div class = "conteneurevenement">
@@ -802,13 +802,17 @@
 							<h2>Ajouter un produit a la vente :</h2>
 							<br>
 							<div>
+									Nom Production
+									<input type="text" id="name" name="surface"  size="25">
+							</div>
+							<div>
 								<label for="pet-select">Exploitation:</label>
 
-								<select name="pets" id="pet-select">
+								<select name="exp" id="pet-select">
 									<option value="">-----choix------</option>
 									<?php
 									   include_once ("../models/modelproduit.php");
-									   SelectProduit();
+									   SelectExploitation();
 									?>	
 								</select>
 								
@@ -817,7 +821,7 @@
 							<div>
 								<label for="pet-select">produits:</label>
 
-								<select name="pets" id="pet-select">
+								<select name="pdr" id="pet-select">
 									<option value="">-----choix------</option>
 									<?php
 									   include_once ("../models/modelproduit.php");
@@ -825,7 +829,19 @@
 									?>	
 								</select>
 								Qte
-								<input type="int" id="name" name="name"  size="3">
+								<input type="int" id="name" name="qte"  size="3">
+								Unité
+								<input type="int" id="name" name="unt"  size="3">
+								Prix
+								<input type="int" id="name" name="prx"  size="3">
+							</div>
+							<div>
+								Date debut :
+								<input id="date" type="date" name="date_debut" value="2017-06-01">
+							</div>
+							<div>
+								Date de fin :
+								<input id="date" type="date" name="date_fin" value="2017-06-01">
 							</div>
 
 							
@@ -846,21 +862,37 @@
 
 			
 			<!--ajouter un produits a la vente-->
-			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_ajout_produit.php">
+			<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
 			<div id="ajouter_productuitmodifenoinp" style = "display: inline">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
-							<h2>Modifier un produit a la vente :</h2>
+							<h2>Modifier une production :</h2>
 							<br>
+							<div>
+								<label for="pet-select">Production</label>
+
+								<select name="exp" id="pet-select">
+									<option value="">-----choix------</option>
+									<?php
+									   include_once ("../models/modelproduction.php");
+									   SelectProduction();
+									?>	
+								</select>
+								
+							</div>
+							<div>
+									Nom Production
+									<input type="text" id="name" name="surface"  size="25">
+							</div>
 							<div>
 								<label for="pet-select">Exploitation:</label>
 
-								<select name="pets" id="pet-select">
+								<select name="expt" id="pet-select">
 									<option value="">-----choix------</option>
 									<?php
 									   include_once ("../models/modelproduit.php");
-									   SelectProduit();
+									   SelectExploitation();
 									?>	
 								</select>
 								
@@ -869,7 +901,7 @@
 							<div>
 								<label for="pet-select">produits:</label>
 
-								<select name="pets" id="pet-select">
+								<select name="pdr" id="pet-select">
 									<option value="">-----choix------</option>
 									<?php
 									   include_once ("../models/modelproduit.php");
@@ -877,7 +909,19 @@
 									?>	
 								</select>
 								Qte
-								<input type="int" id="name" name="name"  size="3">
+								<input type="int" id="name" name="qte"  size="3">
+								Unité
+								<input type="int" id="name" name="unt"  size="3">
+								Prix
+								<input type="int" id="name" name="prx"  size="3">
+							</div>
+							<div>
+								Date debut :
+								<input id="date" type="date" name="date_debut" value="2017-06-01">
+							</div>
+							<div>
+								Date de fin :
+								<input id="date" type="date" name="date_fin" value="2017-06-01">
 							</div>
 
 							

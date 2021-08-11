@@ -40,7 +40,7 @@
 								}
 							?>
 						</p>
-						<p>adresse@mail</p>
+
 						<div >
 							<button onclick="window.location.href='../controlleur/controleur_deconnexion.php';">Deconnexion</button>
 						</div>
@@ -141,8 +141,6 @@
 						<div class="conteneurinput">
 							<h2>Creer un envenement :</h2>
 							<br>
-							Envoyez un fichier png : <input name="file" type="file" /> </br>
-                            Envoyez un fichier pdf : <input name="file2" type="file" /> </br>
 							<div>
 								Activer/Desactiver évènement
 								<label class="switch">
@@ -206,7 +204,7 @@
 			</form>
 
 			<!-- Le type d'encodage des données, enctype, DOIT être spécifié comme ce qui suit -->
-<form enctype="multipart/form-data" action="../controlleur/test.php" method="post">
+<form enctype="multipart/form-data" action="../controlleur/test.php?id=<?php  echo $_GET ["id"];?>" method="post">
   <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
 
  <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" />-->

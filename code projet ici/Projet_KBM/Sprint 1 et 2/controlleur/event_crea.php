@@ -44,7 +44,7 @@
             }
     
         }
-        Modifier_Evenement($_POST["name"],$_POST["date_debut"],$_POST["date_fin"],$_POST["timedebut"],$_POST["timefin"],$_POST["cp"],$_POST["exp"],$file_destination,$file_destination2);
+        Modifier_Evenement($_POST["name"],$_POST["date_debut"],$_POST["date_fin"],$_POST["timedebut"],$_POST["timefin"],$_POST["cp"],$_POST["exp"]);
         header('Location: ../Views/connexion_client.php');
     }
     else

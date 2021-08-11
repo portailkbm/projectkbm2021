@@ -81,7 +81,7 @@ function m_connexion_client($pseudo, $password_non_crypte ){
         }
         return 0;
     } else{
-        return 0; 
+        return 1; 
     }
 }
 

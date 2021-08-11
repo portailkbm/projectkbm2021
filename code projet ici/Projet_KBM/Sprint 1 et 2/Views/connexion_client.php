@@ -631,8 +631,13 @@
 
 									<select name="type" id="pet-select">
 										<option value="">--choix--</option>
-										<option value="Mr">type1</option>
-										<option value="Mme">type2</option>
+										<option value="Mr">Mono-Culture</option>
+										<option value="Mr">Poly-Culture</option>
+										<option value="Mme">Elevage</option>
+										<option value="Mr">Mixte</option>
+										<option value="Mr">Pêche</option>
+										<option value="Mme">Apiculteur</option>
+										<option value="Mme">Artisan</option>
 									</select>
 								</div>
 								

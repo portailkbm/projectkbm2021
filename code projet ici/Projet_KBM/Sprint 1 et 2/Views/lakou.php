@@ -55,8 +55,8 @@
 						<marquee behavior="scroll" direction="down">
 						</marquee>
 						<?php
-						include_once ("../models/modelproduit.php");
-						VisualiserProduit();
+						include_once ("../models/modellakou.php");
+						VisualiserLakou();
 						?>
 					</tbody>
 				</table> 

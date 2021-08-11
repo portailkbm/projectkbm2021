@@ -4,8 +4,8 @@
     display: flex;
 }
 .content{
-    width: 700px;
-    height: 640px;
+    width: 800px;
+    height: 740px;
     border-style: solid;
     border-color: black;
     margin:auto;

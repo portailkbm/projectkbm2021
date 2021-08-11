@@ -230,6 +230,45 @@ function apparition_SupprimerExploitation(){
 		document.getElementById("supprimerExploitation").style.display = 'none'
 	}
 }
+/*Js pour la page connexion producteurs*/
+
+function visualiser_produit_producteur(){
+	
+	if(document.getElementById("visualiser_produit_producteurs").style.display == 'none')
+	{
+		document.getElementById("visualiser_produit_producteurs").style.display = 'inline'
+		
+	}else if(document.getElementById("visualiser_produit_producteurs").style.display == 'inline')
+	{
+		document.getElementById("visualiser_produit_producteurs").style.display = 'none'
+	}
+}
+
+function modifier_produit_producteur(){
+	
+	if(document.getElementById("modification_productuitmodifenoinp").style.display == 'none')
+	{
+		document.getElementById("modification_productuitmodifenoinp").style.display = 'inline'
+		
+	}else if(document.getElementById("modification_productuitmodifenoinp").style.display == 'inline')
+	{
+		document.getElementById("modification_productuitmodifenoinp").style.display = 'none'
+	}
+}
+
+
+
+function supprimer_produit_producteur(){
+	
+	if(document.getElementById("supprimer_produit_producteurs").style.display == 'none')
+	{
+		document.getElementById("supprimer_produit_producteurs").style.display = 'inline'
+		
+	}else if(document.getElementById("supprimer_produit_producteurs").style.display == 'inline')
+	{
+		document.getElementById("supprimer_produit_producteurs").style.display = 'none'
+	}
+}
 
 /*
 

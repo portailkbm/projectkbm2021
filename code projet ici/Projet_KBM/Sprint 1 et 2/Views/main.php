@@ -42,9 +42,9 @@
 		<div id="cent">
 			<div id="contnav">
 				<div class="separenavjaune"></div>
-				<div class="elemenrnav"><a href="">KBM</a></div>
+				<div class="elemenrnav"><a href="Kbm.html">KBM</a></div>
 				<div class="separenavjaune"></div>
-				<div class="elemenrnav"><a href="">Demenjala</a></div>
+				<div class="elemenrnav"><a href="demenjala.html">Demenjala</a></div>
 				<div class="separenavjaune"></div>
 				<div class="elemenrnav"><a href="">Lakou</a></div>
 				<div class="separenavjaune"></div>

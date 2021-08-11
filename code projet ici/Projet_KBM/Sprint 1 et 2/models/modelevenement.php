@@ -13,12 +13,13 @@ include_once("Bdd_login.php");
         {
             while($donnee = $requete->fetch())
             {
+                $cp = Code_Postal($donnee["cp"]);
                 echo "<tr><td>";
                 echo $donnee["debutevent"];
                 echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
-                echo $donnee["cp"];
+                echo $cp;
                 echo "</td></tr>";
             }
         }
@@ -34,12 +35,13 @@ include_once("Bdd_login.php");
         {
             while($donnee = $requete->fetch())
             {
+                $cp = Code_Postal($donnee["cp"]);
                 echo "<tr><td>";
                 echo $donnee["debutevent"];
                 echo "</td><td><a href='../controlleur/controleurevensup.php?id=".$donnee["idevent"]."'>";
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
-                echo $donnee["cp"];
+                echo $cp;
                 echo "</td></tr>";
             }
         }
@@ -56,12 +58,13 @@ include_once("Bdd_login.php");
         {
             while($donnee = $requete->fetch())
             {
+                $cp = Code_Postal($donnee["cp"]);
                 echo "<tr><td>";
                 echo $donnee["debutevent"];
                 echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
-                echo $donnee["cp"];
+                echo $cp;
                 echo "</td></tr>";                  
             }
         }
@@ -101,12 +104,13 @@ include_once("Bdd_login.php");
         {
             while($donnee = $requete->fetch())
             {
+                $cp = Code_Postal($donnee["cp"]);
                 echo "<tr><td>";
                 echo $donnee["debutevent"];
                 echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
-                echo $donnee["cp"];
+                echo $cp;
                 echo "</td></tr>";
             }
         }
@@ -123,12 +127,13 @@ include_once("Bdd_login.php");
         {
             while($donnee = $requete->fetch())
             {
+                $cp = Code_Postal($donnee["cp"]);
                 echo "<tr><td>";
                 echo $donnee["debutevent"];
                 echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idevent"]."'>";
                 echo $donnee["libevent"];
                 echo "</a></td><td>";
-                echo $donnee["cp"];
+                echo $cp;
                 echo "</td></tr>";
             }
         }
@@ -230,11 +235,23 @@ include_once("Bdd_login.php");
         $_SESSION["resultat"] = $requete ->execute();
         while($_SESSION["resultat"] = $requete->fetch())
         {
-            echo '<option valeur="';
+            echo '<option value="';
             echo $_SESSION["resultat"]['cp'];
             echo '">';
-            echo $_SESSION["resultat"]['cp'];
+            echo $_SESSION["resultat"]['nomville'];
             echo '</option>';
+        }
+    }
+    function Code_Postal($select){
+
+        $bdd= connection_bdd();
+        $requete = $bdd->prepare("SELECT * FROM `ville` WHERE `cp` LIKE '$select'");        
+        $requete ->execute();
+
+        $_SESSION["resultat"] = $requete ->execute();
+        while($_SESSION["resultat"] = $requete->fetch())
+        {
+            return $_SESSION["resultat"]['nomville'];     
         }
     }
     function Test ()

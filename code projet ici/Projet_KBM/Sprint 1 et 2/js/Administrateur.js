@@ -257,6 +257,19 @@ function modifier_produit_producteur(){
 }
 
 
+function apparition_visualiserExploitation(){
+	
+	if(document.getElementById("visualiser_exploitation").style.display == 'none')
+	{
+		document.getElementById("visualiser_exploitation").style.display = 'inline'
+		
+	}else if(document.getElementById("visualiser_exploitation").style.display == 'inline')
+	{
+		document.getElementById("visualiser_exploitation").style.display = 'none'
+	}
+}
+
+
 
 function supprimer_produit_producteur(){
 	

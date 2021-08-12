@@ -17,18 +17,26 @@
             <div class=topcontainer>
                 <div class="top1">
                     <p>
-                        Nom
+                        Nom : <?php
+                                    include_once ( "../models/modellakou.php" );
+                                    Select_Nom($_GET ["id"]);    
+								?>
                         <br>
-                        Ville
+                        Ville : <?php
+										include_once ( "../models/modellakou.php" );
+										Select_Ville($_GET ["id"]);   
+									?>
                         <br>
-                        Activity
+                       
                     </p>
                 </div>
                 <div class="top2">
                     <p>
-                        e Lorem Ipsum est simplement du faux texte employé dans la composition et
-                        la mise en page avant impression. Le Lorem 
-                        Ipsum est le faux texte standard de l'imprimerie depuis les années 1500,
+                    Activity :
+                        <?php
+                            include_once ( "../models/modellakou.php" );
+                            Select_Presentation($_GET ["id"]);    
+						?>
                     </p>
                 </div>
             </div>
@@ -64,9 +72,15 @@
             </div>
             <div class="endcontainer">
                 <p>
-                    Nom prenom  telephone:
+                    Nom prenom  telephone : <?php
+                            include_once ( "../models/modellakou.php" );
+                            Select_Responsable1($_GET ["id"]);    
+						?>
                     <br>
-                    Nom prenom  telephone:
+                    Nom prenom  telephone : <?php
+                            include_once ( "../models/modellakou.php" );
+                            Select_Responsable2($_GET ["id"]);    
+						?>
                 </p>
             </div>
         </div>

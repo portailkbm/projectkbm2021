@@ -66,7 +66,8 @@ function m_connexion_client($pseudo, $password_non_crypte ){
      //   session_start();
         while($donnee = $requete->fetch()){
             $_SESSION["login"] = $pseudo;
-            return $donnee["categoriecli"];
+           // return $donnee["categoriecli"];
+           return 0;
 
             /**
              * Administrateur poste maj
@@ -80,6 +81,52 @@ function m_connexion_client($pseudo, $password_non_crypte ){
             }     */   
         }
         return 0;
+        
+    } else{
+        return 1; 
+    }
+}
+
+function m_connexion_admin($pseudo, $password_non_crypte ){
+
+    $bdd= connection_bdd();
+    // On crypte le mot de passe
+    $password = $password_non_crypte;
+
+    // PASSWORD A RECRYPTER !!!!!!!!
+    $requete = $bdd->prepare("SELECT * FROM admi WHERE logi = '".$pseudo."' AND mdp = '".$password."'");
+    $requete->execute();
+
+    if($requete->rowCount() == 1){    
+  
+        while($donnee = $requete->fetch()){
+            $_SESSION["login"] = $pseudo;
+            return 0;
+        }
+        return 0;
+    } else{
+        return 1; 
+    }
+}
+
+function m_connexion_producteur($pseudo, $password_non_crypte ){
+
+    $bdd= connection_bdd();
+    // On crypte le mot de passe
+    $password = $password_non_crypte;
+
+    // PASSWORD A RECRYPTER !!!!!!!!
+    $requete = $bdd->prepare("SELECT * FROM producteur WHERE nomprod = '".$pseudo."' AND mdp = '".$password."'");
+    $requete->execute();
+
+    if($requete->rowCount() == 1){    
+  
+        while($donnee = $requete->fetch()){
+            $_SESSION["login"] = $pseudo;
+            return 0;
+        }
+        return 0;
+        
     } else{
         return 1; 
     }

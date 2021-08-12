@@ -1,5 +1,6 @@
 <?php
     include_once("Bdd_login.php");
+    include_once("modelevenement.php");
     
     function VisualiserLakou()
     {
@@ -11,13 +12,14 @@
         {
             while($donnee = $requete->fetch())
             {
+                $cp = Code_Postal($donnee["cp"]);
                 echo "<tr><td>";
                 echo $donnee["nomlak"];
                 echo "</td><td><a href='../controlleur/controleurevenement.php?id=".$donnee["idlak"]."'>";
                 echo $donnee["Presentation"];
                 echo "</a></td><td>";
-                echo $donnee["cp"];
-                echo "</td><td>";
+                echo $cp;
+                echo "</td></tr>";
             }
         }
     }

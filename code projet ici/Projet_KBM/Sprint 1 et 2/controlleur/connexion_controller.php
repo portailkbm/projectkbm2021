@@ -5,7 +5,58 @@
 	//global $login_client,$mdp_client,$login_admin,$mdp_admin,$login_membre,$mdp_membre,$login_r,$mdp_r,$login_producteur,$mdp_producteur,$login_transporteur,$mdp_transporteur;
 
 	include ('../models/account_management.php');
-    $return = m_connexion_client($_POST["login"], $_POST["mdp"]);
+
+	$returnad = m_connexion_admin($_POST["login"], $_POST["mdp"]);
+	$returnpr = m_connexion_producteur($_POST["login"], $_POST["mdp"]);
+    $returncl = m_connexion_client($_POST["login"], $_POST["mdp"]);
+
+	if ($returnad == 1 && $returnpr == 1 && $returncl == 1){
+		session_start();
+		$_SESSION['message']= "mdp incorect";
+		header('Location: ../Views/connexion.php');
+	}else{
+
+		if ($returnad != 1){
+
+			setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
+			if (isset($_COOKIE['pseudo']))
+			{
+				session_start();
+				$_SESSION['pseudo'] = $_COOKIE['pseudo'];
+				$_SESSION['login'] = $_POST["login"];
+				header('Location: ../Views/connexion_Admin.php');
+			}
+
+		}else if ($returnpr != 1){
+
+			setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
+			if (isset($_COOKIE['pseudo']))
+			{
+				session_start();
+				$_SESSION['pseudo'] = $_COOKIE['pseudo'];
+				$_SESSION['login'] = $_POST["login"];
+				header('Location: ../Views/connexion_Producteurs.php');
+			}	
+
+		}else if ($returncl != 1){
+
+			setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
+			if (isset($_COOKIE['pseudo']))
+			{
+				session_start();
+				$_SESSION['pseudo'] = $_COOKIE['pseudo'];
+				$_SESSION['login'] = $_POST["login"];
+				header('Location: ../Views/main.php');
+			}	
+
+		}
+
+
+	}
+
+
+/*
+
 	if ($return != 1){
 		session_start();
 		$_SESSION['message']= "mdp incorect";
@@ -20,7 +71,7 @@
 			//include("../Views/connexion_client.php");
 			header('Location: ../Views/connexion_client.php');
 		}
-    }
+    }*/
 
 
 /*

@@ -71,7 +71,7 @@
 
    <!--ajouter un produits a la vente-->
    <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
-   <div id="ajouter_produit_vente" style = "display: none">
+   <div id="ajouter_produit_vente" style = "display: inline">
    <h1>Ajouter un produit à la vente</h1>
            <div class = "conteneurevenement">
                <div class="flexinput"></div>
@@ -175,7 +175,7 @@
    
    <!--ajouter un produits a la vente-->
    <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
-   <div id="modification_productuitmodifenoinp" style = "display: none">
+   <div id="modification_productuitmodifenoinp" style = "display: inline">
            <div class = "conteneurevenement">
                <div class="flexinput"></div>
                <div class="conteneurinput">
@@ -279,7 +279,7 @@
 
 
    <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_crea.php">
-       <div id="supprimer_produit_producteurs" style = "display: none">
+       <div id="supprimer_produit_producteurs" style = "display: inline">
            <div class = "conteneurevenement">
                <div class="flexinput"></div>
                <div class="conteneurinput">
@@ -315,7 +315,7 @@
 
 
        <!--visualiser les produits -->
-       <div id="visualiser_produit_producteurs" style = "display: none">
+       <div id="visualiser_produit_producteurs" style = "display: inline">
            <div class = "conteneurevenement">
                <div class="flexinput"></div>
                <div class="conteneurinput">
@@ -346,7 +346,7 @@
 
 
 
-       <script  src="../js/Administrateur.js"></script>
+       <script  src="../js/producteurs.js"></script>
     
 </body>
 </html>

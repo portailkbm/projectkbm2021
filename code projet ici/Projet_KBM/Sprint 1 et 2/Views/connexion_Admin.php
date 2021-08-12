@@ -763,6 +763,35 @@
 					</div>
 				</div>
 
+				<h1>Voir exploitation</h1>
+				<div id="visualiser_produit_producteurs" style = "display: inline">
+           <div class = "conteneurevenement">
+               <div class="flexinput"></div>
+               <div class="conteneurinput">
+                   <div class="celules">
+                       <table class="table">
+                           <thead>
+                               <tr>
+                                   <th  scope="col">nom sc</th>
+                                   <th  scope="col">nom local</th>
+                                   <th  scope="col">type</th>
+                                   <th  scope="col">Qte</th>
+                               </tr>
+                           </thead>
+                           <tbody id="pointsTable" aligne="center">
+                               <marquee behavior="scroll" direction="down">
+                               </marquee>
+                                   <?php
+                                       include_once ("../models/modelproduit.php");
+                                       VisualiserProduit();
+                                   ?>
+                           </tbody>
+                       </table> 
+                   </div>
+               </div>
+               <div class="flexinput"></div>
+           </div>
+       </div>
 
 
 		</div>

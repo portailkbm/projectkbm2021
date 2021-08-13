@@ -39,13 +39,16 @@
     function VisualiserProductionProducteur($select)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("SELECT * FROM production WHERE `idproducteur` LIKE '.$select.'");
+        $requete = $bdd->prepare('SELECT * FROM production WHERE `idproducteur` LIKE "'.$select.'"');
         $requete ->execute();
 
+    
         if ( $requete ->execute())
         {
+            //echo $select;
             while($donnee = $requete->fetch())
             {
+                //echo $select;
                 $prod = SelectProduitid($donnee["idproduit"]);
                 echo "<tr><td>";
                 echo $donnee["nomprod"];
@@ -71,7 +74,7 @@
     function VisualiserProductionSup($select)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("SELECT * FROM production WHERE `idproducteur` LIKE '.$select.'");
+        $requete = $bdd->prepare('SELECT * FROM production WHERE `idproducteur` LIKE "'.$select.'"');
         $requete ->execute();
 
         if ( $requete ->execute())
@@ -79,15 +82,15 @@
             while($donnee = $requete->fetch())
             {
                 $prod = SelectProduitid($donnee["idproduit"]);
-                echo "<tr><td>";
+                echo "<tr><td><a href='../controlleur/sup_production.php?id=".$donnee["id"]."'>";
                 echo $donnee["nomprod"];
-                echo "</td><td>";
+                echo "</a></td><td>";
                 echo $prod;
                 echo "</td><td>";
                 echo $donnee["date_debut"];
                 echo "</td><td>";
                 echo $donnee["date_fin"];
-                echo "</td><td><a href='../controlleur/sup_produit.php?id=".$donnee["id"]."'>";
+                echo "</td><td><a href='../controlleur/sup_production.php?id=".$donnee["id"]."'>";
                 echo $donnee["quantité"];
                 echo "</a></td><td>";
                 echo $donnee["unité"];
@@ -107,10 +110,10 @@
         $requete ->execute(); 
     }
 
-    function SelectProduction()
+    function SelectProduction($select)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare('SELECT * FROM production');
+        $requete = $bdd->prepare('SELECT * FROM production WHERE `idproducteur` LIKE "'.$select.'"');
         $requete ->execute();   
     
         $_SESSION["resultat"] = $requete ->execute();
@@ -124,10 +127,10 @@
         }
     }
 
-    function CreerProduction($nom,$idproducteur,$idproduit,$date_debut,$date_fin,$quantité,$unité,$cp,$prix_unité)
+    function CreerProduction($nom,$idproducteur,$idex,$idproduit,$date_debut,$date_fin,$quantité,$unité,$cp,$prix_unité)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("INSERT INTO `production` (`nomprod`,`idproducteur`,`idproduit`,`date_debut`,`date_fin`,`quantité`,`unité`,`cp`,`prix_unité`) VALUES ('$nom','$idproducteur','$idproduit','$date_debut','$date_fin','$quantité','$unité','$cp','$prix_unité')");
+        $requete = $bdd->prepare("INSERT INTO `production` (`nomprod`,`idproducteur`,`exploitation`,`idproduit`,`date_debut`,`date_fin`,`quantité`,`unité`,`cp`,`prix_unité`) VALUES ('$nom','$idproducteur','$idex','$idproduit','$date_debut','$date_fin','$quantité','$unité','$cp','$prix_unité')");
         if ( $requete ->execute())
         {
             return 1;
@@ -137,10 +140,10 @@
         }   
     }
 
-    function ModifierProduction($nom,$idproducteur,$idproduit,$date_debut,$date_fin,$quantité,$unité,$cp,$prix_unité,$select)
+    function ModifierProduction($nom,$idproducteur,$idex,$idproduit,$date_debut,$date_fin,$quantité,$unité,$cp,$prix_unité,$select)
     {
         $bdd= connection_bdd();
-        $requete = $bdd->prepare("UPDATE `production` SET `nomprod` = '$nom',`idproducteur` ='$idproducteur',`idproduit`='$idproduit',`date_debut`='$date_debut',`date_fin` = '$date_fin',`quantité` ='$quantité',`unité`='$unité',`cp`='$cp',`prix_unité`='$prix_unité' WHERE `idproduit` LIKE '$select'");
+        $requete = $bdd->prepare("UPDATE `production` SET `nomprod` = '$nom',`exploitation` = '$idex',`idproducteur` ='$idproducteur',`idproduit`='$idproduit',`date_debut`='$date_debut',`date_fin` = '$date_fin',`quantité` ='$quantité',`unité`='$unité',`cp`='$cp',`prix_unité`='$prix_unité' WHERE `id` LIKE '$select'");
 
         if ( $requete ->execute())
         {
@@ -176,6 +179,8 @@
             return $_SESSION["resultat"]['nomfranse'];   
         }
     }
+
+    
 
 
 

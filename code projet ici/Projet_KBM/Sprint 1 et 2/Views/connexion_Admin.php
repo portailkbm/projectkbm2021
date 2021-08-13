@@ -808,18 +808,23 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th  scope="col">nom sc</th>
+									<th  scope="col">nom Producteur</th>
+									<th  scope="col">id Producteur</th>
 									<th  scope="col">nom local</th>
-									<th  scope="col">type</th>
+									<th  scope="col">date debut</th>
+									<th  scope="col">date fin</th>
 									<th  scope="col">Qte</th>
+									<th  scope="col">unité</th>
+									<th  scope="col">Qte</th>
+									<th  scope="col">prix unité</th>
 								</tr>
 							</thead>
 							<tbody id="pointsTable" aligne="center">
 								<marquee behavior="scroll" direction="down">
 								</marquee>
 									<?php
-										include_once ("../models/modelproduit.php");
-										VisualiserProduit();
+										include_once ("../models/modelproduction.php");
+										VisualiserProduction();
 									?>
 							</tbody>
 						</table> 

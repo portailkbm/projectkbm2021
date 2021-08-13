@@ -283,6 +283,19 @@ function supprimer_produit_producteur(){
 	}
 }
 
+
+function afficher_prodeuction(){
+	
+	if(document.getElementById("visualiser_production").style.display == 'none')
+	{
+		document.getElementById("visualiser_production").style.display = 'inline'
+		
+	}else if(document.getElementById("visualiser_production").style.display == 'inline')
+	{
+		document.getElementById("visualiser_production").style.display = 'none'
+	}
+}
+
 /*
 
 function Gestiondesproduits(){

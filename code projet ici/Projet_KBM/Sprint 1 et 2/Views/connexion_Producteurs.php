@@ -9,6 +9,7 @@
     <title>Producteurs</title>
 </head>
 <body>
+<script  src="../js/producteurs.js"></script> 
     <header>
 		<a href="../Views/main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" /> </a>
 		<div id="wrapper">
@@ -71,7 +72,9 @@
 
         <!--ajouter un produits a la vente-->
         <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
+
         <div id="ajouter_produit_vente" style = "display: inline">
+
         <h1>Ajouter un produit à la vente</h1>
                 <div class = "conteneurevenement">
                     <div class="flexinput"></div>
@@ -167,12 +170,7 @@
                 </div>
             </div>
         </form>
-
-
-
-
-
-        
+        </div>
         <!--ajouter un produits a la vente-->
         <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
         <div id="modification_productuitmodifenoinp" style = "display: inline">
@@ -202,7 +200,7 @@
                         </div>
                     
                         
-                        <div style="display: flex ; flex-direction: row ;">
+                        <div style="display: flex ; flex-direction: column ;">
                             <label for="pet-select">produits:</label>
 
                             <select name="pdr" id="pet-select">
@@ -347,7 +345,7 @@
 
 
        
-    
+    <script  src="../js/producteurs.js"></script> 
 </body>
-    <script  src="../js/producteurs.js"></script>
+    
 </html>

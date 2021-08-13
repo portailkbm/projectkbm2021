@@ -196,6 +196,10 @@
 				<div class="buttonevenement">
 					<button onclick="apparitionproduit()" >Produits</button>
 				</div>
+
+				<div class="buttonevenement" >
+						<button onclick="afficher_prodeuction()">voir production</button>
+					</div>
 				
 			</div>
 
@@ -219,6 +223,8 @@
 					<div class="buttonevenement">
 						<button onclick="apparition_supprimerProducteur()" >supprimer</button>
 					</div>
+
+					
 
 				</div>
 
@@ -776,17 +782,9 @@
 
 
 				
-			<div id="choixproduit" style="display:none">
-				<div class="contenueuractionevenement" style ="background-color:#68af29">
+			
 
-					<div class="buttonevenement" >
-						<button onclick="apparition_ajout_produit()">visualiser production</button>
-					</div>
-				</div>
-
-			</div>
-
-				<div id="visualiser_production" style = "display: inline">
+				<div id="visualiser_production" style = "display: none">
 					<div class = "conteneurevenement">
 					<div class="flexinput"></div>
 					<div class="conteneurinput">

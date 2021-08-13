@@ -43,6 +43,7 @@
 
 	<div id="principale"> <!-- option pour l'administrateurs uniquement-->
 		<div id="Evenement">
+
 			<div id="contenurtitre">
 				<h2>Evenement(visible que par l'admin)</h2>
 			</div>
@@ -177,7 +178,8 @@
 			</form>
 
 
-		<div id = "Production">
+		
+			<div id = "Production">
 			<h1>Production</h1>
 			<div class="contenueuractionevenement">
 
@@ -565,7 +567,7 @@
 				
 
 			<!-- choix option pour Exploitation -->
-test
+
 			<div id="choixpexploitation" style="display:none">
 				<div class="contenueuractionevenement" style ="background-color:#68af29">
 
@@ -769,7 +771,22 @@ test
 
 <!-- pour faire apparaitre la vue change le display:none en display: inline (ligne:772) -->
 
-				<div id="visualiser_exploitation" style = "display: none">
+
+
+
+
+				
+			<div id="choixproduit" style="display:none">
+				<div class="contenueuractionevenement" style ="background-color:#68af29">
+
+					<div class="buttonevenement" >
+						<button onclick="apparition_ajout_produit()">visualiser production</button>
+					</div>
+				</div>
+
+			</div>
+
+				<div id="visualiser_production" style = "display: inline">
 					<div class = "conteneurevenement">
 					<div class="flexinput"></div>
 					<div class="conteneurinput">

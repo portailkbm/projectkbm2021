@@ -73,7 +73,7 @@
             <!--ajouter un produits a la vente-->
         <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
 
-            <div id="ajouter_produit_vente" style = "display: inline">
+            <div id="ajouter_produit_vente" style = "display: none">
 
             <h1>Ajouter un produit à la vente</h1>
                     <div class = "conteneurevenement">
@@ -169,7 +169,7 @@
                         <div class="flexinput"></div>
                     </div>
                 </div>
-            </form>
+        </form>
             
 
                 <!-- modifier-->
@@ -177,7 +177,7 @@
 
                 <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
 
-                    <div id="ajouter_produit_vente" style = "display: inline">
+                    <div id="modifier" style = "display: none">
                         <div class = "conteneurevenement">
                             <div class="flexinput"></div>
                             <div class="conteneurinput">
@@ -275,7 +275,7 @@
 
                 <!-- Section Supprimer-->
 
-                <div id="conteneurglobalinputModifier" style = "display: inline">
+                <div id="Supprimer" style = "display: none">
                 <h1>Supprimer </h1>
 				<div class = "conteneurevenement">
 					<div class="flexinput"></div>
@@ -309,7 +309,7 @@
 
             <!-- Section Visualiser-->
 
-            <div id="conteneurglobalinputModifier" style = "display: inline">
+            <div id="voir" style = "display: none">
                 <h1>Visualiser </h1>
 				<div class = "conteneurevenement">
 					<div class="flexinput"></div>

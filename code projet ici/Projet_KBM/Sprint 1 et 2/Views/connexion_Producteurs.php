@@ -71,7 +71,7 @@
         <div>
             
             <!--ajouter un produits a la vente-->
-        <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
+        <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php?id=<?php  echo $_GET ["id"];?>">
 
             <div id="ajouter_produit_vente" style = "display: none">
 
@@ -84,14 +84,14 @@
                             <div style="display: flex ; flex-direction: row">
                                 <div style=" flex:1"> Nom Production</div>
                                     <div style=" flex:1">
-                                        <input type="text" id="name" name="surface"  size="25">
+                                        <input type="text" id="name" name="name"  size="25">
                                     </div>
                                     
                             </div>
                             <div style="display: flex ; flex-direction: row">
                                 <label for="pet-select" style=" flex:1">Exploitation:</label>
 
-                                <select name="exp" id="pet-select" style=" flex:1">
+                                <select name="expt" id="pet-select" style=" flex:1">
                                     <option value="">-----choix------</option>
                                     <?php
                                         include_once ("../models/modelproduit.php");
@@ -175,7 +175,7 @@
                 <!-- modifier-->
 
 
-                <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
+                <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php?id=<?php  echo $_GET ["id"];?>">
 
                     <div id="modifier" style = "display: none">
                         <div class = "conteneurevenement">
@@ -183,17 +183,24 @@
                             <div class="conteneurinput">
                                 <h2>Modifier un produit a la vente :</h2>
                                 <br>
+                                <select name="exp" id="pet-select" style=" flex:1">
+                                        <option value="">-----choix------</option>
+                                        <?php
+                                            include_once ("../models/modelproduction.php");
+                                            SelectProduction($_GET ["id"]);
+                                        ?>	
+                                </select>
                                 <div style="display: flex ; flex-direction: row">
                                     <div style=" flex:1"> Nom Production</div>
                                         <div style=" flex:1">
-                                            <input type="text" id="name" name="surface"  size="25">
+                                            <input type="text" id="name" name="name"  size="25">
                                         </div>
                                         
                                 </div>
                                 <div style="display: flex ; flex-direction: row">
                                     <label for="pet-select" style=" flex:1">Exploitation:</label>
 
-                                    <select name="exp" id="pet-select" style=" flex:1">
+                                    <select name="expt" id="pet-select" style=" flex:1">
                                         <option value="">-----choix------</option>
                                         <?php
                                             include_once ("../models/modelproduit.php");
@@ -294,8 +301,8 @@
 									<marquee behavior="scroll" direction="down">
 									</marquee>
 										<?php
-											include_once ("../models/modelevenement.php");
-											visualiser();
+											include_once ("../models/modelproduction.php");
+											VisualiserProductionSup($_GET ["id"]);
 										?>
 								</tbody>
 							</table> 
@@ -318,18 +325,23 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th  scope="col">Organisateur</th>
-										<th  scope="col">Activités</th>
-										<th  scope="col">Lieux</th>
-										<th  scope="col">Date</th>
+                                        <th  scope="col">nom Producteur</th>
+                                        <th  scope="col">id Producteur</th>
+                                        <th  scope="col">nom local</th>
+                                        <th  scope="col">date debut</th>
+                                        <th  scope="col">date fin</th>
+                                        <th  scope="col">Qte</th>
+                                        <th  scope="col">unité</th>
+                                        <th  scope="col">Qte</th>
+                                        <th  scope="col">prix unité</th>
 									</tr>
 								</thead>
 								<tbody id="pointsTable" aligne="center">
 									<marquee behavior="scroll" direction="down">
 									</marquee>
 										<?php
-											include_once ("../models/modelevenement.php");
-											visualiser();
+											include_once ("../models/modelproduction.php");
+                                            VisualiserProductionProducteur($_GET ["id"]);                       
 										?>
 								</tbody>
 							</table> 

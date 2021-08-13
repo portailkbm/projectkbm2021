@@ -67,7 +67,7 @@ function m_connexion_client($pseudo, $password_non_crypte ){
         while($donnee = $requete->fetch()){
             $_SESSION["login"] = $pseudo;
            // return $donnee["categoriecli"];
-           return 0;
+           return 1;
 
             /**
              * Administrateur poste maj
@@ -80,10 +80,10 @@ function m_connexion_client($pseudo, $password_non_crypte ){
                 return $donnee["categoriecli"];
             }     */   
         }
-        return 0;
+        return 1;
         
     } else{
-        return 1; 
+        return 0; 
     }
 }
 
@@ -101,11 +101,11 @@ function m_connexion_admin($pseudo, $password_non_crypte ){
   
         while($donnee = $requete->fetch()){
             $_SESSION["login"] = $pseudo;
-            return 0;
+            return 1;
         }
-        return 0;
+        return 1;
     } else{
-        return 1; 
+        return 0; 
     }
 }
 
@@ -123,12 +123,12 @@ function m_connexion_producteur($pseudo, $password_non_crypte ){
   
         while($donnee = $requete->fetch()){
             $_SESSION["login"] = $pseudo;
-            return 0;
+            return $donnee["idprod"];
         }
-        return 0;
+        return 1;
         
     } else{
-        return 1; 
+        return 0; 
     }
 }
 

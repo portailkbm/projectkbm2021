@@ -10,13 +10,13 @@
 	$returnpr = m_connexion_producteur($_POST["login"], $_POST["mdp"]);
     $returncl = m_connexion_client($_POST["login"], $_POST["mdp"]);
 
-	if ($returnad == 1 && $returnpr == 1 && $returncl == 1){
+	if ($returnad == 0 && $returnpr == 0 && $returncl == 0){
 		session_start();
 		$_SESSION['message']= "mdp incorect";
 		header('Location: ../Views/connexion.php');
 	}else{
 
-		if ($returnad != 1){
+		if ($returnad != 0){
 
 			setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
 			if (isset($_COOKIE['pseudo']))
@@ -27,7 +27,7 @@
 				header('Location: ../Views/connexion_Admin.php');
 			}
 
-		}else if ($returnpr != 1){
+		}else if ($returnpr != 0){
 
 			setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
 			if (isset($_COOKIE['pseudo']))
@@ -35,10 +35,10 @@
 				session_start();
 				$_SESSION['pseudo'] = $_COOKIE['pseudo'];
 				$_SESSION['login'] = $_POST["login"];
-				header('Location: ../Views/connexion_Producteurs.php');
+				header('Location: ../Views/connexion_Producteurs.php?id='.$returnpr.'');
 			}	
 
-		}else if ($returncl != 1){
+		}else if ($returncl != 0){
 
 			setcookie('pseudo', $_POST['login'], time() + 365*24*3600, null, null, false, true);
 			if (isset($_COOKIE['pseudo']))

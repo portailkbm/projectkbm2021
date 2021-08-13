@@ -45,7 +45,7 @@
 		<div id="Evenement">
 
 			<div id="contenurtitre">
-				<h2>Evenement(visible que par l'admin)</h2>
+				<h2>Evenement</h2>
 			</div>
 			<div class ="contenueuractionevenement">
 				<div class="buttonevenement">

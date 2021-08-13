@@ -119,10 +119,9 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th  scope="col">Organisateur</th>
+								<th  scope="col">Dates</th>
 								<th  scope="col">Activités</th>
 								<th  scope="col">Lieux</th>
-								<th  scope="col">Dates</th>
 							</tr>
 						</thead>
 						<tbody id="pointsTable" aligne="center">

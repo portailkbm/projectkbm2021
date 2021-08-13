@@ -135,26 +135,14 @@ a:hover { color: yellow; }
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -40%);
     text-align: center;
     background-color: rgba(255,255,255,0.4);
     padding: 30px;
 }
 
 /* table à entête fixe */
-thead{
-    display: block;
-    width: 100%;
-  }
-  tbody{
-    height:23em; /* hauteur imposée */
-    width: 100%;
-    overflow-y: scroll;
-    display: block;
-  }
-  table th, table td {
-    width:10%;
-  }
+
   /* ---------------------- */
   /* DECO */
   .celules {
@@ -178,26 +166,9 @@ thead{
     border: 1px solid #ccc;
     padding:8px 3px;
   }
+  /* ---------------------- */
   
-  #Organisateur{
-      width: 10em;
-  }
-  
-  
-  #activités{
-  
-      width: 20em;
-  }
-  
-  #lieux{
-      width: 15em;
-  }
-  
-  #dates{
-  
-      width: 5em;
-  
-  }
+ 
   
   /* ---------------------- */
   

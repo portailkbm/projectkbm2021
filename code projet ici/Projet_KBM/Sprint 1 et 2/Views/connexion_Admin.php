@@ -75,11 +75,13 @@
 								</label>
 							</div>
 							<div>
-								Date debut :
+								
+								<div>Date debut :</div>
 								<input id="date" type="date" name="date_debut" value="2017-06-01">
 							</div>
 							<div>
-								Date de fin :
+								
+								<div>Date de fin :</div>
 								<input id="date" type="date" name="date_fin" value="2017-06-01">
 							</div>
 							<div>
@@ -91,11 +93,11 @@
 								<input id="appt-time" type="time" name="timefin" value="13:30">
 							</div>
 							<div>
-								Nom Evenement
+								<div>Nom Evenement</div>
 								<input type="text" id="name" name="name"  size="25">
 							</div>
 							<div>
-								Code Postal
+								<div>Code Postal</div>
 								<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
 									<option value="">--Votre Code Postal--</option>
 									<?php
@@ -123,10 +125,9 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th  scope="col">Organisateur</th>
+										<th  scope="col">Dates</th>
 										<th  scope="col">Activités</th>
 										<th  scope="col">Lieux</th>
-										<th  scope="col">Date</th>
 									</tr>
 								</thead>
 								<tbody id="pointsTable" aligne="center">
@@ -154,10 +155,9 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th  scope="col">Organisateur</th>
+										<th  scope="col">Dates</th>
 										<th  scope="col">Activités</th>
 										<th  scope="col">Lieux</th>
-										<th  scope="col">Date</th>
 									</tr>
 								</thead>
 								<tbody id="pointsTable" aligne="center">
@@ -391,10 +391,9 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th  scope="col">Organisateur</th>
-												<th  scope="col">Activités</th>
-												<th  scope="col">Lieux</th>
-												<th  scope="col">Date</th>
+												<th  scope="col">Nom </th>
+												<th  scope="col">Numero</th>
+												<th  scope="col">Mail</th>
 											</tr>
 										</thead>
 										<tbody id="pointsTable" aligne="center">
@@ -561,10 +560,10 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th  scope="col">Organisateur</th>
-												<th  scope="col">Activités</th>
-												<th  scope="col">Lieux</th>
-												<th  scope="col">Date</th>
+												<th  scope="col">Nom sc</th>
+												<th  scope="col">Nom local</th>
+												<th  scope="col">catégorie</th>
+												<th  scope="col">Qtete</th>
 											</tr>
 										</thead>
 										<tbody id="pointsTable" aligne="center">

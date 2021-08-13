@@ -68,279 +68,281 @@
 
             </div>
 
-       
-
-        <!--ajouter un produits a la vente-->
+        <div>
+            
+            <!--ajouter un produits a la vente-->
         <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
 
-        <div id="ajouter_produit_vente" style = "display: inline">
+            <div id="ajouter_produit_vente" style = "display: inline">
 
-        <h1>Ajouter un produit à la vente</h1>
-                <div class = "conteneurevenement">
-                    <div class="flexinput"></div>
-                    <div class="conteneurinput">
-                        <h2>Ajouter un produit a la vente :</h2>
-                        <br>
-                        <div style="display: flex ; flex-direction: row">
-                            <div style=" flex:1"> Nom Production</div>
-                                <div style=" flex:1">
-                                    <input type="text" id="name" name="surface"  size="25">
-                                </div>
-                                
-                        </div>
-                        <div style="display: flex ; flex-direction: row">
-                            <label for="pet-select" style=" flex:1">Exploitation:</label>
-
-                            <select name="exp" id="pet-select" style=" flex:1">
-                                <option value="">-----choix------</option>
-                                <?php
-                                    include_once ("../models/modelproduit.php");
-                                    SelectExploitation();
-                                ?>	
-                            </select>
-                            
-                        </div>
-                        
-                        
-                        <div style="display: flex ; flex-direction: row ;">
-                            <label for="pet-select">produits:</label>
-
-                            <select name="pdr" id="pet-select">
-                                <option value="">-----choix------</option>
-                                <?php
-                                    include_once ("../models/modelproduit.php");
-                                    SelectProduit();
-                                ?>	
-                            </select>
-                            <div  style=" flex:1">
-                                    Qte:
-                                </div>
-                            
-                            <div  style=" flex:1">
-                                    <input type="int" id="name" name="qte"  size="3">
-                                </div>
-                            
-                            <div  style=" flex:1">
-                                    Unité
-                                </div>
-                            
-                            <div  style=" flex:1">
-                                    <input type="int" id="name" name="unt"  size="3">
-                                </div>
-                            
-                            
-                            <div  style=" flex:1">
-                                    Prix 
-                                </div>
-                            
-                                <div  style=" flex:1">
-                                    <input type="int" id="name" name="prx"  size="3">
-                                </div>
-                        </div>
-
-                        <div style="display: flex ; flex-direction: row">
-                                <div  style=" flex:1">
-                                    Date debut :
-                                </div>
-                            
-                                <div  style=" flex:1">
-                                    <input id="date" type="date" name="date_debut" value="2017-06-01">
-                                </div>
-                        </div>
-
-                        <div style="display: flex ; flex-direction: row">
-                            
-                            <div  style=" flex:1">
-                                    Date de fin :
-                                </div>
-                            
-                            <div  style=" flex:1">
-                                    <input id="date" type="date" name="date_fin" value="2017-06-01">
-                                </div>
-                        </div>
-
-                        
-                        <br>
-                        <div style="display: flex ; flex-direction: row">
-                            <button type="submit">valider</button>
-                            <button onclick="">annuler</button>
-                        </div>
-                    </div>
-                    <div class="flexinput"></div>
-                </div>
-            </div>
-        </form>
-        </div>
-        <!--ajouter un produits a la vente-->
-        <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
-        <div id="modification_productuitmodifenoinp" style = "display: inline">
-                <div class = "conteneurevenement">
-                    <div class="flexinput"></div>
-                    <div class="conteneurinput">
-                        <h2>Modifier un produit a la vente :</h2>
-                        <br>
-                        <div style="display: flex ; flex-direction: row">
-                            <div style=" flex:1"> Nom Production</div>
-                            <div style=" flex:1">
-                                <input type="text" id="name" name="surface"  size="25">
-                            </div>
-                                
-                        </div>
-                        <div style="display: flex ; flex-direction: row">
-                            <label for="pet-select" style=" flex:1">Exploitation:</label>
-
-                            <select name="exp" id="pet-select" style=" flex:1">
-                                <option value="">-----choix------</option>
-                                <?php
-                                include_once ("../models/modelproduit.php");
-                                SelectProduction();
-                                ?>	
-                            </select>
-                            
-                        </div>
-                    
-                        
-                        <div style="display: flex ; flex-direction: column ;">
-                            <label for="pet-select">produits:</label>
-
-                            <select name="pdr" id="pet-select">
-                                <option value="">-----choix------</option>
-                                <?php
-                                include_once ("../models/modelproduit.php");
-                                SelectExploitation();;
-                                ?>	
-                            </select>
-                            <div  style=" flex:1">
-                                Qte:
-                            </div>
-                        
-                            <div  style=" flex:1">
-                                <input type="int" id="name" name="qte"  size="3">
-                            </div>
-                            
-                            <div  style=" flex:1">
-                                Unité
-                            </div>
-                            
-                            <div  style=" flex:1">
-                                <input type="int" id="name" name="unt"  size="3">
-                            </div>
-                            
-                        
-                            <div  style=" flex:1">
-                                Prix 
-                            </div>
-                            
-                            <div  style=" flex:1">
-                                <input type="int" id="name" name="prx"  size="3">
-                            </div>
-                        </div>
-
-                        <div style="display: flex ; flex-direction: row">
-                            <div  style=" flex:1">
-                                Date debut :
-                            </div>
-                        
-                            <div  style=" flex:1">
-                                <input id="date" type="date" name="date_debut" value="2017-06-01">
-                            </div>
-                        </div>
-
-                        <div style="display: flex ; flex-direction: row">
-                        
-                            <div  style=" flex:1">
-                                Date de fin :
-                            </div>
-                            
-                            <div  style=" flex:1">
-                                <input id="date" type="date" name="date_fin" value="2017-06-01">
-                            </div>
-                        </div>
-
-
-                        <br>
-                        <div style="display: flex ; flex-direction: row">
-                            <button type="submit">valider</button>
-                            <button onclick="">annuler</button>
-                        </div>
-                    </div>
-                    <div class="flexinput"></div>
-                </div>
-            </div>
-        </form>
-
-
-
-
-
-
-
-
-            <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_crea.php">
-                <div id="supprimer_produit_producteurs" style = "display: inline">
+            <h1>Ajouter un produit à la vente</h1>
                     <div class = "conteneurevenement">
                         <div class="flexinput"></div>
                         <div class="conteneurinput">
-                            Selectionner un évènement à supprimer
+                            <h2>Ajouter un produit a la vente :</h2>
+                            <br>
+                            <div style="display: flex ; flex-direction: row">
+                                <div style=" flex:1"> Nom Production</div>
+                                    <div style=" flex:1">
+                                        <input type="text" id="name" name="surface"  size="25">
+                                    </div>
+                                    
+                            </div>
+                            <div style="display: flex ; flex-direction: row">
+                                <label for="pet-select" style=" flex:1">Exploitation:</label>
 
-                            <div class="celules">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th  scope="col">Organisateur</th>
-                                        <th  scope="col">Activités</th>
-                                        <th  scope="col">Lieux</th>
-                                        <th  scope="col">Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="pointsTable" aligne="center">
-                                    <marquee behavior="scroll" direction="down">
-                                    </marquee>
-                                        <?php
-                                            include_once ("../models/modelevenement.php");
-                                            Visualiser_Sup();
-                                        ?>
-                                </tbody>
-                            </table> 
+                                <select name="exp" id="pet-select" style=" flex:1">
+                                    <option value="">-----choix------</option>
+                                    <?php
+                                        include_once ("../models/modelproduit.php");
+                                        SelectExploitation();
+                                    ?>	
+                                </select>
+                                
+                            </div>
+                            
+                            
+                            <div style="display: flex ; flex-direction: row ;">
+                                <label for="pet-select">produits:</label>
+
+                                <select name="pdr" id="pet-select">
+                                    <option value="">-----choix------</option>
+                                    <?php
+                                        include_once ("../models/modelproduit.php");
+                                        SelectProduit();
+                                    ?>	
+                                </select>
+                                <div  style=" flex:1">
+                                        Qte:
+                                    </div>
+                                
+                                <div  style=" flex:1">
+                                        <input type="int" id="name" name="qte"  size="3">
+                                    </div>
+                                
+                                <div  style=" flex:1">
+                                        Unité
+                                    </div>
+                                
+                                <div  style=" flex:1">
+                                        <input type="int" id="name" name="unt"  size="3">
+                                    </div>
+                                
+                                
+                                <div  style=" flex:1">
+                                        Prix 
+                                    </div>
+                                
+                                    <div  style=" flex:1">
+                                        <input type="int" id="name" name="prx"  size="3">
+                                    </div>
+                            </div>
+
+                            <div style="display: flex ; flex-direction: row">
+                                    <div  style=" flex:1">
+                                        Date debut :
+                                    </div>
+                                
+                                    <div  style=" flex:1">
+                                        <input id="date" type="date" name="date_debut" value="2017-06-01">
+                                    </div>
+                            </div>
+
+                            <div style="display: flex ; flex-direction: row">
+                                
+                                <div  style=" flex:1">
+                                        Date de fin :
+                                    </div>
+                                
+                                <div  style=" flex:1">
+                                        <input id="date" type="date" name="date_fin" value="2017-06-01">
+                                    </div>
+                            </div>
+
+                            
+                            <br>
+                            <div style="display: flex ; flex-direction: row">
+                                <button type="submit">valider</button>
+                                <button onclick="">annuler</button>
+                            </div>
                         </div>
-                        </div> 
                         <div class="flexinput"></div>
-                        </div>
                     </div>
                 </div>
             </form>
+            
+
+                <!-- modifier-->
 
 
+                <form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/ajout_produit.php">
 
-        <!--visualiser les produits -->
-        <div id="visualiser_produit_producteurs" style = "display: inline">
-            <div class = "conteneurevenement">
-                <div class="flexinput"></div>
-                <div class="conteneurinput">
-                    <div class="celules">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th  scope="col">nom sc</th>
-                                    <th  scope="col">nom local</th>
-                                    <th  scope="col">type</th>
-                                    <th  scope="col">Qte</th>
-                                </tr>
-                            </thead>
-                            <tbody id="pointsTable" aligne="center">
-                                <marquee behavior="scroll" direction="down">
-                                </marquee>
-                                    <?php
-                                        include_once ("../models/modelproduit.php");
-                                        VisualiserProduit();
-                                    ?>
-                            </tbody>
-                        </table> 
+                    <div id="ajouter_produit_vente" style = "display: inline">
+                        <div class = "conteneurevenement">
+                            <div class="flexinput"></div>
+                            <div class="conteneurinput">
+                                <h2>Modifier un produit a la vente :</h2>
+                                <br>
+                                <div style="display: flex ; flex-direction: row">
+                                    <div style=" flex:1"> Nom Production</div>
+                                        <div style=" flex:1">
+                                            <input type="text" id="name" name="surface"  size="25">
+                                        </div>
+                                        
+                                </div>
+                                <div style="display: flex ; flex-direction: row">
+                                    <label for="pet-select" style=" flex:1">Exploitation:</label>
+
+                                    <select name="exp" id="pet-select" style=" flex:1">
+                                        <option value="">-----choix------</option>
+                                        <?php
+                                            include_once ("../models/modelproduit.php");
+                                            SelectExploitation();
+                                        ?>	
+                                    </select>
+                                    
+                                </div>
+                                
+                                
+                                <div style="display: flex ; flex-direction: row ;">
+                                    <label for="pet-select">produits:</label>
+
+                                    <select name="pdr" id="pet-select">
+                                        <option value="">-----choix------</option>
+                                        <?php
+                                            include_once ("../models/modelproduit.php");
+                                            SelectProduit();
+                                        ?>	
+                                    </select>
+                                    <div  style=" flex:1">
+                                            Qte:
+                                        </div>
+                                    
+                                    <div  style=" flex:1">
+                                            <input type="int" id="name" name="qte"  size="3">
+                                        </div>
+                                    
+                                    <div  style=" flex:1">
+                                            Unité
+                                        </div>
+                                    
+                                    <div  style=" flex:1">
+                                            <input type="int" id="name" name="unt"  size="3">
+                                        </div>
+                                    
+                                    
+                                    <div  style=" flex:1">
+                                            Prix 
+                                        </div>
+                                    
+                                        <div  style=" flex:1">
+                                            <input type="int" id="name" name="prx"  size="3">
+                                        </div>
+                                </div>
+
+                                <div style="display: flex ; flex-direction: row">
+                                        <div  style=" flex:1">
+                                            Date debut :
+                                        </div>
+                                    
+                                        <div  style=" flex:1">
+                                            <input id="date" type="date" name="date_debut" value="2017-06-01">
+                                        </div>
+                                </div>
+
+                                <div style="display: flex ; flex-direction: row">
+                                    
+                                    <div  style=" flex:1">
+                                            Date de fin :
+                                        </div>
+                                    
+                                    <div  style=" flex:1">
+                                            <input id="date" type="date" name="date_fin" value="2017-06-01">
+                                        </div>
+                                </div>
+
+                                
+                                <br>
+                                <div style="display: flex ; flex-direction: row">
+                                    <button type="submit">valider</button>
+                                    <button onclick="">annuler</button>
+                                </div>
+                            </div>
+                            <div class="flexinput"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="flexinput"></div>
-            </div>
-        </div>
+                </form>
+
+                <!-- Section Supprimer-->
+
+                <div id="conteneurglobalinputModifier" style = "display: inline">
+                <h1>Supprimer </h1>
+				<div class = "conteneurevenement">
+					<div class="flexinput"></div>
+					<div class="conteneurinput">
+						<div class="celules">
+							<table class="table">
+								<thead>
+									<tr>
+										<th  scope="col">Organisateur</th>
+										<th  scope="col">Activités</th>
+										<th  scope="col">Lieux</th>
+										<th  scope="col">Date</th>
+									</tr>
+								</thead>
+								<tbody id="pointsTable" aligne="center">
+									<marquee behavior="scroll" direction="down">
+									</marquee>
+										<?php
+											include_once ("../models/modelevenement.php");
+											visualiser();
+										?>
+								</tbody>
+							</table> 
+						</div>
+					</div>
+					<div class="flexinput"></div>
+				</div>
+			</div>
+
+
+
+            <!-- Section Visualiser-->
+
+            <div id="conteneurglobalinputModifier" style = "display: inline">
+                <h1>Visualiser </h1>
+				<div class = "conteneurevenement">
+					<div class="flexinput"></div>
+					<div class="conteneurinput">
+						<div class="celules">
+							<table class="table">
+								<thead>
+									<tr>
+										<th  scope="col">Organisateur</th>
+										<th  scope="col">Activités</th>
+										<th  scope="col">Lieux</th>
+										<th  scope="col">Date</th>
+									</tr>
+								</thead>
+								<tbody id="pointsTable" aligne="center">
+									<marquee behavior="scroll" direction="down">
+									</marquee>
+										<?php
+											include_once ("../models/modelevenement.php");
+											visualiser();
+										?>
+								</tbody>
+							</table> 
+						</div>
+					</div>
+					<div class="flexinput"></div>
+				</div>
+			</div>
+
+
+
+
+
     </div>
 
 

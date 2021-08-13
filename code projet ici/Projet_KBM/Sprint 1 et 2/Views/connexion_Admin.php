@@ -248,31 +248,36 @@
 									</select>
 								</div>
 								<div>
-									Nom :
+									<div>Nom :</div>
+									
 									<input type="text" id="name" name="nom"  size="25">
 								</div>
 								<div>
-									Prenom :
+									<div>Prenom :</div>
+									
 									<input type="text" id="name" name="prenom"  size="25">
 								</div>
 								<div>
-									Mobile :
+									<div>Mobile :</div>
 									<input type="text" id="name" name="mobile"  size="25">
 								</div>
 								<div>
-									Fixe :
+									<div>Fixe :</div>
 									<input type="text" id="name" name="fixe"  size="25">
 								</div>
 								<div>
-									Adresse mail :
+									
+									<div>Adresse mail :</div>
 									<input type="text" id="name" name="mail"  size="25">
 								</div>
 								<div>
-									Adresse :
+									
+									<div>Adresse :</div>
 									<input type="text" id="name" name="ad"  size="25">
 								</div>
 								<div>
-								Code Postal
+								
+								<div>Code Postal</div>
 									<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
 										<option value="">--Votre Code Postal--</option>
 										<?php
@@ -323,31 +328,38 @@
 									</select>
 								</div>
 								<div>
-									Nom :
+									
+									<div>Nom :</div>
 									<input type="text" id="name" name="nom"  size="25">
 								</div>
 								<div>
-									Prenom :
+									
+									<div>Prenom :</div>
 									<input type="text" id="name" name="prenom"  size="25">
 								</div>
 								<div>
-									Mobile :
+									
+									<div>Mobile :</div>
 									<input type="text" id="name" name="mobile"  size="25">
 								</div>
 								<div>
-									Fixe :
+									
+									<div>Fixe :</div>
 									<input type="text" id="name" name="fixe"  size="25">
 								</div>
 								<div>
-									Adresse mail :
+									
+									<div>Adresse mail :</div>
 									<input type="text" id="name" name="mail"  size="25">
 								</div>
 								<div>
-									Adresse :
+									
+									<div>Adresse :</div>
 									<input type="text" id="name" name="ad"  size="25">
 								</div>
 								<div>
-								Code Postal
+								
+								<div> Code Postal</div>
 									<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
 										<option value="">--Votre Code Postal--</option>
 										<?php
@@ -438,15 +450,17 @@
 								<br>
 								
 								<div>
-									Nom scientifique:
+									<div>Nom scientifique:</div>
 									<input type="text" id="ns" name="ns"  size="25">
 								</div>
 								<div>
-									Nom français:
+									
+									<div> Nom français:</div>
 									<input type="text" id="nf" name="nf"  size="25">
 								</div>
 								<div>
-									Nom local:
+									
+									<div>Nom local:</div>
 									<input type="text" id="nl" name="nl"  size="25">
 								</div>
 								
@@ -499,15 +513,16 @@
 							</div>
 									
 									<div>
-										Nom scientifique:
+										<div>Nom scientifique:</div>
 										<input type="text" id="ns" name="ns"  size="25">
 									</div>
 									<div>
-										Nom français:
+										<div>Nom français:</div>
 										<input type="text" id="nf" name="nf"  size="25">
 									</div>
 									<div>
-										Nom local:
+										
+										<div> Nom local:</div>
 										<input type="text" id="nl" name="nl"  size="25">
 									</div>
 									
@@ -620,11 +635,12 @@
 								</div>
 								
 								<div>
-									Nom :
+									
+									<div>Nom :</div>
 									<input type="text" id="name" name="nom"  size="25">
 								</div>
 								<div>
-									Surface :
+									<div>Surface :</div>
 									<input type="text" id="name" name="surface"  size="25">
 								</div>
 								
@@ -700,11 +716,12 @@
 								</div>
 								
 								<div>
-									Nom :
+									
+									<div>Nom :</div>
 									<input type="text" id="name" name="nom"  size="25">
 								</div>
 								<div>
-									Surface :
+									<div>Surface :</div>
 									<input type="text" id="name" name="surface"  size="25">
 								</div>
 								

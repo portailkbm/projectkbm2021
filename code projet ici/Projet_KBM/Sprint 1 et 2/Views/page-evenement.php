@@ -7,6 +7,7 @@
 		<title>KBM-Evenement</title>
 	</head>
 <body > 
+	
 	<header>
 		<a href="main.php"> <img id="logo-retour" src="../Ressources/logo_retour.png" alt="retour" /></a>
 		<h1 id="titre">Évenement</h1>
@@ -121,6 +122,8 @@
 			include_once ( "../models/modelevenement.php" );
 			Select_Flyer_Evenement($_GET ["id"]);
 		?>
+
+		<!-- Fonction Admin-->
 		<div id="actiondelimitation">
 			<div id="divopserstatue">
 				<button onclick="Modifierjs()">Modifier</button>
@@ -218,6 +221,6 @@
 		
 		
 	</div>
-	<script  src="../js/page-evenement.js"></script>
+	
 </body>
 </html>

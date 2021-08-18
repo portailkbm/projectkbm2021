@@ -123,7 +123,7 @@
 		?>
 		<div id="actiondelimitation">
 			<div id="divopserstatue">
-				<button onclick="Modifier()">Modifier</button>
+				<button onclick="Modifierjs()">Modifier</button>
 			</div>
 			<div id="divopserstatue">
 				<input type="button" value="Supprimer" id="button" onClick="window.location.href='../controlleur/sup_event.php'">
@@ -135,7 +135,7 @@
 		<!-- Vue afficher par le bouton modifier -->
 
 		<form name="fomulaire" method='POST' id="formulaire"  action="../controlleur/event_crea.php">
-			<div id="Modifier-page-evenement" style = "display:inline">
+			<div id="Modifier-page-evenement" style = "display:none">
 					<div class = "conteneurevenement">
 						<div class="flexinput"></div>
 						<div class="conteneurinput">
@@ -215,73 +215,7 @@
   <input type="submit" value="Envoyer les fichier" />
 </form>
 
-			<!--
-		<div id="Modifier-page-evenement" style = "display:inline">
-					<div class = "conteneurevenement">
-						<div class="flexinput"></div>
-						<div class="conteneurinput">
-							<h2>Modifier l'evenements :</h2>
-							<br>
-							<div>
-								<label for="pet-select">Producteur:</label>
-
-								<select name="pets" id="pet-select">
-									<option value="">-----choix------</option>
-									<?php
-									  // include_once ("../models/modelproduit.php");
-									  // SelectProduit();
-									?>	
-								</select>
-								
-							</div>
-							<div>
-								Date debut :
-								<input id="date" type="date" name="date_debut" value="2017-06-01">
-							</div>
-							<div>
-								Date de fin :
-								<input id="date" type="date" name="date_fin" value="2017-06-01">
-							</div>
-							<div>
-								<label for="appt-time"> Heure de debut :</label>
-								<input id="appt-time" type="time" name="timedebut" value="13:30">
-							</div>
-							<div>
-								<label for="appt-time"> Heure de fin :</label>
-								<input id="appt-time" type="time" name="timefin" value="13:30">
-							</div>
-							<div>
-								Nom Evenement
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Code Postal
-								<select class="element champselect" name="cp" id="cp" placeholder="Votre Code Postal" required pattern=".*\S.*">
-									<option value="">--Votre Code Postal--</option>
-									<?php
-										//include_once ( "../models/modelevenement.php" );
-									//	Select_Code_Postal_all();    
-									?>
-								</select> 
-							</div>
-							<div>
-								Organisateur
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<div>
-								Contact
-								<input type="text" id="name" name="name"  size="25">
-							</div>
-							<br>
-							<div>
-								<button type="submit">valider</button>
-								<button onclick="apparitionCreerevenement()">annuler</button>
-							</div>
-						</div>
-						<div class="flexinput"></div>
-					</div>
-				</div>
-							-->
+		
 		
 	</div>
 	<script  src="../js/page-evenement.js"></script>

@@ -1,6 +1,6 @@
 
 
-function Modifier(){
+function Modifierjs(){
 	// gestion apparition pour creer
 	if(document.getElementById("Modifier-page-evenement").style.display == 'inline')
 	{

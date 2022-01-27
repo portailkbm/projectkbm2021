@@ -107,18 +107,76 @@ import Deployment from "./pages/docs/Deployment";
 import MigratingToNextJS from "./pages/docs/MigratingToNextJS";
 import Support from "./pages/docs/Support";
 import Changelog from "./pages/docs/Changelog";
+import Produit from "pages/Produit";
+import Evenment from "pages/Evenment";
 
-// Protected routes
 import ProtectedPage from "./pages/protected/ProtectedPage";
+import Accueil from "pages/Accueil";
 
 const routes: RouteObject[] = [
 	{
 		path: "/",
-		element: <LandingLayout />,
+		element: <DashboardLayout />,
 		children: [
 			{
 				path: "",
-				element: <Landing />,
+				element: <Accueil/>,
+			},
+		],
+	},
+	{
+		path: "Demenjala/KBM",
+		element: <DashboardLayout />,
+		children: [
+			{
+				path: "KBM",
+				element: <Default />,
+			},
+			{
+				path: "Demenjala",
+				element: <Analytics/>,
+			},
+			{
+				path: "Lakou",
+				element: <SaaS />,
+			},
+		],
+	},
+	{
+		path: "Partage",
+		element: <DashboardLayout />,
+		children: [
+			{
+				path: "Evenement",
+				element: <Evenment/>,
+			},
+			{
+				path: "Produit",
+				element: <Produit/>,
+			},
+			{
+				path: "Producteur",
+				element: <SaaS />,
+			},
+		],
+	},
+	{
+		path: "Bokantag",
+		element: <DashboardLayout />,
+		children: [
+			{
+				path: "",
+				element: <Accueil/>,
+			},
+		],
+	},
+	{
+		path: "Connaissance",
+		element: <DashboardLayout />,
+		children: [
+			{
+				path: "",
+				element: <Accueil/>,
 			},
 		],
 	},

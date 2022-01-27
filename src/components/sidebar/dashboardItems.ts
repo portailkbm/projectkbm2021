@@ -12,9 +12,66 @@ import {
 	MapPin,
 	Users,
 	Share,
+	CreditCard,
+	Folder,
 } from "react-feather";
 
 const pagesSection = [
+	{
+		href: "/Demenjala/KBM",
+		icon: CreditCard,
+		title: "Demenjala/KBM",
+		children: [
+			{
+				href: "/Demenjala/KBM/KBM",
+				title: "KBM",
+			},
+			{
+				href: "/Demenjala/KBM/Demenjala",
+				title: "Demenjala",
+			},
+			{
+				href: "/Demenjala/KBM/Lakou",
+				title: "Lakou",
+			},
+		],
+	},
+		{
+			href: "/Partage",
+			icon: Share,
+			title: "Partage",
+			children: [
+				{
+					href: "/Partage/Evenement",
+					title: "Evenement",
+				},
+				{
+					href: "/Partage/Produit",
+					title: "Produit",
+				},
+				{
+					href: "/Partage/Producteur",
+					title: "Producteur",
+				},
+			],
+		},
+		{
+			href: "/Bokantag",
+			icon: Folder,
+			title: "Bokantag",
+			children: [
+				
+			],
+		},
+		{
+			href: "/Connaissance",
+			icon: Folder,
+			title: "Connaissance",
+			children: [
+				
+			],
+		},
+	/*
 	{
 		href: "/dashboard",
 		icon: Sliders,
@@ -118,7 +175,7 @@ const pagesSection = [
 		href: "/docs/introduction",
 		icon: BookOpen,
 		title: "Documentation",
-	},
+	},*/
 ];
 
 const componentsSection = [
@@ -361,6 +418,7 @@ const navItems = [
 		title: "Pages",
 		pages: pagesSection,
 	},
+	/*
 	{
 		title: "Tools & Components",
 		pages: componentsSection,
@@ -368,7 +426,7 @@ const navItems = [
 	{
 		title: "Plugins & Addons",
 		pages: pluginsSection,
-	},
+	},*/
 ];
 
 export default navItems;

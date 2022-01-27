@@ -71,7 +71,7 @@ const pagesSection = [
 				
 			],
 		},
-	
+	/*
 	{
 		href: "/dashboard",
 		icon: Sliders,
@@ -175,7 +175,7 @@ const pagesSection = [
 		href: "/docs/introduction",
 		icon: BookOpen,
 		title: "Documentation",
-	},
+	},*/
 ];
 
 const componentsSection = [
@@ -418,7 +418,7 @@ const navItems = [
 		title: "Pages",
 		pages: pagesSection,
 	},
-	
+	/*
 	{
 		title: "Tools & Components",
 		pages: componentsSection,
@@ -426,7 +426,7 @@ const navItems = [
 	{
 		title: "Plugins & Addons",
 		pages: pluginsSection,
-	},
+	},*/
 ];
 
 export default navItems;

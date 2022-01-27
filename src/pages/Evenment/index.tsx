@@ -8,10 +8,10 @@ const Accueil = () => {
     return (<React.Fragment>
         <div>Nou Kontan vwè'w</div> 
         <Row>
-				<Col lg="6" xl="5" className="d-flex">
+				<Col lg="9" xl="7" className="d-flex">
 					<Event/>
 				</Col>
-				<Col lg="6" xl="7" className="d-flex">
+				<Col lg="4" xl="4" className="d-flex">
 					<Carte/>
 				</Col>
 			</Row>

@@ -19,13 +19,14 @@ const CardWithImageAndLinks = () => (
 		{/*<img style={ {width:"100px"} } src={banane} ></img>*/}
 		<Card.Header>
 			<Card.Title className="mb-0">
-				Card with image and links
+				Lieu de l'evenement
 			</Card.Title>
 		</Card.Header>
 		<Card.Body>
 			<Card.Text>
-				Some quick example text to build on the card title and make up the bulk
-				of the card's content.
+				heure de commencement
+				heure de fin
+				quesque c'est ?
 			</Card.Text>
 			<Card.Link href="#">Card link</Card.Link>
 			<Card.Link href="#">Another link</Card.Link>

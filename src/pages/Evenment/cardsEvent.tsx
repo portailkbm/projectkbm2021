@@ -6,7 +6,9 @@ import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 const image={ 
 	width:"300px",
 	marginTop: "20px", 
-	margin: "auto",
+	marginLeft: "auto",
+	marginRight: "auto",
+
 	/*TextAlign : "center",*/
 }
 

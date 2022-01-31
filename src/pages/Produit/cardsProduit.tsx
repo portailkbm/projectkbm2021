@@ -26,7 +26,7 @@ const CardWithImageAndLinks = () => (
 		</Card.Header>
 		<Card.Body>
 			<Card.Text>
-			lantes de la famille des Dioscoreacées, 2 espèces d'ignames sont principalement cultivées en Guadeloupe 
+			Plantes de la famille des Dioscoreacées, 2 espèces d'ignames sont principalement cultivées en Guadeloupe 
 			: Dioscorea alata (variétés : « Pacala », « Plimbite », « Belep ») et Dioscorea cayenensisrotundata 
 			(Igname jaune et igname grosse caille).
 			</Card.Text>

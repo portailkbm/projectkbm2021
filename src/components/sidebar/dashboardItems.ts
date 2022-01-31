@@ -55,11 +55,99 @@ const pagesSection = [
 				},
 			],
 		},
+		
+		{
+			href: "/KBM",
+			icon: Folder,
+			title: "KBM",
+			children: [
+				{
+					href: "/Partage/Evenement",
+					title: "Evenement",
+				},
+				{
+					href: "/Partage/Produit",
+					title: "Produit",
+				},
+				{
+					href: "/Partage/Producteur",
+					title: "Producteur",
+				},
+				{
+					href: "/dashboard/analytics",
+					title: "Producteur",
+				},
+			],
+		},
+		
+		{
+			href: "/Demenjala",
+			icon: Folder,
+			title: "Demenjala",
+			children: [
+				{
+					href: "/Partage/Evenement",
+					title: "Evenement",
+				},
+				{
+					href: "/Partage/Produit",
+					title: "Produit",
+				},
+				{
+					href: "/Partage/Producteur",
+					title: "Producteur",
+				},
+				{
+					href: "/dashboard/analytics",
+					title: "Producteur",
+				},
+			],
+		},
+		
+		{
+			href: "/connaissance",
+			icon: Folder,
+			title: "Partage",
+			children: [
+				{
+					href: "/Partage/Evenement",
+					title: "Evenement",
+				},
+				{
+					href: "/Partage/Produit",
+					title: "Produit",
+				},
+				{
+					href: "/Partage/Producteur",
+					title: "Producteur",
+				},
+			],
+		},
+		{
+			href: "/Lakou",
+			icon: Folder,
+			title: "Lakou",
+			children: [
+				
+			],
+		},
 		{
 			href: "/Bokantag",
 			icon: Folder,
 			title: "Bokantag",
 			children: [
+				{
+					href: "/Partage/Evenement",
+					title: "Evenement",
+				},
+				{
+					href: "/Partage/Produit",
+					title: "Produit",
+				},
+				{
+					href: "/Partage/Producteur",
+					title: "Producteur",
+				},
 				
 			],
 		},
@@ -72,6 +160,7 @@ const pagesSection = [
 			],
 		},
 	/*
+	
 	{
 		href: "/dashboard",
 		icon: Sliders,

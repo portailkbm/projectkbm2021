@@ -56,7 +56,7 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.625;
   --bs-body-color: #6c757d;
-  --bs-body-bg: #009900; /* #F7F9FC */
+  --bs-body-bg: #FECB66; /* #009900 #FECB66 #F7F9FC */
 }
 
 *,
@@ -15093,7 +15093,7 @@ body[data-theme=light] .sidebar {
 
 .sidebar-content {
   transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
-  background: #FECB66; /* #293042 */
+  background: #009900; /* #FECB66 #009900 #293042 */
 }
 body[data-theme=colored] .sidebar-content {
   background: #2d6bcf;

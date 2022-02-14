@@ -78,6 +78,26 @@ app.delete('/api/Evenemment/:id', function(req, res) {
   //connection.end()
 })
 
+app.post('/api/Evenemment', function(req, res) {  
+  const libevent = req.body.libevent
+  const desevent = req.body.desevent
+  const photoevent = req.body.photoevent
+  const flyer = req.body.flyer
+  const debutevent = req.body.debutevent
+  const debutevent_hr = req.body.debutevent_hr
+  const finevent = req.body.finevent
+  const finevent_hr = req.body.finevent_hr
+  const cp = req.body.cp
+  console.log(body)
+  connection.query("INSERT INTO `evenement`(`libevent`, `desevent`, `photoevent`, `flyer`, `debutevent`, `debutevent_hr`, `finevent`, `finevent_hr`, `cp`) VALUES ("+libevent+","+desevent+","+photoevent+","+flyer+","+debutevent+","+debutevent_hr+","+finevent+","+finevent_hr+","+cp+")", function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results);
+    res.send(results);
+  })
+  //connection.end()
+})
+
+
 app.get('/api/Ville', function(req, res) {   
   connection.query("SELECT * FROM `ville`", function (error, results, fields) {
     if (error) throw error;

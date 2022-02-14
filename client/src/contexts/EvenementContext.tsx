@@ -1,12 +1,14 @@
 import React, { createContext,useState, useReducer, useEffect} from "react";
+import axios from "axios";
 
-import { getTab2, getOneEvent, getCity } from "../services";
+import { getTab2, getOneEvent, getCity, postEvent } from "../services";
 
 const FETCH_STATS_TABB = "FETCH_STATS_TABB"
 const FETCH_PENDING = "FETCH_POSTS_PENDING"
 const FETCH_ERROR = "FETCH_POSTS_ERROR"
 const FETCH_CARD = "FETCH_CARD"
 const FETCH_CITY = "FETCH_CITY"
+const POST_EVENT = "POST_EVENT"
 
 const initialState = {
   isFetching: false,
@@ -99,12 +101,34 @@ function EvenementProvider({ children }) {
   }
 
 
+  const postData = async (body) => {
+
+    //const response = await postEvent(body)
+ /*    await axios.post('http://localhost:4002/api/Evenemment', body)
+		.then(function (response) {
+		console.log(response);
+		})
+		.catch(function (error) {
+		console.log(error);
+		}); */
+	
+    //console.log(response)
+    /* dispatch({
+      type: POST_EVENT,
+      payload: {
+        response: response
+      },
+    }) */
+  }
+  
+
   return (
     <EvenementContext.Provider
       value={{
         ...state,
         fetchTabKBM, 
         fetchCardKBM,
+        postData,
         fetchCity,
       }}
     >

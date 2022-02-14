@@ -7,7 +7,7 @@ import useEvenement from "hooks/useEvenement"
 
 const BasicForm = () => {
 	const { t } = useTranslation();
-	const { city } = useEvenement()
+	const { city, postData } = useEvenement()
 	const [state, setstate] = useState({
 		
 		libevent: null,
@@ -18,7 +18,7 @@ const BasicForm = () => {
 		debutevent_hr: null,
 		finevent: null,
 		finevent_hr: null,
-		cp: 97139,
+		cp: '',
 		
 		/*imagevent: '', cr_event: null,
 		visevent: null, 
@@ -102,7 +102,7 @@ const BasicForm = () => {
 					<Form.Check type="checkbox" id="checkbox" label="Check me out" />
 				</Form.Group> */}
 
-				<Button variant="primary">{t("Créer l'évènement")}</Button>
+				<Button variant="primary" onClick={() => postData(state)}>{t("Créer l'évènement")}</Button>
 			</Form>
 		</Card.Body>
 	</Card>

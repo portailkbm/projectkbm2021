@@ -108,7 +108,8 @@ import MigratingToNextJS from "./pages/docs/MigratingToNextJS";
 import Support from "./pages/docs/Support";
 import Changelog from "./pages/docs/Changelog";
 import Produit from "pages/Produit";
-import Evenment from "pages/Evenment";
+import Evenment from "pages/Evenment/Event";
+import InscriptionsEvent from "pages/Evenment/Inscription";
 
 import ProtectedPage from "./pages/protected/ProtectedPage";
 import Accueil from "pages/Accueil";
@@ -148,11 +149,22 @@ const routes: RouteObject[] = [
 		children: [
 			{
 				path: "Evenement",
-				element: <Evenment/>,
+				children: [
+					{
+						path: "",
+				        element: <Evenment />,
+					},
+					{
+						path: "Inscriptions",
+				        element: <InscriptionsEvent />,
+					}
+
+				],
+				/* element: <Evenment/>, */
 			},
 			{
 				path: "Produit",
-				element: <Produit/>,
+				element: <Produit />,
 			},
 			{
 				path: "Producteur",

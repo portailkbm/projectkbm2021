@@ -10,6 +10,7 @@ import routes from "./routes";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { SidebarProvider } from "./contexts/SidebarContext";
 import { LayoutProvider } from "./contexts/LayoutContext";
+import { EvenementProvider } from "contexts/EvenementContext";
 import ChartJsDefaults from "./utils/ChartJsDefaults";
 
 import { AuthProvider } from "./contexts/JWTContext";
@@ -31,7 +32,9 @@ const App = () => {
 					<SidebarProvider>
 						<LayoutProvider>
 							<ChartJsDefaults />
-							<AuthProvider>{content}</AuthProvider>
+							<EvenementProvider> 
+								<AuthProvider>{content}</AuthProvider>
+							</EvenementProvider>	
 						</LayoutProvider>
 					</SidebarProvider>
 				</ThemeProvider>

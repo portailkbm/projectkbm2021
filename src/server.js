@@ -43,7 +43,13 @@ app.get('/test', function(req, res) {
     res.send(__dirname)
 })
 
-app.get('/api', function(req, res) {   
+
+const sequelize = new Sequelize("demen1587164", "demen1587164", "5t4fllyba3", {
+  dialect: "mysql",
+  host: "91.216.107.183 "
+ });
+
+app.get('/api/Evenemment', function(req, res) {   
   connection.query("select evenement.*, ville.nomville from evenement, ville where evenement.cp = ville.cp order by evenement.debutevent", function (error, results, fields) {
     if (error) throw error;
     console.log('The solution is: ', results);
@@ -51,23 +57,36 @@ app.get('/api', function(req, res) {
   })
   //connection.end()
 })
-const sequelize = new Sequelize("demen1587164", "demen1587164", "5t4fllyba3", {
-  dialect: "mysql",
-  host: "91.216.107.183 "
- });
 
-app.get('/api/test', function(req, res) {   
- try {
-    sequelize.authenticate();
-    console.log('Connecté à la base de données MySQL!');
-    sequelize.query("select evenement.*, ville.nomville from evenement, ville where evenement.cp = ville.cp order by evenement.debutevent").then(([results, metadata]) => {
-        console.log(results);
-        res.send(results);
-      })
-  } catch (error) {
-    console.error('Impossible de se connecter, erreur suivante :', error);
-  }
+app.get('/api/Evenemment/:id', function(req, res) {  
+  const id = req.params.id 
+  connection.query("select evenement.*, ville.nomville from evenement, ville where evenement.idevent ="+id+" and evenement.cp = ville.cp order by evenement.debutevent", function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results);
+    res.send(results);
+  })
+  //connection.end()
 })
+
+app.delete('/api/Evenemment/:id', function(req, res) {  
+  const id = req.params.id 
+  connection.query("DELETE FROM `evenement` WHERE evenement.idevent ="+id+"", function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results);
+    res.send(results);
+  })
+  //connection.end()
+})
+
+app.get('/api/Ville', function(req, res) {   
+  connection.query("SELECT * FROM `ville`", function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results);
+    res.send(results);
+  })
+  //connection.end()
+})
+
 
 
 

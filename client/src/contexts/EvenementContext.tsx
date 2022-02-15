@@ -104,13 +104,24 @@ function EvenementProvider({ children }) {
   const postData = async (body) => {
 
     //const response = await postEvent(body)
- /*    await axios.post('http://localhost:4002/api/Evenemment', body)
+    console.log(body)
+    await axios.post('http://localhost:4002/api/Evenemment',body/* {
+      libevent: body.libevent,
+      desevent: body.desevent,
+      photoevent: body.photoevent,
+      flyer: body.flyer,
+      debutevent: body.debutevent,
+      debutevent_hr: body.debutevent_hr,
+      finevent: body.finevent,
+      finevent_hr: body.finevent_hr,
+      cp: body.cp,
+    } */)
 		.then(function (response) {
 		console.log(response);
 		})
 		.catch(function (error) {
 		console.log(error);
-		}); */
+		});
 	
     //console.log(response)
     /* dispatch({

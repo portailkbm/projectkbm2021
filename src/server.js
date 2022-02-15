@@ -88,10 +88,9 @@ app.post('/api/Evenemment', function(req, res) {
   const finevent = req.body.finevent
   const finevent_hr = req.body.finevent_hr
   const cp = req.body.cp
-  console.log(body)
-  connection.query("INSERT INTO `evenement`(`libevent`, `desevent`, `photoevent`, `flyer`, `debutevent`, `debutevent_hr`, `finevent`, `finevent_hr`, `cp`) VALUES ("+libevent+","+desevent+","+photoevent+","+flyer+","+debutevent+","+debutevent_hr+","+finevent+","+finevent_hr+","+cp+")", function (error, results, fields) {
+  connection.query("INSERT INTO `evenement`(`libevent`, `desevent`, `photoevent`, `flyer`, `debutevent`, `debutevent_hr`, `finevent`, `finevent_hr`, `cp`) VALUES ('"+libevent+"','"+desevent+"','"+photoevent+"','"+flyer+"','"+debutevent+"','"+debutevent_hr+"','"+finevent+"','"+finevent_hr+"','"+cp+"')", function (error, results, fields) {
     if (error) throw error;
-    console.log('The solution is: ', results);
+    console.log('The solution is: ', results)
     res.send(results);
   })
   //connection.end()

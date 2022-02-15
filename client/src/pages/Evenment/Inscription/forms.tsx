@@ -13,12 +13,12 @@ const BasicForm = () => {
 		libevent: null,
 		desevent: null,
 		photoevent: null,
-		flyer: '',
+		flyer: null,
 		debutevent: null,
 		debutevent_hr: null,
 		finevent: null,
 		finevent_hr: null,
-		cp: '',
+		cp: 0,
 		
 		/*imagevent: '', cr_event: null,
 		visevent: null, 
@@ -30,6 +30,11 @@ const BasicForm = () => {
 		
 		/* nomville: 'les Abymes' */
 	})
+	const handleChange = (e) => {
+
+		setstate({...state, cp: e.target.value})
+		
+	}
 	return (
 	<Card className="m-sm-4 text-center"style={{ maxWidth: 500, overflow: "auto"}}>
 		<Card.Header>
@@ -49,10 +54,12 @@ const BasicForm = () => {
 					id="exampleCustomSelect"
 					name="customSelect"
 					className="mb-3"
+					value={state.cp}
+					onChange={handleChange}
 				>
-					<option value="">{t("Ville")}</option>
+					<option value="">{t("Ville")}</option> 
 					{city.map((cit) => {
-						return <option key={cit.cp} value={cit.cp}>{cit.nomville}</option>
+						return <option key={cit.cp} value={cit.cp} >{cit.nomville}</option>
 					})}
 				</Form.Select>
 				<Form.Group className="mb-3">

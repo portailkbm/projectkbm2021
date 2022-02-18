@@ -402,8 +402,8 @@ app.all('/*', (req, res) => {
 app.all('/*', (req, res) => {
   res.status(200).sendFile(path.join(__dirname,'../client/build','index.html'))
 }); */
-
+var port = process.env.PORT || 4002
 // starting the server
-app.listen(4002, () => {
+app.listen(port, () => {
   console.log('listening on port 4002');
 });

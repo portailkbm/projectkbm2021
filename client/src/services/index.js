@@ -20,7 +20,7 @@ const options3 = {
     headers: { "authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZYSWtCLWdlTWN3NUtFdVREWW8xVyJ9.eyJpc3MiOiJodHRwczovL2Rldi1iOXlvYmRydy51cy5hdXRoMC5jb20vIiwic3ViIjoieWl6ME1aV0g1WVlySDJUbG55ZHBBTE5ESzRSZHIyNTRAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYWRzLWFwaSIsImlhdCI6MTYzNDMxMzgwOSwiZXhwIjoxNjM0NDAwMjA5LCJhenAiOiJ5aXowTVpXSDVZWXJIMlRsbnlkcEFMTkRLNFJkcjI1NCIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.LevckBfdi1o61VYYUk3O52bYEUgLQHoOlcZ4YorHfmPBweyUARlhWREicir-UVGaVoZOrxYyJdauPID_iY_cm7ONNdmaLpYIHb6dxevYEuQpZRef_3yhxRrt9vvKCuPRGVcB4nFlUyqASs14d0t8WRBZsWN1-PZkR7cmWmrBlTvFT0hOtPSF1YEBqbSktoX5LFvO2Kd5JbTXt_CToNH7dihakIExUPQCrPyztYkShRp8a4-CZrGOWmwuZX2g-XvA12m8Mzwmyie3RpcoAWBmGY0Mbj2Q5lHsEblYFWS3J_wirZMkEqn8AR_2dA-fgaDeh9RaNG_OzGldoNKqHGGpvQ" },
 }
 
-const host = "http://localhost:4002/"
+const host = "https://demenjala.herokuapp.com/"
 
 export const getLeaks = () => {
     

@@ -108,8 +108,10 @@ import MigratingToNextJS from "./pages/docs/MigratingToNextJS";
 import Support from "./pages/docs/Support";
 import Changelog from "./pages/docs/Changelog";
 import Produit from "pages/Produit";
+//Evenement
 import Evenment from "pages/Evenment/Event";
 import InscriptionsEvent from "pages/Evenment/Inscription";
+import Modification from "pages/Evenment/ModificationSuppression"
 
 import ProtectedPage from "./pages/protected/ProtectedPage";
 import Accueil from "pages/Accueil";
@@ -157,6 +159,10 @@ const routes: RouteObject[] = [
 					{
 						path: "Inscriptions",
 				        element: <InscriptionsEvent />,
+					},
+					{
+						path: "Modifications-Suppression",
+				        element: <Modification />,
 					}
 
 				],

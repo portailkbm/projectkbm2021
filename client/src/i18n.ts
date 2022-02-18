@@ -23,6 +23,8 @@ const resources = {
 			"Heure de fin de l'évènement :" : "Heure de fin de l'évènement :",
 			"Lieu de l'évènement :" : "Lieu de l'évènement :",
 			"Creation d'évènement" : "Creation d'évènement",
+			"Supprimer l'évènement": "Supprimer l'évènement",
+			"Modifier l'évènement": "Modifier l'évènement",
 		},
 	},
 	fr: {

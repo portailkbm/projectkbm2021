@@ -12,13 +12,13 @@ const MD5 = require('crypto-js/md5')
 const { Sequelize } = require('sequelize');
 
 
-var connection = mysql.createConnection({
-  host     : 'localhost', //                91.216.107.183        92.243.16.99
-  user     : 'root', //                    demen1587164      c16_react
-  password : '', //                        5t4fllyba3      euvMyMC4@4
-  database : 'demen1587164' //                           c16_react
+/* var connection = mysql.createConnection({
+  host     : '145.14.153.51', //                91.216.107.183        92.243.16.99
+  user     : 'u917258199_Demenjala', //                    demen1587164      c16_react
+  password : 'MotDePasse@971', //                        5t4fllyba3      euvMyMC4@4
+  database : 'u917258199_KBM' //                           c16_react
 })
-
+ */
 // defining the Express app
 const app = express();
 
@@ -44,11 +44,89 @@ app.get('/test', function(req, res) {
 })
 
 
-const sequelize = new Sequelize("demen1587164", "demen1587164", "5t4fllyba3", {
+const sequelize = new Sequelize("u917258199_KBM", "u917258199_Demenjala", "MotDePasse@971", {
   dialect: "mysql",
-  host: "91.216.107.183 "
+  host: "145.14.153.51"
  });
 
+ app.get('/api/Evenemment', function(req, res) {   
+  try {
+     sequelize.authenticate();
+     console.log('Connecté à la base de données MySQL!');
+     sequelize.query("select evenement.*, ville.nomville from evenement, ville where evenement.cp = ville.cp order by evenement.debutevent").then(([results, metadata]) => {
+         console.log(results);
+         res.send(results);
+       })
+   } catch (error) {
+     console.error('Impossible de se connecter, erreur suivante :', error);
+   }
+ })
+
+ app.get('/api/Evenemment/:id', function(req, res) {   
+  const id = req.params.id 
+  try {
+     sequelize.authenticate();
+     console.log('Connecté à la base de données MySQL!');
+     sequelize.query("select evenement.*, ville.nomville from evenement, ville where evenement.idevent ="+id+" and evenement.cp = ville.cp order by evenement.debutevent").then(([results, metadata]) => {
+         console.log(results);
+         res.send(results);
+       })
+   } catch (error) {
+     console.error('Impossible de se connecter, erreur suivante :', error);
+   }
+ })
+
+ app.delete('/api/Evenemment/:id', function(req, res) {  
+  const id = req.params.id  
+  try {
+     sequelize.authenticate();
+     console.log('Connecté à la base de données MySQL!');
+     sequelize.query("DELETE FROM `evenement` WHERE evenement.idevent ="+id+"").then(([results, metadata]) => {
+         console.log(results);
+         res.send(results);
+       })
+   } catch (error) {
+     console.error('Impossible de se connecter, erreur suivante :', error);
+   }
+ })
+
+ app.post('/api/Evenemment', function(req, res) {   
+  const libevent = req.body.libevent
+  const desevent = req.body.desevent
+  const photoevent = req.body.photoevent
+  const flyer = req.body.flyer
+  const debutevent = req.body.debutevent
+  const debutevent_hr = req.body.debutevent_hr
+  const finevent = req.body.finevent
+  const finevent_hr = req.body.finevent_hr
+  const cp = req.body.cp
+  try {
+     sequelize.authenticate();
+     console.log('Connecté à la base de données MySQL!');
+     sequelize.query("INSERT INTO `evenement`(`libevent`, `desevent`, `photoevent`, `flyer`, `debutevent`, `debutevent_hr`, `finevent`, `finevent_hr`, `cp`) VALUES ('"+libevent+"','"+desevent+"','"+photoevent+"','"+flyer+"','"+debutevent+"','"+debutevent_hr+"','"+finevent+"','"+finevent_hr+"','"+cp+"')").then(([results, metadata]) => {
+         console.log(results);
+         //res.send(results);
+         res.sendStatus(200);
+       })
+   } catch (error) {
+     console.error('Impossible de se connecter, erreur suivante :', error);
+   }
+ })
+
+app.get('/api/Ville', function(req, res) {   
+const id = req.params.id 
+try {
+  sequelize.authenticate();
+  console.log('Connecté à la base de données MySQL!');
+  sequelize.query("SELECT * FROM `ville`").then(([results, metadata]) => {
+      console.log(results);
+      res.send(results);
+    })
+} catch (error) {
+  console.error('Impossible de se connecter, erreur suivante :', error);
+}
+})
+/*
 app.get('/api/Evenemment', function(req, res) {   
   connection.query("select evenement.*, ville.nomville from evenement, ville where evenement.cp = ville.cp order by evenement.debutevent", function (error, results, fields) {
     if (error) throw error;
@@ -56,7 +134,7 @@ app.get('/api/Evenemment', function(req, res) {
     res.send(results);
   })
   //connection.end()
-})
+}) 
 
 app.get('/api/Evenemment/:id', function(req, res) {  
   const id = req.params.id 

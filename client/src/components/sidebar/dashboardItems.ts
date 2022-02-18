@@ -83,6 +83,10 @@ const pagesSection = [
 						href: "/Partage/Evenement/inscriptions",
 						title: "Inscription",
 					},
+					{
+						href: "/Partage/Evenement/Modifications-Suppression",
+						title: "Modifications-Suppression",
+					},
 				],
 			},
 			{

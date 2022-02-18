@@ -1,7 +1,7 @@
 import React, { createContext,useState, useReducer, useEffect} from "react";
 import axios from "axios";
 
-import { getTab2, getOneEvent, getCity, postEvent } from "../services";
+import { getTab2, getOneEvent, getCity, postEvent, deletEvent } from "../services";
 
 const FETCH_STATS_TABB = "FETCH_STATS_TABB"
 const FETCH_PENDING = "FETCH_POSTS_PENDING"
@@ -104,7 +104,6 @@ function EvenementProvider({ children }) {
   const postData = async (body) => {
 
     //const response = await postEvent(body)
-    console.log(body)
     await axios.post('http://localhost:4002/api/Evenemment',body/* {
       libevent: body.libevent,
       desevent: body.desevent,
@@ -118,18 +117,23 @@ function EvenementProvider({ children }) {
     } */)
 		.then(function (response) {
 		console.log(response);
+    return response.status
 		})
 		.catch(function (error) {
 		console.log(error);
 		});
 	
-    //console.log(response)
-    /* dispatch({
-      type: POST_EVENT,
-      payload: {
-        response: response
-      },
-    }) */
+  }
+  const deleteEvent = async () => {
+
+    if(state.dataCards.idevent){
+      const id = state.dataCards.idevent
+      await deletEvent(id)
+      fetchTabKBM(1,2)
+    }else {
+      console.log("fail")
+    }
+    
   }
   
 
@@ -141,6 +145,7 @@ function EvenementProvider({ children }) {
         fetchCardKBM,
         postData,
         fetchCity,
+        deleteEvent,
       }}
     >
       {children}

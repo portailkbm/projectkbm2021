@@ -1,13 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Helmet } from "react-helmet-async";
 
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import useEvenement from "hooks/useEvenement"
+import NotyfContext from "contexts/NotyfContext";
 
 const BasicForm = () => {
 	const { t } = useTranslation();
 	const { city, postData } = useEvenement()
+	const notyf = useContext(NotyfContext);
+	const [message, setMessage] = useState("Evenement Enregistré");
+	const [type, setType] = useState("success");
+	const [duration, setDuration] = useState("2500");
+	const [ripple, setRipple] = useState(true);
+	const [dismissible, setDismissible] = useState(false);
+	const [positionX, setPositionX] = useState("right");
+	const [positionY, setPositionY] = useState("top");
 	const [state, setstate] = useState({
 		
 		libevent: null,
@@ -34,6 +43,32 @@ const BasicForm = () => {
 
 		setstate({...state, cp: e.target.value})
 		
+	}
+	const handleClick = async () => {
+
+		const status = await postData(state)
+
+		if(status != 200){
+			setType("danger")
+			setMessage("Evenement non Enregistré")
+		}else {
+
+			setType("success")
+			setMessage("Evenement Enregistré")
+		}
+		notyf.open({
+			type,
+			message: message
+				? message
+				: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+			duration: Number(duration),
+			ripple,
+			dismissible,
+			position: {
+				x: positionX as any,
+				y: positionY as any,
+			},
+		})
 	}
 	return (
 	<Card className="m-sm-4 text-center"style={{ maxWidth: 500, overflow: "auto"}}>
@@ -109,7 +144,7 @@ const BasicForm = () => {
 					<Form.Check type="checkbox" id="checkbox" label="Check me out" />
 				</Form.Group> */}
 
-				<Button variant="primary" onClick={() => postData(state)}>{t("Créer l'évènement")}</Button>
+				<Button variant="primary" onClick={() => handleClick()}>{t("Créer l'évènement")}</Button>
 			</Form>
 		</Card.Body>
 	</Card>
